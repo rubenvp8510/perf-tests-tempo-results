@@ -1,0 +1,132 @@
+{
+  "exported_at": "2026-01-06T08:20:49Z",
+  "duration": "75m",
+  "metrics": [
+    {
+      "name": "summary_memory_p99_total",
+      "description": "P99 total memory usage over the entire test (75m)",
+      "value": 13285024727.04
+    },
+    {
+      "name": "summary_cpu_p99_total",
+      "description": "P99 total CPU usage over the entire test (75m)",
+      "value": 5.8316535918170285
+    },
+    {
+      "name": "summary_memory_p99_by_component",
+      "description": "P99 memory by component over the entire test (75m)",
+      "value": 7666337873.920002,
+      "labels": {
+        "component": "compactor"
+      }
+    },
+    {
+      "name": "summary_memory_p99_by_component",
+      "description": "P99 memory by component over the entire test (75m)",
+      "value": 5781589442.560009,
+      "labels": {
+        "component": "ingester"
+      }
+    },
+    {
+      "name": "summary_memory_p99_by_component",
+      "description": "P99 memory by component over the entire test (75m)",
+      "value": 58448445.44,
+      "labels": {
+        "component": "distributor"
+      }
+    },
+    {
+      "name": "summary_memory_p99_by_component",
+      "description": "P99 memory by component over the entire test (75m)",
+      "value": 1245659136,
+      "labels": {
+        "component": "query-frontend"
+      }
+    },
+    {
+      "name": "summary_memory_p99_by_component",
+      "description": "P99 memory by component over the entire test (75m)",
+      "value": 624712499.2,
+      "labels": {
+        "component": "querier"
+      }
+    },
+    {
+      "name": "summary_memory_p99_by_component",
+      "description": "P99 memory by component over the entire test (75m)",
+      "value": 96768573.44000001,
+      "labels": {
+        "component": "gateway"
+      }
+    },
+    {
+      "name": "summary_cpu_p99_by_component",
+      "description": "P99 CPU by component over the entire test (75m)",
+      "value": 1.0077401974306697,
+      "labels": {
+        "component": "compactor"
+      }
+    },
+    {
+      "name": "summary_cpu_p99_by_component",
+      "description": "P99 CPU by component over the entire test (75m)",
+      "value": 5.028508885300877,
+      "labels": {
+        "component": "ingester"
+      }
+    },
+    {
+      "name": "summary_cpu_p99_by_component",
+      "description": "P99 CPU by component over the entire test (75m)",
+      "value": 0.1455243198728552,
+      "labels": {
+        "component": "distributor"
+      }
+    },
+    {
+      "name": "summary_cpu_p99_by_component",
+      "description": "P99 CPU by component over the entire test (75m)",
+      "value": 1.0042159624538274,
+      "labels": {
+        "component": "querier"
+      }
+    },
+    {
+      "name": "summary_cpu_p99_by_component",
+      "description": "P99 CPU by component over the entire test (75m)",
+      "value": 0.21080509249435234,
+      "labels": {
+        "component": "query-frontend"
+      }
+    },
+    {
+      "name": "summary_cpu_p99_by_component",
+      "description": "P99 CPU by component over the entire test (75m)",
+      "value": 0.29487210605263203,
+      "labels": {
+        "component": "gateway"
+      }
+    },
+    {
+      "name": "summary_memory_max_total",
+      "description": "Max total memory usage over the entire test (75m)",
+      "value": 13511364608
+    },
+    {
+      "name": "summary_cpu_max_total",
+      "description": "Max total CPU usage over the entire test (75m)",
+      "value": 6.084633711400371
+    },
+    {
+      "name": "summary_memory_avg_total",
+      "description": "Average total memory usage over the entire test (75m)",
+      "value": 8167466653.013333
+    },
+    {
+      "name": "summary_cpu_avg_total",
+      "description": "Average total CPU usage over the entire test (75m)",
+      "value": 2.5360879405987578
+    }
+  ]
+}

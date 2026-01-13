@@ -1,0 +1,315 @@
+level=warn ts=2026-01-06T13:29:33.393356387Z caller=main.go:119 msg="-- CONFIGURATION WARNINGS --"
+level=warn ts=2026-01-06T13:29:33.393391773Z caller=main.go:125 msg="Inline, unscoped overrides are deprecated. Please use the new overrides config format."
+level=info ts=2026-01-06T13:29:33.393497052Z caller=main.go:103 msg="Starting Tempo" version="(version=2.9.0, branch=HEAD, revision=f1b3ef152)" target=ingester
+level=info msg="server listening on addresses" http=[::]:3101 grpc=[::]:38089
+level=info ts=2026-01-06T13:29:33.404492285Z caller=cache.go:55 msg="caches available to storage backend" parquet-footer=false bloom=false parquet-offset-idx=false parquet-column-idx=false trace-id-index=false parquet-page=false
+level=info ts=2026-01-06T13:29:33.406181402Z caller=server.go:281 msg="server listening on addresses" http=[::]:3200 grpc=[::]:9095
+level=info ts=2026-01-06T13:29:33.40758731Z caller=memberlist_client.go:484 msg="Using memberlist cluster label and node name" cluster_label= node=tempo-tempostack-ingester-0-0402e0ee
+level=info ts=2026-01-06T13:29:33.40930705Z caller=module_service.go:82 msg=starting module=internal-server
+level=info ts=2026-01-06T13:29:33.409514647Z caller=module_service.go:82 msg=starting module=cache-provider
+level=info ts=2026-01-06T13:29:33.409615991Z caller=module_service.go:82 msg=starting module=server
+level=info ts=2026-01-06T13:29:33.409892168Z caller=module_service.go:82 msg=starting module=overrides
+level=info ts=2026-01-06T13:29:33.409944109Z caller=module_service.go:82 msg=starting module=store
+level=info ts=2026-01-06T13:29:33.410122752Z caller=module_service.go:82 msg=starting module=memberlist-kv
+level=info ts=2026-01-06T13:29:33.410220631Z caller=module_service.go:82 msg=starting module=ring
+level=info ts=2026-01-06T13:29:33.410283026Z caller=module_service.go:82 msg=starting module=live-store-ring
+level=info ts=2026-01-06T13:29:33.410425106Z caller=memberlist_client.go:628 msg="memberlist fast-join starting" nodes_found=1 to_join=2
+level=info ts=2026-01-06T13:29:33.427624291Z caller=memberlist_client.go:648 msg="memberlist fast-join finished" joined_nodes=6 elapsed_time=17.202625ms
+level=info ts=2026-01-06T13:29:33.427667576Z caller=memberlist_client.go:666 phase=startup msg="joining memberlist cluster" join_members=tempo-tempostack-gossip-ring
+level=info ts=2026-01-06T13:29:33.427708465Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-06T13:29:33.4277167Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-06T13:29:33.427843589Z caller=module_service.go:82 msg=starting module=ingester
+level=info ts=2026-01-06T13:29:33.427865078Z caller=ingester.go:413 msg="beginning wal replay"
+level=warn ts=2026-01-06T13:29:33.428001006Z caller=wal.go:103 msg="unowned file entry ignored during wal replay" file=blocks err=null
+level=info ts=2026-01-06T13:29:33.428016315Z caller=ingester.go:451 msg="wal replay complete"
+level=info ts=2026-01-06T13:29:33.428037144Z caller=ingester.go:465 msg="reloading local blocks" tenants=0
+level=info ts=2026-01-06T13:29:33.428102309Z caller=lifecycler.go:714 msg="instance not found in ring, adding with no tokens" ring=ingester
+level=info ts=2026-01-06T13:29:33.428107653Z caller=app.go:213 msg="Tempo started"
+level=info ts=2026-01-06T13:29:33.428214801Z caller=lifecycler.go:556 msg="auto-joining cluster after timeout" ring=ingester
+level=info ts=2026-01-06T13:29:33.438545886Z caller=memberlist_client.go:673 phase=startup msg="joining memberlist cluster succeeded" reached_nodes=6 elapsed_time=10.870851ms
+level=info ts=2026-01-06T13:31:10.080792197Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=31081209-a512-4348-9b75-e1d1c532c1ec
+level=info ts=2026-01-06T13:31:14.728034015Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=31081209-a512-4348-9b75-e1d1c532c1ec
+level=info ts=2026-01-06T13:31:44.06451708Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=31081209-a512-4348-9b75-e1d1c532c1ec duration=29.336452571s
+level=info ts=2026-01-06T13:31:44.165196747Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=31081209-a512-4348-9b75-e1d1c532c1ec
+level=info ts=2026-01-06T13:32:09.348404141Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=ed69106a-0504-466a-8bec-4a18fe8fe20f
+level=info ts=2026-01-06T13:32:11.024674663Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=ed69106a-0504-466a-8bec-4a18fe8fe20f
+level=info ts=2026-01-06T13:32:39.287182018Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=ed69106a-0504-466a-8bec-4a18fe8fe20f duration=28.262477859s
+level=info ts=2026-01-06T13:32:39.390228418Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=ed69106a-0504-466a-8bec-4a18fe8fe20f
+level=info ts=2026-01-06T13:33:09.613608118Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=ce150002-9c72-432f-954a-b1f941e8a5f9
+level=info ts=2026-01-06T13:33:13.460400286Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=ce150002-9c72-432f-954a-b1f941e8a5f9
+level=info ts=2026-01-06T13:33:42.220008945Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=ce150002-9c72-432f-954a-b1f941e8a5f9 duration=28.759580011s
+level=info ts=2026-01-06T13:33:42.31012547Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=ce150002-9c72-432f-954a-b1f941e8a5f9
+level=info ts=2026-01-06T13:34:10.033923291Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=45e36df8-c756-4cf2-9bdc-448f174b65d6
+level=info ts=2026-01-06T13:34:19.853505961Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=45e36df8-c756-4cf2-9bdc-448f174b65d6
+level=info ts=2026-01-06T13:34:47.779039391Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=45e36df8-c756-4cf2-9bdc-448f174b65d6 duration=27.925505333s
+level=info ts=2026-01-06T13:34:47.870124034Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=45e36df8-c756-4cf2-9bdc-448f174b65d6
+level=info ts=2026-01-06T13:35:09.652947519Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=35f5638a-e50d-4620-9d02-426e7e4311f2
+level=info ts=2026-01-06T13:35:09.670172313Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=35f5638a-e50d-4620-9d02-426e7e4311f2
+level=info ts=2026-01-06T13:35:39.020059479Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=35f5638a-e50d-4620-9d02-426e7e4311f2 duration=29.349853668s
+level=info ts=2026-01-06T13:35:39.112234603Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=35f5638a-e50d-4620-9d02-426e7e4311f2
+level=info ts=2026-01-06T13:36:10.805052198Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=3a022823-1b27-49b1-bf24-0816a9e7000f
+level=info ts=2026-01-06T13:36:13.059195969Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=3a022823-1b27-49b1-bf24-0816a9e7000f
+level=info ts=2026-01-06T13:36:41.313828845Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=3a022823-1b27-49b1-bf24-0816a9e7000f duration=28.254533706s
+level=info ts=2026-01-06T13:36:41.410013766Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=3a022823-1b27-49b1-bf24-0816a9e7000f
+level=info ts=2026-01-06T13:37:10.559148286Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=652ac7fb-a768-41ec-a0fe-6fdeacc3a9cf
+level=info ts=2026-01-06T13:37:14.458010986Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=652ac7fb-a768-41ec-a0fe-6fdeacc3a9cf
+level=info ts=2026-01-06T13:37:43.257075781Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=652ac7fb-a768-41ec-a0fe-6fdeacc3a9cf duration=28.799032586s
+level=info ts=2026-01-06T13:37:43.360059714Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=652ac7fb-a768-41ec-a0fe-6fdeacc3a9cf
+level=info ts=2026-01-06T13:38:09.729971941Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=43572f5b-12a9-4e06-9927-46e0a2c998c3
+level=info ts=2026-01-06T13:38:14.29700759Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=43572f5b-12a9-4e06-9927-46e0a2c998c3
+level=info ts=2026-01-06T13:38:42.493216974Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=43572f5b-12a9-4e06-9927-46e0a2c998c3 duration=28.196162807s
+level=info ts=2026-01-06T13:38:42.590867186Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=43572f5b-12a9-4e06-9927-46e0a2c998c3
+level=info ts=2026-01-06T13:39:09.422293327Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=7841cf16-6785-4e11-87fe-bb3984076956
+level=info ts=2026-01-06T13:39:09.93665177Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=7841cf16-6785-4e11-87fe-bb3984076956
+level=info ts=2026-01-06T13:39:37.982139564Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=7841cf16-6785-4e11-87fe-bb3984076956 duration=28.045448s
+level=info ts=2026-01-06T13:39:38.083405798Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=7841cf16-6785-4e11-87fe-bb3984076956
+level=info ts=2026-01-06T13:40:38.376418375Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=47dc163f-118a-46db-9f04-25030ce09cb0
+level=info ts=2026-01-06T13:40:39.985514957Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=47dc163f-118a-46db-9f04-25030ce09cb0
+level=info ts=2026-01-06T13:41:14.077899917Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=47dc163f-118a-46db-9f04-25030ce09cb0 duration=34.092346886s
+level=info ts=2026-01-06T13:41:14.307064809Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=47dc163f-118a-46db-9f04-25030ce09cb0
+level=info ts=2026-01-06T13:41:23.27172071Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=5ffa1c9d-0a29-4bf4-8c22-413b0c9e9a43
+level=info ts=2026-01-06T13:41:30.856320574Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=5ffa1c9d-0a29-4bf4-8c22-413b0c9e9a43
+level=info ts=2026-01-06T13:42:00.55742379Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=5ffa1c9d-0a29-4bf4-8c22-413b0c9e9a43 duration=29.701046763s
+level=info ts=2026-01-06T13:42:00.644078327Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=5ffa1c9d-0a29-4bf4-8c22-413b0c9e9a43
+level=info ts=2026-01-06T13:42:42.918301871Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=13d8b14d-a262-4ffd-8869-733a5ce8651a
+level=info ts=2026-01-06T13:42:45.690768232Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=13d8b14d-a262-4ffd-8869-733a5ce8651a
+level=info ts=2026-01-06T13:43:19.174720183Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=13d8b14d-a262-4ffd-8869-733a5ce8651a duration=33.483889314s
+level=info ts=2026-01-06T13:43:19.274781441Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=13d8b14d-a262-4ffd-8869-733a5ce8651a
+level=info ts=2026-01-06T13:44:04.458598207Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=cd5cf33a-4994-4b83-a736-af8ba32e05ae
+level=info ts=2026-01-06T13:44:11.77691531Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=cd5cf33a-4994-4b83-a736-af8ba32e05ae
+level=info ts=2026-01-06T13:44:46.507678379Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=cd5cf33a-4994-4b83-a736-af8ba32e05ae duration=34.730722309s
+level=info ts=2026-01-06T13:44:46.618186663Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=cd5cf33a-4994-4b83-a736-af8ba32e05ae
+level=info ts=2026-01-06T13:45:12.919880712Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=d5abf7af-9e77-40c3-8fb3-27d7163616ca
+level=info ts=2026-01-06T13:45:21.821504909Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=d5abf7af-9e77-40c3-8fb3-27d7163616ca
+level=info ts=2026-01-06T13:45:52.877906925Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=d5abf7af-9e77-40c3-8fb3-27d7163616ca duration=31.056351807s
+level=info ts=2026-01-06T13:45:52.970093362Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=d5abf7af-9e77-40c3-8fb3-27d7163616ca
+level=info ts=2026-01-06T13:46:50.534915536Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=b3c0ac93-25c3-4126-9291-c74de03eefaf
+level=info ts=2026-01-06T13:46:52.472521229Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=b3c0ac93-25c3-4126-9291-c74de03eefaf
+level=info ts=2026-01-06T13:47:25.628101368Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=b3c0ac93-25c3-4126-9291-c74de03eefaf duration=33.155538747s
+level=info ts=2026-01-06T13:47:25.716335487Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=b3c0ac93-25c3-4126-9291-c74de03eefaf
+level=info ts=2026-01-06T13:47:59.225983733Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=0d802303-910d-4d90-a122-9e884183b266
+level=info ts=2026-01-06T13:48:02.500077249Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=0d802303-910d-4d90-a122-9e884183b266
+level=info ts=2026-01-06T13:48:35.14365239Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=0d802303-910d-4d90-a122-9e884183b266 duration=32.643443921s
+level=info ts=2026-01-06T13:48:35.231467654Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=0d802303-910d-4d90-a122-9e884183b266
+level=info ts=2026-01-06T13:49:07.99699582Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=43715b45-e1b9-4ef1-a28b-2e2f6a516c60
+level=info ts=2026-01-06T13:49:17.713669641Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=43715b45-e1b9-4ef1-a28b-2e2f6a516c60
+level=info ts=2026-01-06T13:49:46.712910439Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=43715b45-e1b9-4ef1-a28b-2e2f6a516c60 duration=28.999205573s
+level=info ts=2026-01-06T13:49:46.804410381Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=43715b45-e1b9-4ef1-a28b-2e2f6a516c60
+level=info ts=2026-01-06T13:50:17.16462053Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=a5cd9032-9891-4ed0-8f08-90741dda2d5d
+level=info ts=2026-01-06T13:50:24.238362503Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=a5cd9032-9891-4ed0-8f08-90741dda2d5d
+level=info ts=2026-01-06T13:50:55.055465324Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=a5cd9032-9891-4ed0-8f08-90741dda2d5d duration=30.817064449s
+level=info ts=2026-01-06T13:50:55.154478201Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=a5cd9032-9891-4ed0-8f08-90741dda2d5d
+level=info ts=2026-01-06T13:51:26.658525452Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=48aacacf-1907-4728-832c-c6d64fbff782
+level=info ts=2026-01-06T13:51:30.542383661Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=48aacacf-1907-4728-832c-c6d64fbff782
+level=info ts=2026-01-06T13:52:02.635598799Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=48aacacf-1907-4728-832c-c6d64fbff782 duration=32.093088564s
+level=info ts=2026-01-06T13:52:02.73994662Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=48aacacf-1907-4728-832c-c6d64fbff782
+level=info ts=2026-01-06T13:52:36.437113845Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=38197ee0-1e50-4242-9287-f4ef2fd61658
+level=info ts=2026-01-06T13:52:36.882321959Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=38197ee0-1e50-4242-9287-f4ef2fd61658
+level=info ts=2026-01-06T13:53:09.31988738Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=38197ee0-1e50-4242-9287-f4ef2fd61658 duration=32.437530985s
+level=info ts=2026-01-06T13:53:09.361108004Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=38197ee0-1e50-4242-9287-f4ef2fd61658
+level=info ts=2026-01-06T13:53:46.907635096Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=24458f74-58bd-4f3a-925f-25672a0f276d
+level=info ts=2026-01-06T13:53:49.070811877Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=24458f74-58bd-4f3a-925f-25672a0f276d
+level=info ts=2026-01-06T13:54:21.118793487Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=24458f74-58bd-4f3a-925f-25672a0f276d duration=32.047825376s
+level=info ts=2026-01-06T13:54:21.132307913Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=24458f74-58bd-4f3a-925f-25672a0f276d
+level=info ts=2026-01-06T13:54:55.879953221Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=7b18c91f-3486-4387-82be-6ef7e5a33205
+level=info ts=2026-01-06T13:55:01.805174428Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=7b18c91f-3486-4387-82be-6ef7e5a33205
+level=info ts=2026-01-06T13:55:31.871722773Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=7b18c91f-3486-4387-82be-6ef7e5a33205 duration=30.066504441s
+level=info ts=2026-01-06T13:55:31.906193535Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=7b18c91f-3486-4387-82be-6ef7e5a33205
+level=info ts=2026-01-06T13:55:55.830891468Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=9616f1a0-7d6d-4c7d-856e-371035f28018
+level=info ts=2026-01-06T13:56:01.452918304Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=9616f1a0-7d6d-4c7d-856e-371035f28018
+level=info ts=2026-01-06T13:56:29.05845469Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=9616f1a0-7d6d-4c7d-856e-371035f28018 duration=27.6055057s
+level=info ts=2026-01-06T13:56:29.145691253Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=9616f1a0-7d6d-4c7d-856e-371035f28018
+level=info ts=2026-01-06T13:56:55.863106514Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=1556aeff-07a5-477f-af4a-1397e1f25a5c
+level=info ts=2026-01-06T13:57:04.323123198Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=1556aeff-07a5-477f-af4a-1397e1f25a5c
+level=info ts=2026-01-06T13:57:32.040087402Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=1556aeff-07a5-477f-af4a-1397e1f25a5c duration=27.716846404s
+level=info ts=2026-01-06T13:57:32.134416102Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=1556aeff-07a5-477f-af4a-1397e1f25a5c
+level=info ts=2026-01-06T13:57:55.675482145Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=fbde7d7f-9c0a-4c95-8e7a-bccc366fb9f7
+level=info ts=2026-01-06T13:58:03.075649303Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=fbde7d7f-9c0a-4c95-8e7a-bccc366fb9f7
+level=info ts=2026-01-06T13:58:32.131799827Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=fbde7d7f-9c0a-4c95-8e7a-bccc366fb9f7 duration=29.056023098s
+level=info ts=2026-01-06T13:58:32.220578181Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=fbde7d7f-9c0a-4c95-8e7a-bccc366fb9f7
+level=info ts=2026-01-06T13:58:55.336729575Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=ea239c77-5eed-4761-9a17-5b6fa1d7fd93
+level=info ts=2026-01-06T13:58:56.622023994Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=ea239c77-5eed-4761-9a17-5b6fa1d7fd93
+level=info ts=2026-01-06T13:59:25.351500359Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=ea239c77-5eed-4761-9a17-5b6fa1d7fd93 duration=28.729441578s
+level=info ts=2026-01-06T13:59:25.422709701Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=ea239c77-5eed-4761-9a17-5b6fa1d7fd93
+level=info ts=2026-01-06T13:59:55.552489238Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=47de9e8b-3469-422b-b5a5-d89ce206e374
+level=info ts=2026-01-06T13:59:56.948761399Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=47de9e8b-3469-422b-b5a5-d89ce206e374
+level=info ts=2026-01-06T14:00:25.053808579Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=47de9e8b-3469-422b-b5a5-d89ce206e374 duration=28.105001671s
+level=info ts=2026-01-06T14:00:25.146437502Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=47de9e8b-3469-422b-b5a5-d89ce206e374
+level=info ts=2026-01-06T14:00:55.835828397Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=e69c1a27-182d-4196-b63c-e58b7cff607c
+level=info ts=2026-01-06T14:01:03.247220682Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=e69c1a27-182d-4196-b63c-e58b7cff607c
+level=info ts=2026-01-06T14:01:31.724695177Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=e69c1a27-182d-4196-b63c-e58b7cff607c duration=28.477317336s
+level=info ts=2026-01-06T14:01:31.816081175Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=e69c1a27-182d-4196-b63c-e58b7cff607c
+level=info ts=2026-01-06T14:01:55.294179537Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=3f0d6cde-aa06-4f69-a933-8e56370a0bea
+level=info ts=2026-01-06T14:02:01.838970364Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=3f0d6cde-aa06-4f69-a933-8e56370a0bea
+level=info ts=2026-01-06T14:02:29.824648264Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=3f0d6cde-aa06-4f69-a933-8e56370a0bea duration=27.98565049s
+level=info ts=2026-01-06T14:02:29.915344152Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=3f0d6cde-aa06-4f69-a933-8e56370a0bea
+level=info ts=2026-01-06T14:02:55.717953714Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=2ae4af2e-1761-4508-847d-d6929b738b66
+level=info ts=2026-01-06T14:02:58.129514119Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=2ae4af2e-1761-4508-847d-d6929b738b66
+level=info ts=2026-01-06T14:03:26.657557303Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=2ae4af2e-1761-4508-847d-d6929b738b66 duration=28.528011726s
+level=info ts=2026-01-06T14:03:26.750235185Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=2ae4af2e-1761-4508-847d-d6929b738b66
+level=info ts=2026-01-06T14:03:55.545611095Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=c91b27cc-887b-4732-88ee-c59a8adfb38e
+level=info ts=2026-01-06T14:03:59.409273044Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=c91b27cc-887b-4732-88ee-c59a8adfb38e
+level=info ts=2026-01-06T14:04:28.631558129Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=c91b27cc-887b-4732-88ee-c59a8adfb38e duration=29.222247917s
+level=info ts=2026-01-06T14:04:28.806176702Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=c91b27cc-887b-4732-88ee-c59a8adfb38e
+level=info ts=2026-01-06T14:04:55.580384682Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=a0aa7d89-985d-4bf9-9404-55e9faae72c0
+level=info ts=2026-01-06T14:04:59.773082658Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=a0aa7d89-985d-4bf9-9404-55e9faae72c0
+level=info ts=2026-01-06T14:05:28.546815302Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=a0aa7d89-985d-4bf9-9404-55e9faae72c0 duration=28.773700195s
+level=info ts=2026-01-06T14:05:28.645193627Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=a0aa7d89-985d-4bf9-9404-55e9faae72c0
+level=info ts=2026-01-06T14:05:55.48058149Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=a1bd90b9-3575-4480-aab6-f6a03c9bb7b0
+level=info ts=2026-01-06T14:06:02.191710804Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=a1bd90b9-3575-4480-aab6-f6a03c9bb7b0
+level=info ts=2026-01-06T14:06:31.261943055Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=a1bd90b9-3575-4480-aab6-f6a03c9bb7b0 duration=29.070197904s
+level=info ts=2026-01-06T14:06:31.352384385Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=a1bd90b9-3575-4480-aab6-f6a03c9bb7b0
+level=info ts=2026-01-06T14:06:55.514776747Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=ca2e22cb-cbd5-4c49-a94b-0cb570e5fb52
+level=info ts=2026-01-06T14:07:02.892740509Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=ca2e22cb-cbd5-4c49-a94b-0cb570e5fb52
+level=info ts=2026-01-06T14:07:30.562099008Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=ca2e22cb-cbd5-4c49-a94b-0cb570e5fb52 duration=27.669305529s
+level=info ts=2026-01-06T14:07:30.66147567Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=ca2e22cb-cbd5-4c49-a94b-0cb570e5fb52
+level=info ts=2026-01-06T14:07:54.895487853Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=6cd295f3-b07f-42e4-9355-1d09275d676d
+level=info ts=2026-01-06T14:08:01.494795115Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=6cd295f3-b07f-42e4-9355-1d09275d676d
+level=info ts=2026-01-06T14:08:30.007097628Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=6cd295f3-b07f-42e4-9355-1d09275d676d duration=28.51226104s
+level=info ts=2026-01-06T14:08:30.10790131Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=6cd295f3-b07f-42e4-9355-1d09275d676d
+level=info ts=2026-01-06T14:08:55.256931428Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=2a73c391-21cf-4ed2-a4de-ca9fad244f84
+level=info ts=2026-01-06T14:09:01.932189902Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=2a73c391-21cf-4ed2-a4de-ca9fad244f84
+level=info ts=2026-01-06T14:09:29.985123468Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=2a73c391-21cf-4ed2-a4de-ca9fad244f84 duration=28.052903812s
+level=info ts=2026-01-06T14:09:30.078969252Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=2a73c391-21cf-4ed2-a4de-ca9fad244f84
+level=info ts=2026-01-06T14:09:55.269708446Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=958dcdd8-9a46-4347-9688-8f4bcc46e3fa
+level=info ts=2026-01-06T14:10:03.781045552Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=958dcdd8-9a46-4347-9688-8f4bcc46e3fa
+level=info ts=2026-01-06T14:10:31.508020285Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=958dcdd8-9a46-4347-9688-8f4bcc46e3fa duration=27.726858114s
+level=info ts=2026-01-06T14:10:31.59448593Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=958dcdd8-9a46-4347-9688-8f4bcc46e3fa
+level=info ts=2026-01-06T14:10:55.160975192Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=bd6844f0-c392-48e0-862b-7d5ade52bb33
+level=info ts=2026-01-06T14:10:55.314089048Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=bd6844f0-c392-48e0-862b-7d5ade52bb33
+level=info ts=2026-01-06T14:11:23.993635824Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=bd6844f0-c392-48e0-862b-7d5ade52bb33 duration=28.679509837s
+level=info ts=2026-01-06T14:11:24.09099254Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=bd6844f0-c392-48e0-862b-7d5ade52bb33
+level=info ts=2026-01-06T14:11:55.051057041Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=52fd100e-e37a-4864-8e84-0743e87ae83a
+level=info ts=2026-01-06T14:11:56.696533168Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=52fd100e-e37a-4864-8e84-0743e87ae83a
+level=info ts=2026-01-06T14:12:24.115193339Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=52fd100e-e37a-4864-8e84-0743e87ae83a duration=27.418622972s
+level=info ts=2026-01-06T14:12:24.214734917Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=52fd100e-e37a-4864-8e84-0743e87ae83a
+level=info ts=2026-01-06T14:12:55.052097247Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=39729e11-84e6-4551-bd40-fea5cce87516
+level=info ts=2026-01-06T14:12:55.506873857Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=39729e11-84e6-4551-bd40-fea5cce87516
+level=info ts=2026-01-06T14:13:23.658668256Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=39729e11-84e6-4551-bd40-fea5cce87516 duration=28.151767546s
+level=info ts=2026-01-06T14:13:23.753281953Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=39729e11-84e6-4551-bd40-fea5cce87516
+level=info ts=2026-01-06T14:13:54.887886673Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=d580ae49-1b36-45c1-83c2-455ed8f62267
+level=info ts=2026-01-06T14:14:03.294890201Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=d580ae49-1b36-45c1-83c2-455ed8f62267
+level=info ts=2026-01-06T14:14:31.03310675Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=d580ae49-1b36-45c1-83c2-455ed8f62267 duration=27.738176114s
+level=info ts=2026-01-06T14:14:31.123914268Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=d580ae49-1b36-45c1-83c2-455ed8f62267
+level=info ts=2026-01-06T14:14:55.106860429Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=209e856c-16ab-4f1c-a418-2a151aa97147
+level=info ts=2026-01-06T14:15:01.007200765Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=209e856c-16ab-4f1c-a418-2a151aa97147
+level=info ts=2026-01-06T14:15:28.398228579Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=209e856c-16ab-4f1c-a418-2a151aa97147 duration=27.390990025s
+level=info ts=2026-01-06T14:15:28.488963398Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=209e856c-16ab-4f1c-a418-2a151aa97147
+level=info ts=2026-01-06T14:15:54.850664811Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=e67be305-0c76-4606-ac29-e8d76ca49573
+level=info ts=2026-01-06T14:15:55.459273051Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=e67be305-0c76-4606-ac29-e8d76ca49573
+level=info ts=2026-01-06T14:16:23.779826055Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=e67be305-0c76-4606-ac29-e8d76ca49573 duration=28.320517905s
+level=info ts=2026-01-06T14:16:23.873851275Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=e67be305-0c76-4606-ac29-e8d76ca49573
+level=info ts=2026-01-06T14:16:55.293225814Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=002edbeb-629e-4771-914a-166009de53a3
+level=info ts=2026-01-06T14:17:02.642229843Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=002edbeb-629e-4771-914a-166009de53a3
+level=info ts=2026-01-06T14:17:30.869884135Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=002edbeb-629e-4771-914a-166009de53a3 duration=28.227595487s
+level=info ts=2026-01-06T14:17:30.972170326Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=002edbeb-629e-4771-914a-166009de53a3
+level=info ts=2026-01-06T14:17:55.161198844Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=dadbf0c4-a70d-4171-b2ac-b7da23d4cab8
+level=info ts=2026-01-06T14:18:00.031477033Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=dadbf0c4-a70d-4171-b2ac-b7da23d4cab8
+level=info ts=2026-01-06T14:18:29.074088745Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=dadbf0c4-a70d-4171-b2ac-b7da23d4cab8 duration=29.042580883s
+level=info ts=2026-01-06T14:18:29.166997854Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=dadbf0c4-a70d-4171-b2ac-b7da23d4cab8
+level=info ts=2026-01-06T14:18:54.992534278Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=5d7f1533-00f4-4424-93a7-318848365000
+level=info ts=2026-01-06T14:19:00.097892418Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=5d7f1533-00f4-4424-93a7-318848365000
+level=info ts=2026-01-06T14:19:28.662408896Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=5d7f1533-00f4-4424-93a7-318848365000 duration=28.564486542s
+level=info ts=2026-01-06T14:19:28.754891155Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=5d7f1533-00f4-4424-93a7-318848365000
+level=info ts=2026-01-06T14:19:54.892269023Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=11427176-97ed-4db5-bb66-6f0b54ff6928
+level=info ts=2026-01-06T14:19:55.309632262Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=11427176-97ed-4db5-bb66-6f0b54ff6928
+level=info ts=2026-01-06T14:20:23.714165228Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=11427176-97ed-4db5-bb66-6f0b54ff6928 duration=28.404495002s
+level=info ts=2026-01-06T14:20:23.816200362Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=11427176-97ed-4db5-bb66-6f0b54ff6928
+level=info ts=2026-01-06T14:20:54.888562895Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=a8ded98a-9b31-4a69-a49f-bb53688517b9
+level=info ts=2026-01-06T14:21:02.009763605Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=a8ded98a-9b31-4a69-a49f-bb53688517b9
+level=info ts=2026-01-06T14:21:30.54363615Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=a8ded98a-9b31-4a69-a49f-bb53688517b9 duration=28.533750969s
+level=info ts=2026-01-06T14:21:30.634855324Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=a8ded98a-9b31-4a69-a49f-bb53688517b9
+level=info ts=2026-01-06T14:21:55.274078004Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=b9b2917b-0aa9-4ac7-890c-797c12be1098
+level=info ts=2026-01-06T14:22:03.797827194Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=b9b2917b-0aa9-4ac7-890c-797c12be1098
+level=info ts=2026-01-06T14:22:32.681843013Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=b9b2917b-0aa9-4ac7-890c-797c12be1098 duration=28.883977138s
+level=info ts=2026-01-06T14:22:32.786024434Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=b9b2917b-0aa9-4ac7-890c-797c12be1098
+level=info ts=2026-01-06T14:22:55.198010393Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=94554039-9091-4504-8926-a0c7a265411c
+level=info ts=2026-01-06T14:22:58.228810095Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=94554039-9091-4504-8926-a0c7a265411c
+level=info ts=2026-01-06T14:23:26.68906941Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=94554039-9091-4504-8926-a0c7a265411c duration=28.460225797s
+level=info ts=2026-01-06T14:23:26.789669316Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=94554039-9091-4504-8926-a0c7a265411c
+level=info ts=2026-01-06T14:23:55.021596721Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=63fe15a3-6bfd-4b31-9777-888be7501256
+level=info ts=2026-01-06T14:24:01.271491253Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=63fe15a3-6bfd-4b31-9777-888be7501256
+level=info ts=2026-01-06T14:24:30.481593317Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=63fe15a3-6bfd-4b31-9777-888be7501256 duration=29.210059845s
+level=info ts=2026-01-06T14:24:30.573996936Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=63fe15a3-6bfd-4b31-9777-888be7501256
+level=info ts=2026-01-06T14:24:55.237073593Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=cb518ab2-6fe7-4dcf-af93-65d1ef0ff9fb
+level=info ts=2026-01-06T14:25:01.464942869Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=cb518ab2-6fe7-4dcf-af93-65d1ef0ff9fb
+level=info ts=2026-01-06T14:25:30.912793297Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=cb518ab2-6fe7-4dcf-af93-65d1ef0ff9fb duration=29.447802363s
+level=info ts=2026-01-06T14:25:31.020923765Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=cb518ab2-6fe7-4dcf-af93-65d1ef0ff9fb
+level=info ts=2026-01-06T14:25:55.288813698Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=db077519-70b1-4c51-81c6-fde5b41b28da
+level=info ts=2026-01-06T14:25:56.1658308Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=db077519-70b1-4c51-81c6-fde5b41b28da
+level=info ts=2026-01-06T14:26:26.246814572Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=db077519-70b1-4c51-81c6-fde5b41b28da duration=30.080955397s
+level=info ts=2026-01-06T14:26:26.335455609Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=db077519-70b1-4c51-81c6-fde5b41b28da
+level=info ts=2026-01-06T14:26:54.851403947Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=e77356eb-a7d9-462c-9de2-a8074218c060
+level=info ts=2026-01-06T14:27:04.393119226Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=e77356eb-a7d9-462c-9de2-a8074218c060
+level=info ts=2026-01-06T14:27:33.713866894Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=e77356eb-a7d9-462c-9de2-a8074218c060 duration=29.320712016s
+level=info ts=2026-01-06T14:27:33.831519211Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=e77356eb-a7d9-462c-9de2-a8074218c060
+level=info ts=2026-01-06T14:27:55.155599568Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=7e6ae7fe-9366-4795-a29d-350b72f5d256
+level=info ts=2026-01-06T14:27:56.697413586Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=7e6ae7fe-9366-4795-a29d-350b72f5d256
+level=info ts=2026-01-06T14:28:27.200071072Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=7e6ae7fe-9366-4795-a29d-350b72f5d256 duration=30.502553254s
+level=info ts=2026-01-06T14:28:27.302215463Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=7e6ae7fe-9366-4795-a29d-350b72f5d256
+level=info ts=2026-01-06T14:28:55.118417746Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=cacc00a8-d8f5-4bed-ae90-c0204520b736
+level=info ts=2026-01-06T14:29:03.039013874Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=cacc00a8-d8f5-4bed-ae90-c0204520b736
+level=info ts=2026-01-06T14:29:32.730289847Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=cacc00a8-d8f5-4bed-ae90-c0204520b736 duration=29.691235635s
+level=info ts=2026-01-06T14:29:32.842177969Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=cacc00a8-d8f5-4bed-ae90-c0204520b736
+level=info ts=2026-01-06T14:29:54.944870778Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=8f0c6621-9a3f-44dd-ad91-71314f08f2ed
+level=info ts=2026-01-06T14:30:03.618326244Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=8f0c6621-9a3f-44dd-ad91-71314f08f2ed
+level=info ts=2026-01-06T14:30:32.293816451Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=8f0c6621-9a3f-44dd-ad91-71314f08f2ed duration=28.675444473s
+level=info ts=2026-01-06T14:30:32.390652647Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=8f0c6621-9a3f-44dd-ad91-71314f08f2ed
+level=info ts=2026-01-06T14:30:54.887567121Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=e8857aa8-3558-4ac7-bc15-818007a0898f
+level=info ts=2026-01-06T14:31:01.318964901Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=e8857aa8-3558-4ac7-bc15-818007a0898f
+level=info ts=2026-01-06T14:31:30.246608741Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=e8857aa8-3558-4ac7-bc15-818007a0898f duration=28.927609366s
+level=info ts=2026-01-06T14:31:30.342458347Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=e8857aa8-3558-4ac7-bc15-818007a0898f
+level=info ts=2026-01-06T14:31:54.878933089Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=03d903dc-4f7a-4e75-87ab-b7f570fa4908
+level=info ts=2026-01-06T14:31:55.868026909Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=03d903dc-4f7a-4e75-87ab-b7f570fa4908
+level=info ts=2026-01-06T14:32:25.17460915Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=03d903dc-4f7a-4e75-87ab-b7f570fa4908 duration=29.306535469s
+level=info ts=2026-01-06T14:32:25.191228249Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=03d903dc-4f7a-4e75-87ab-b7f570fa4908
+level=info ts=2026-01-06T14:32:55.139000525Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=f21a03a1-aac3-4e89-bc22-a26cf680ce98
+level=info ts=2026-01-06T14:33:03.786004177Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=f21a03a1-aac3-4e89-bc22-a26cf680ce98
+level=info ts=2026-01-06T14:33:32.932745176Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=f21a03a1-aac3-4e89-bc22-a26cf680ce98 duration=29.146703346s
+level=info ts=2026-01-06T14:33:33.028354054Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=f21a03a1-aac3-4e89-bc22-a26cf680ce98
+level=info ts=2026-01-06T14:33:54.941695734Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=1bb82bd9-6ad9-4939-9dda-e5a761068636
+level=info ts=2026-01-06T14:33:59.559425789Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=1bb82bd9-6ad9-4939-9dda-e5a761068636
+level=info ts=2026-01-06T14:34:28.117746756Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=1bb82bd9-6ad9-4939-9dda-e5a761068636 duration=28.558278672s
+level=info ts=2026-01-06T14:34:28.211564113Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=1bb82bd9-6ad9-4939-9dda-e5a761068636
+level=info ts=2026-01-06T14:34:55.075378264Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=7a4a98b7-2e9c-4eff-af51-0922401b7f8a
+level=info ts=2026-01-06T14:34:55.907373348Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=7a4a98b7-2e9c-4eff-af51-0922401b7f8a
+level=info ts=2026-01-06T14:35:25.180685112Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=7a4a98b7-2e9c-4eff-af51-0922401b7f8a duration=29.273276263s
+level=info ts=2026-01-06T14:35:25.210395297Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=7a4a98b7-2e9c-4eff-af51-0922401b7f8a
+level=info ts=2026-01-06T14:35:54.785153995Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=ae8f2d4c-5b0a-460b-bdc9-bf7cfe767474
+level=info ts=2026-01-06T14:36:02.048294113Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=ae8f2d4c-5b0a-460b-bdc9-bf7cfe767474
+level=info ts=2026-01-06T14:36:30.047049209Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=ae8f2d4c-5b0a-460b-bdc9-bf7cfe767474 duration=27.998714401s
+level=info ts=2026-01-06T14:36:30.149029876Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=ae8f2d4c-5b0a-460b-bdc9-bf7cfe767474
+level=info ts=2026-01-06T14:36:54.91240401Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=4f5499d2-a54c-4385-96a9-08e89bb878b3
+level=info ts=2026-01-06T14:36:55.56531367Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=4f5499d2-a54c-4385-96a9-08e89bb878b3
+level=info ts=2026-01-06T14:37:24.39484287Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=4f5499d2-a54c-4385-96a9-08e89bb878b3 duration=28.829478622s
+level=info ts=2026-01-06T14:37:24.492092026Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=4f5499d2-a54c-4385-96a9-08e89bb878b3
+level=info ts=2026-01-06T14:37:55.069762248Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=ebffb2d0-8cb1-4420-b50a-47e8ec2e85d1
+level=info ts=2026-01-06T14:37:59.540602915Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=ebffb2d0-8cb1-4420-b50a-47e8ec2e85d1
+level=info ts=2026-01-06T14:38:29.295154014Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=ebffb2d0-8cb1-4420-b50a-47e8ec2e85d1 duration=29.754522468s
+level=info ts=2026-01-06T14:38:29.390959043Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=ebffb2d0-8cb1-4420-b50a-47e8ec2e85d1
+level=info ts=2026-01-06T14:38:55.151915924Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=5bdc402b-7c05-4d1d-9fa2-e0e6bd1cdc69
+level=info ts=2026-01-06T14:39:01.004434622Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=5bdc402b-7c05-4d1d-9fa2-e0e6bd1cdc69
+level=info ts=2026-01-06T14:39:30.159362113Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=5bdc402b-7c05-4d1d-9fa2-e0e6bd1cdc69 duration=29.154895846s
+level=info ts=2026-01-06T14:39:30.257584264Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=5bdc402b-7c05-4d1d-9fa2-e0e6bd1cdc69
+level=info ts=2026-01-06T14:39:54.923875741Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=80f2876c-b4ec-4b1b-86d1-9e273767a069
+level=info ts=2026-01-06T14:39:58.831643732Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=80f2876c-b4ec-4b1b-86d1-9e273767a069
+level=info ts=2026-01-06T14:40:27.259117215Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=80f2876c-b4ec-4b1b-86d1-9e273767a069 duration=28.427442843s
+level=info ts=2026-01-06T14:40:27.350895658Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=80f2876c-b4ec-4b1b-86d1-9e273767a069
+level=info ts=2026-01-06T14:40:54.812167495Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=3545c87a-4d9f-410c-bb3e-2c8bd74c08b6
+level=info ts=2026-01-06T14:41:03.337962905Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=3545c87a-4d9f-410c-bb3e-2c8bd74c08b6
+level=info ts=2026-01-06T14:41:32.568598787Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=3545c87a-4d9f-410c-bb3e-2c8bd74c08b6 duration=29.230597638s
+level=info ts=2026-01-06T14:41:32.666284628Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=3545c87a-4d9f-410c-bb3e-2c8bd74c08b6
+level=info ts=2026-01-06T14:41:54.791461941Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=bc034ce1-0c3c-4d15-9ee3-03a42055b567
+level=info ts=2026-01-06T14:41:57.957975247Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=bc034ce1-0c3c-4d15-9ee3-03a42055b567
+level=info ts=2026-01-06T14:42:27.641363809Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=bc034ce1-0c3c-4d15-9ee3-03a42055b567 duration=29.683355086s
+level=info ts=2026-01-06T14:42:27.735609895Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=bc034ce1-0c3c-4d15-9ee3-03a42055b567
+level=info ts=2026-01-06T14:42:55.111028834Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=44327ac8-1add-48bf-bb2d-a039c3a1cfb6
+level=info ts=2026-01-06T14:43:02.848353512Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=44327ac8-1add-48bf-bb2d-a039c3a1cfb6
+level=info ts=2026-01-06T14:43:32.580902316Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=44327ac8-1add-48bf-bb2d-a039c3a1cfb6 duration=29.732505669s
+level=info ts=2026-01-06T14:43:32.678574751Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=44327ac8-1add-48bf-bb2d-a039c3a1cfb6
+level=info ts=2026-01-06T14:43:54.718114396Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=e33aa44b-a429-4902-b524-7f171fbfbc5b
+level=info ts=2026-01-06T14:44:04.133397346Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=e33aa44b-a429-4902-b524-7f171fbfbc5b
+level=info ts=2026-01-06T14:44:33.906133144Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=e33aa44b-a429-4902-b524-7f171fbfbc5b duration=29.772701674s
+level=info ts=2026-01-06T14:44:34.010325851Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=e33aa44b-a429-4902-b524-7f171fbfbc5b
+level=info ts=2026-01-06T14:44:51.996644656Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=a0a8037e-ea0a-42d9-b6f7-be6ceb967937
+level=info ts=2026-01-06T14:44:54.312042301Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=a0a8037e-ea0a-42d9-b6f7-be6ceb967937

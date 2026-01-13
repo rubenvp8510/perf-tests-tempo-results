@@ -1,0 +1,93 @@
+level=warn ts=2026-01-06T04:31:37.463219715Z caller=main.go:119 msg="-- CONFIGURATION WARNINGS --"
+level=warn ts=2026-01-06T04:31:37.46327093Z caller=main.go:125 msg="Inline, unscoped overrides are deprecated. Please use the new overrides config format."
+level=info ts=2026-01-06T04:31:37.46337687Z caller=main.go:103 msg="Starting Tempo" version="(version=2.9.0, branch=HEAD, revision=f1b3ef152)" target=querier
+level=info msg="server listening on addresses" http=[::]:3101 grpc=[::]:40599
+level=info ts=2026-01-06T04:31:37.464865103Z caller=server.go:281 msg="server listening on addresses" http=[::]:3200 grpc=[::]:9095
+level=info ts=2026-01-06T04:31:37.476929355Z caller=cache.go:55 msg="caches available to storage backend" parquet-footer=false bloom=false parquet-offset-idx=false parquet-column-idx=false trace-id-index=false parquet-page=false
+level=info ts=2026-01-06T04:31:37.478856475Z caller=memberlist_client.go:484 msg="Using memberlist cluster label and node name" cluster_label= node=tempo-tempostack-querier-6467454b57-95p69-3041aecb
+level=info ts=2026-01-06T04:31:37.479432872Z caller=tempodb.go:638 msg="polling enabled" interval=5m0s blocklist_concurrency=50
+level=info ts=2026-01-06T04:31:37.480613621Z caller=memberlist_client.go:628 msg="memberlist fast-join starting" nodes_found=1 to_join=2
+level=info ts=2026-01-06T04:31:37.480784088Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.001313652
+level=info ts=2026-01-06T04:31:37.481015102Z caller=worker.go:108 msg="Starting querier worker connected to query-frontend" frontend=tempo-tempostack-query-frontend-discovery:9095
+level=info ts=2026-01-06T04:31:37.48139554Z caller=module_service.go:82 msg=starting module=internal-server
+level=info ts=2026-01-06T04:31:37.481451205Z caller=module_service.go:82 msg=starting module=cache-provider
+level=info ts=2026-01-06T04:31:37.481450299Z caller=module_service.go:82 msg=starting module=server
+level=info ts=2026-01-06T04:31:37.481510114Z caller=module_service.go:82 msg=starting module=memberlist-kv
+level=info ts=2026-01-06T04:31:37.481521426Z caller=module_service.go:82 msg=starting module=store
+level=info ts=2026-01-06T04:31:37.481538784Z caller=module_service.go:82 msg=starting module=metrics-generator-ring
+level=info ts=2026-01-06T04:31:37.481545232Z caller=module_service.go:82 msg=starting module=live-store-ring
+level=info ts=2026-01-06T04:31:37.481555974Z caller=module_service.go:82 msg=starting module=overrides
+level=info ts=2026-01-06T04:31:37.481561861Z caller=module_service.go:82 msg=starting module=ring
+level=info ts=2026-01-06T04:31:37.481588378Z caller=module_service.go:82 msg=starting module=secondary-ring
+ts=2026-01-06T04:31:37.483744669Z caller=memberlist_logger.go:74 level=warn msg="Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host"
+level=info ts=2026-01-06T04:31:37.483766639Z caller=memberlist_client.go:634 msg="fast-joining node failed" node=tempo-tempostack-gossip-ring err="1 error occurred:\n\t* Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host\n\n"
+level=warn ts=2026-01-06T04:31:37.483782423Z caller=memberlist_client.go:644 msg="memberlist fast-join failed because no node has been successfully reached" elapsed_time=3.170831ms
+level=error ts=2026-01-06T04:31:37.483793088Z caller=memberlist_client.go:521 msg="failed to fast-join the memberlist cluster at startup" err="no memberlist node reached during fast-join procedure"
+level=info ts=2026-01-06T04:31:37.483811157Z caller=memberlist_client.go:666 phase=startup msg="joining memberlist cluster" join_members=tempo-tempostack-gossip-ring
+level=info ts=2026-01-06T04:31:37.483850849Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-06T04:31:37.483862673Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-06T04:31:37.483850578Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-06T04:31:37.483927385Z caller=module_service.go:82 msg=starting module=querier
+level=info ts=2026-01-06T04:31:37.48405273Z caller=app.go:213 msg="Tempo started"
+level=info ts=2026-01-06T04:31:37.484540941Z caller=worker.go:184 msg="adding connection" addr=10.131.0.32:9095
+level=info ts=2026-01-06T04:31:37.48518455Z caller=worker.go:250 msg="total worker concurrency updated" totalConcurrency=20
+ts=2026-01-06T04:31:37.485902716Z caller=memberlist_logger.go:74 level=warn msg="Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host"
+level=warn ts=2026-01-06T04:31:37.485921009Z caller=memberlist_client.go:700 phase=startup msg="joining memberlist cluster" attempts=1 max_attempts=10 err="1 error occurred:\n\t* Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host\n\n"
+ts=2026-01-06T04:31:38.897835557Z caller=memberlist_logger.go:74 level=warn msg="Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host"
+level=warn ts=2026-01-06T04:31:38.897863351Z caller=memberlist_client.go:700 phase=startup msg="joining memberlist cluster" attempts=2 max_attempts=10 err="1 error occurred:\n\t* Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host\n\n"
+ts=2026-01-06T04:31:41.399150073Z caller=memberlist_logger.go:74 level=warn msg="Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host"
+level=warn ts=2026-01-06T04:31:41.399177261Z caller=memberlist_client.go:700 phase=startup msg="joining memberlist cluster" attempts=3 max_attempts=10 err="1 error occurred:\n\t* Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host\n\n"
+level=info ts=2026-01-06T04:31:47.485895463Z caller=worker.go:184 msg="adding connection" addr=10.128.2.37:9095
+level=info ts=2026-01-06T04:31:47.486462486Z caller=worker.go:250 msg="total worker concurrency updated" totalConcurrency=20
+level=info ts=2026-01-06T04:31:49.409120743Z caller=memberlist_client.go:673 phase=startup msg="joining memberlist cluster succeeded" reached_nodes=7 elapsed_time=11.925301416s
+level=error ts=2026-01-06T04:32:29.968942965Z caller=frontend_processor.go:84 msg="error processing requests" address=10.131.0.32:9095 err="rpc error: code = Unavailable desc = error reading from server: EOF"
+level=error ts=2026-01-06T04:32:29.968943078Z caller=frontend_processor.go:84 msg="error processing requests" address=10.131.0.32:9095 err="rpc error: code = Unavailable desc = error reading from server: EOF"
+level=error ts=2026-01-06T04:32:29.96898456Z caller=frontend_processor.go:84 msg="error processing requests" address=10.131.0.32:9095 err="rpc error: code = Unavailable desc = error reading from server: EOF"
+level=error ts=2026-01-06T04:32:29.968949735Z caller=frontend_processor.go:84 msg="error processing requests" address=10.131.0.32:9095 err="rpc error: code = Unavailable desc = error reading from server: EOF"
+level=error ts=2026-01-06T04:32:29.968995521Z caller=frontend_processor.go:84 msg="error processing requests" address=10.131.0.32:9095 err="rpc error: code = Unavailable desc = error reading from server: EOF"
+level=error ts=2026-01-06T04:32:29.968943056Z caller=frontend_processor.go:84 msg="error processing requests" address=10.131.0.32:9095 err="rpc error: code = Unavailable desc = error reading from server: EOF"
+level=error ts=2026-01-06T04:32:29.968998001Z caller=frontend_processor.go:84 msg="error processing requests" address=10.131.0.32:9095 err="rpc error: code = Unavailable desc = error reading from server: EOF"
+level=error ts=2026-01-06T04:32:29.968974272Z caller=frontend_processor.go:84 msg="error processing requests" address=10.131.0.32:9095 err="rpc error: code = Unavailable desc = error reading from server: EOF"
+level=error ts=2026-01-06T04:32:29.968962576Z caller=frontend_processor.go:84 msg="error processing requests" address=10.131.0.32:9095 err="rpc error: code = Unavailable desc = error reading from server: EOF"
+level=error ts=2026-01-06T04:32:29.968969747Z caller=frontend_processor.go:84 msg="error processing requests" address=10.131.0.32:9095 err="rpc error: code = Unavailable desc = error reading from server: EOF"
+level=info ts=2026-01-06T04:32:37.491674116Z caller=worker.go:197 msg="removing connection" addr=10.131.0.32:9095
+level=info ts=2026-01-06T04:32:37.491724518Z caller=worker.go:250 msg="total worker concurrency updated" totalConcurrency=20
+level=warn ts=2026-01-06T04:32:42.492659146Z caller=frontend_processor.go:64 msg="failed to notify querier shutdown to query-frontend" address=10.131.0.32:9095 err="rpc error: code = DeadlineExceeded desc = context deadline exceeded while waiting for connections to become ready"
+level=error ts=2026-01-06T04:32:42.492717715Z caller=frontend_processor.go:76 msg="error contacting frontend" address=10.131.0.32:9095 err="rpc error: code = Canceled desc = context canceled while waiting for connections to become ready"
+level=error ts=2026-01-06T04:32:42.492730667Z caller=frontend_processor.go:76 msg="error contacting frontend" address=10.131.0.32:9095 err="rpc error: code = Canceled desc = context canceled while waiting for connections to become ready"
+level=error ts=2026-01-06T04:32:42.492739565Z caller=frontend_processor.go:76 msg="error contacting frontend" address=10.131.0.32:9095 err="rpc error: code = Canceled desc = context canceled while waiting for connections to become ready"
+level=error ts=2026-01-06T04:32:42.492748919Z caller=frontend_processor.go:76 msg="error contacting frontend" address=10.131.0.32:9095 err="rpc error: code = Canceled desc = context canceled while waiting for connections to become ready"
+level=error ts=2026-01-06T04:32:42.492734055Z caller=frontend_processor.go:76 msg="error contacting frontend" address=10.131.0.32:9095 err="rpc error: code = Canceled desc = context canceled while waiting for connections to become ready"
+level=error ts=2026-01-06T04:32:42.49274549Z caller=frontend_processor.go:76 msg="error contacting frontend" address=10.131.0.32:9095 err="rpc error: code = Canceled desc = context canceled while waiting for connections to become ready"
+level=error ts=2026-01-06T04:32:42.492763428Z caller=frontend_processor.go:76 msg="error contacting frontend" address=10.131.0.32:9095 err="rpc error: code = Canceled desc = context canceled while waiting for connections to become ready"
+level=error ts=2026-01-06T04:32:42.492759457Z caller=frontend_processor.go:76 msg="error contacting frontend" address=10.131.0.32:9095 err="rpc error: code = Canceled desc = context canceled while waiting for connections to become ready"
+level=error ts=2026-01-06T04:32:42.492758852Z caller=frontend_processor.go:76 msg="error contacting frontend" address=10.131.0.32:9095 err="rpc error: code = Canceled desc = context canceled while waiting for connections to become ready"
+level=error ts=2026-01-06T04:32:42.492772768Z caller=frontend_processor.go:76 msg="error contacting frontend" address=10.131.0.32:9095 err="rpc error: code = Canceled desc = context canceled while waiting for connections to become ready"
+level=info ts=2026-01-06T04:36:37.489688734Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.008739774
+level=info ts=2026-01-06T04:41:37.490392043Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.009374736
+level=info ts=2026-01-06T04:46:37.495888525Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T04:42:37.564812995Z metas=1 compactedMetas=0
+level=info ts=2026-01-06T04:46:37.495940421Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.014318528
+level=info ts=2026-01-06T04:51:37.487160224Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T04:47:37.560723684Z metas=1 compactedMetas=0
+level=info ts=2026-01-06T04:51:37.487210068Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.005980547
+level=info ts=2026-01-06T04:56:37.487249996Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T04:52:37.564404917Z metas=2 compactedMetas=0
+level=info ts=2026-01-06T04:56:37.487309527Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.00633311
+level=info ts=2026-01-06T05:01:37.486981581Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T04:57:37.561006741Z metas=1 compactedMetas=2
+level=info ts=2026-01-06T05:01:37.487032197Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.006115334
+level=info ts=2026-01-06T05:06:37.487304286Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T05:02:37.566795464Z metas=2 compactedMetas=2
+level=info ts=2026-01-06T05:06:37.487349133Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.006362545
+level=info ts=2026-01-06T05:11:37.488527266Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T05:07:37.560986189Z metas=2 compactedMetas=2
+level=info ts=2026-01-06T05:11:37.488574575Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.007084864
+level=info ts=2026-01-06T05:16:37.488595954Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T05:12:37.566184802Z metas=3 compactedMetas=2
+level=info ts=2026-01-06T05:16:37.488640655Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.006806273
+level=info ts=2026-01-06T05:21:37.487127719Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T05:17:37.562083155Z metas=2 compactedMetas=4
+level=info ts=2026-01-06T05:21:37.487173042Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.006035549
+level=info ts=2026-01-06T05:26:37.48710594Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T05:22:37.567041602Z metas=3 compactedMetas=4
+level=info ts=2026-01-06T05:26:37.487155468Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.006170849
+level=info ts=2026-01-06T05:31:37.487435714Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T05:27:37.563802725Z metas=3 compactedMetas=4
+level=info ts=2026-01-06T05:31:37.48748039Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.006537119
+level=info ts=2026-01-06T05:36:37.487448014Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T05:32:37.566662373Z metas=4 compactedMetas=4
+level=info ts=2026-01-06T05:36:37.487493894Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.006466458
+level=info ts=2026-01-06T05:41:37.487101488Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T05:37:37.563721292Z metas=2 compactedMetas=8
+level=info ts=2026-01-06T05:41:37.487154191Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.0060645
+level=info ts=2026-01-06T05:46:37.487612622Z caller=poller.go:276 msg="successfully pulled tenant index" tenant=tenant-1 createdAt=2026-01-06T05:42:37.567666486Z metas=3 compactedMetas=8
+level=info ts=2026-01-06T05:46:37.487665328Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.006474367

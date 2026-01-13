@@ -1,0 +1,3653 @@
+INFO: WARNING: MINIO_ACCESS_KEY and MINIO_SECRET_KEY are deprecated.
+         Please use MINIO_ROOT_USER and MINIO_ROOT_PASSWORD
+INFO: Formatting 1st pool, 1 set(s), 1 drives per set.
+INFO: WARNING: Host local has more than 0 drives of set. A host failure will result in data becoming unavailable.
+MinIO Object Storage Server
+Copyright: 2015-2026 MinIO, Inc.
+License: GNU AGPLv3 - https://www.gnu.org/licenses/agpl-3.0.html
+Version: RELEASE.2025-09-07T16-13-09Z (go1.24.6 linux/amd64)
+
+API: http://10.128.2.44:9000  http://127.0.0.1:9000 
+WebUI: http://10.128.2.44:39621 http://127.0.0.1:39621   
+
+Docs: https://docs.min.io
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:06:37 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815C6C3C15BD1
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:06:37 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815C6C2A578D5
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:06:37 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815C6C3BE88C6
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:06:37 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815C6C1A69B8E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:06:37 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815C6C52A7473
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:06:37 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815C6C8B73D3A
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:06:37 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815C6CE6D2C25
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:06:37 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815C6D0EE1AF5
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:06:37 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815C6D0EC9665
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:06:37 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815C6D6E21F15
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:06:37 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815C6E4BB553A
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:06:37 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815C6E27C0A2D
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:07:08 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CE04DCDD8F
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:07:08 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CE03364D9F
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:07:08 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CE04CDD467
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFC5563BA0
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFC555463F
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFC7DC7E13
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFC77FFD6B
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:16 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFCE535EEE
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:16 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFCDBD4D27
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:16 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFD1F639C9
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:16 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFD16274E8
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:16 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFD4BCA0B6
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:16 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFDC621F6E
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:16 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFE3481CF9
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:16 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFE0ED6DC5
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:16 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815CFEC145197
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D70D7D027D
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D70BDA383C
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D70E0E8AB6
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D70FE1001B
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D7119BC882
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D7145BF08A
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D714E694A9
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D719195126
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D7197A97F2
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D7202F7508
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D71CC3A849
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D72867B37F
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D72D59F120
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:07:47 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815D72DB9DC2B
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:08 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC13049029
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:08 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC1C24B75E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:08 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC1B382811
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:08 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC1B48C40A
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:09 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC22614527
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:09 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC26D9B2B8
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:09 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC2908F1B3
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:09 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC2CE4A8D7
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:09 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC2B0C17E2
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:09 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC2E4A8362
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:09 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC33851E61
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:09 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC3B5DA417
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:09 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC3D9DB9B4
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:08:09 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815DC415E7B0C
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E5484A0B72
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E549ECF52F
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E54931AF60
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E54BD5192F
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E54FE93DE1
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E551168BC5
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E552ADDC79
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E5555D1E0D
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E5549706FD
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E55B5FE368
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E567CEB3B7
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E56A354281
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:08:48 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815E56D51979B
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:10:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815F8519B8C31
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:10:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815F851C06C19
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:10:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815F8504C727D
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:10:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815F853A9232A
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:10:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815F854DEA552
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:10:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815F85720E35E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:10:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815F854DE23FA
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:10:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188815F85D07B9CD
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:10:49 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816018CBA9CA9
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:10:49 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816018BAF3FF0
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:10:49 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816018CBB64F8
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:10:49 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816018ECC0859
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:10:49 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881601902874C6
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816146DB2F273
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816146DB3CA98
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816146C6C4024
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816146BCAAA56
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161478B0715E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816147690F14E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:10 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161479D737CF
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:11 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816147A7FDD1E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:11 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816147E5245CC
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:11 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816148963D70B
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:11 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881614885B9C8F
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:11 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816148D8F23CC
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:12:11 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816148B34C3E1
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:12:50 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161DA062672F
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:12:50 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161D9FF54787
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:12:50 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161DA21BBB9D
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:12:50 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161D9E3875AC
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:12:50 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161DA4548A1E
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:12:50 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161DA38386C4
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:12:50 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161DABA3DBA1
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:12:50 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161DAB0DBA9C
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:12:50 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161DA92AEBF2
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:12:50 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161DAFD4DD89
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:12:50 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161DC469A09C
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:12:50 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888161DC1497CED
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:14:12 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881630AACFF3D3
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:14:12 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881630B2963808
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:14:12 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881630AF419265
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:14:12 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881630B87BE74D
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:14:12 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881630B8FAE537
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:14:12 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881630B7DC5C9F
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:14:12 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881630BC6F8AFC
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:14:12 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881630C001C9D9
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:14:12 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881630C09F7B68
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:14:12 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881630C674E789
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:14:12 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881630CC30DD6C
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:14:12 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881630CFE6881A
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639D51ED113
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639CDF3DB6A
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639D43DB39C
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639D650FD42
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639D92F3169
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639DAC434E9
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639E0C0731D
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639DD36C773
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639E4880E6E
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639EE45AC2A
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639F232DA35
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639EE724C31
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639F9D6604E
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:14:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881639FE86524C
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:16:13 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888164CEFD546B9
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:16:13 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888164CE8A93042
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:16:13 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888164CEF5885AE
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655D6714724
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655D82495A7
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655D7211BF6
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655D9B86A8E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655DC1E4AF4
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655DCB931B5
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655DE944D99
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655E32E1A21
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655E7F09E6E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655EC751F16
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655F5A21C9E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655F5A69588
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655F4BF8D1B
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655FB4260E5
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:16:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881655FD948220
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C765E55A9
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C78262884
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C6FEEAF61
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C6FEE4BA3
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C7FB1BB1A
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C825C980F
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C89489F0D
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C83D82715
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C84D60159
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C894940E5
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C951A7C0E
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C97E383AF
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C9C2D73B6
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:20 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165C9DDA52C8
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:22 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D18D03162
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:22 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D18E7996C
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:22 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D1993B991
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:22 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D18A568B2
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:23 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D220BF08F
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:23 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D236BC725
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:23 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D212E6DE9
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:23 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D277D8D8B
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:23 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D25F2D51E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:23 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D2C5521E2
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:23 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D302AE61F
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:23 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D39ECE580
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:23 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D377A330C
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:17:23 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888165D3E80155E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663B3E43002
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663BBB948BF
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663C3095EEC
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663BE69B638
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663C56FA1F1
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663C4F6CFDD
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663C86970F8
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663C9A49AF5
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663D06854AD
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663CED2941E
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663D350E5D2
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663D9CE601D
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663DBCB733D
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:17:51 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881663DD26DE91
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:13 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881668FF75C45C
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:13 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881668FDE7E869
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:13 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881668F69C5B85
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:13 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881668FD5571CF
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:14 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816690B3350E0
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:14 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816690719C3C8
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:14 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816690B329A5D
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:14 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816691275A2BB
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:14 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881669124C1E68
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:14 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881669170BCF93
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:14 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816691E9ADE4F
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:14 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166922A0D43A
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:18:14 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166923E5EA32
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:18:24 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166B548CB590
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:18:24 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166B5379BB66
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:18:24 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166B55FFBD95
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:18:24 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166B55A4DDD6
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:18:24 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166B58F14F53
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:18:24 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166B628C92D4
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:18:24 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166B604F2526
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:18:24 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166B639CD952
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:18:24 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166B655A76A2
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:18:24 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166B6A701D3E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:18:24 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166B6AD073F0
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:18:24 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888166B77B2FC21
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:18:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888167205805774
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:18:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881672050232A9
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:18:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816720501BA17
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:18:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888167205017747
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:18:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881671FEFF7B70
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:18:52 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888167204D537EE
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:20:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816852FBD37B6
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:20:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816853704E3C7
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:20:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816853488E229
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:20:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168536801DE5
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:20:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168540E5284E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:20:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816853B9AA835
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:20:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168547461F31
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:20:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881685459DC204
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/1f7564c1-26dc-4d65-a68c-8ef0a2fb8e5d/data.parquet)
+Time: 08:20:15 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816854DEA52A0
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168780A2046C
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881687889616F3
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168789F4F661
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816878F28B21E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816879511F7EC
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168794C216EF
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168799DFB344
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816879BBF04B2
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 188816879F34F76E
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881687A093A7FD
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881687A54EBCF7
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881687A88B5CC9
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881687AD0B9557
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/f15752de-3b26-402f-beb2-db617d9e136f/data.parquet)
+Time: 08:20:25 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 18881687AC668A2A
+RemoteHost: 10.129.2.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E0998D41C
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E0FD50856
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E1277EF95
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E11EE3D77
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E13CEFFC9
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E1A04EEA5
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E1EDE3384
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E1A7F9F5C
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E2B08C600
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E2B08AF18
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/2d2539ae-2bd1-47a4-b85d-b8ef6153539a/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E2BFEB093
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E2B0813DA
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
+
+API: PutObjectPart(bucket=tempo, object=tenant-1/87bcaaff-aac5-4a94-afb1-08a457c914da/data.parquet)
+Time: 08:20:53 UTC 01/06/2026
+DeploymentID: f87549fe-c8be-463d-a41e-3213b615e702
+RequestID: 1888168E2AB52629
+RemoteHost: 10.131.0.41
+Host: minio.tempo-perf-1x-pico.svc.cluster.local:9000
+UserAgent: MinIO (linux; amd64) minio-go/v7.0.94
+Error: no space left on device (syscall.Errno)
+       5: internal/logger/logger.go:271:logger.LogIf()
+       4: cmd/logging.go:112:cmd.internalLogIf()
+       3: cmd/api-errors.go:2609:cmd.toAPIError()
+       2: cmd/object-multipart-handlers.go:875:cmd.objectAPIHandlers.PutObjectPartHandler()
+       1: net/http/server.go:2294:http.HandlerFunc.ServeHTTP()
