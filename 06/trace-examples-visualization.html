@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo Performance Test - Trace Examples</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #00d9ff;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .trace-info {
+            background: #16213e;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .trace-info h2 {
+            color: #00d9ff;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .info-item {
+            background: #1a1a2e;
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        .info-label {
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .info-value {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .trace-container {
+            background: #16213e;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .trace-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        .trace-title {
+            color: #00d9ff;
+        }
+
+        .trace-id {
+            font-family: monospace;
+            color: #ffd700;
+            font-size: 12px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 200px;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 200px;
+            margin-bottom: 10px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .span-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .span-service {
+            position: absolute;
+            left: 0;
+            width: 190px;
+            text-align: right;
+            padding-right: 15px;
+            font-size: 12px;
+            color: #aaa;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .span-bar-container {
+            flex: 1;
+            height: 24px;
+            position: relative;
+            background: rgba(255,255,255,0.03);
+            border-radius: 3px;
+        }
+
+        .span-bar {
+            position: absolute;
+            height: 100%;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            padding: 0 8px;
+            font-size: 11px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .span-bar:hover {
+            opacity: 0.8;
+        }
+
+        .span-duration {
+            position: absolute;
+            right: 5px;
+            font-size: 10px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Service colors */
+        .service-edge-gateway { background: linear-gradient(90deg, #ff6b6b, #ee5a5a); }
+        .service-api-gateway { background: linear-gradient(90deg, #4ecdc4, #3dbdb5); }
+        .service-auth-service { background: linear-gradient(90deg, #45b7d1, #3aa7c1); }
+        .service-user-service { background: linear-gradient(90deg, #96ceb4, #86bea4); }
+        .service-account-service { background: linear-gradient(90deg, #ffeaa7, #eed997); }
+        .service-transaction-service { background: linear-gradient(90deg, #dfe6e9, #cfd6d9); color: #333; }
+        .service-fraud-detection { background: linear-gradient(90deg, #fd79a8, #ed6998); }
+        .service-ml-scoring { background: linear-gradient(90deg, #a29bfe, #928bee); }
+        .service-risk-engine { background: linear-gradient(90deg, #fdcb6e, #edbb5e); color: #333; }
+        .service-compliance-service { background: linear-gradient(90deg, #00b894, #00a884); }
+        .service-audit-service { background: linear-gradient(90deg, #6c5ce7, #5c4cd7); }
+        .service-notification-service { background: linear-gradient(90deg, #e17055, #d16045); }
+        .service-ledger-service { background: linear-gradient(90deg, #74b9ff, #64a9ef); }
+        .service-database-primary { background: linear-gradient(90deg, #55efc4, #45dfb4); color: #333; }
+        .service-database-replica { background: linear-gradient(90deg, #81ecec, #71dcdc); color: #333; }
+        .service-event-store { background: linear-gradient(90deg, #fab1a0, #eaa190); color: #333; }
+        .service-cache-layer { background: linear-gradient(90deg, #ff7675, #ee6565); }
+        .service-analytics-service { background: linear-gradient(90deg, #a8e6cf, #98d6bf); color: #333; }
+        .service-rate-limiter { background: linear-gradient(90deg, #ffa502, #ef9500); color: #333; }
+        .service-message-broker { background: linear-gradient(90deg, #ff4757, #ee3747); }
+
+        .legend {
+            background: #16213e;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .legend h3 {
+            color: #00d9ff;
+            margin-bottom: 15px;
+        }
+
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 14px;
+            border-radius: 3px;
+        }
+
+        .legend-name {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .stats-section {
+            background: #16213e;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stats-section h3 {
+            color: #00d9ff;
+            margin-bottom: 15px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .stat-card {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00d9ff;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .span-details {
+            display: none;
+            background: #0f0f1a;
+            padding: 15px;
+            margin: 5px 0 15px 200px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .span-details.active {
+            display: block;
+        }
+
+        .span-details table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .span-details td {
+            padding: 5px 10px;
+            border-bottom: 1px solid #222;
+        }
+
+        .span-details td:first-child {
+            color: #888;
+            width: 150px;
+        }
+
+        .span-details code {
+            background: #1a1a2e;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tempo Performance Test - Trace Examples</h1>
+        <p class="subtitle">Visualizing distributed trace spans from the performance test profile "large" (Fintech/Enterprise)</p>
+
+        <div class="trace-info">
+            <h2>Trace Profile Configuration</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Profile Name</div>
+                    <div class="info-value">large</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Description</div>
+                    <div class="info-value">Fintech/Enterprise - Complex distributed system</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Root Operation</div>
+                    <div class="info-value">POST /api/v2/transactions</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Root Service</div>
+                    <div class="info-value">edge-gateway</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Spans per Trace</div>
+                    <div class="info-value">50-80 spans</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Services Count</div>
+                    <div class="info-value">20+ services</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <h3>Test Execution Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">4.7M</div>
+                    <div class="stat-label">Total Traces Sent</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">~31.9GB</div>
+                    <div class="stat-label">Total Data Ingested</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1,045/s</div>
+                    <div class="stat-label">Traces per Second</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">7.1 MB/s</div>
+                    <div class="stat-label">Ingestion Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5.19ms</div>
+                    <div class="stat-label">Median Duration</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">54.3ms</div>
+                    <div class="stat-label">p95 Duration</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <h3>Service Legend</h3>
+            <div class="legend-grid">
+                <div class="legend-item">
+                    <div class="legend-color service-edge-gateway"></div>
+                    <span class="legend-name">edge-gateway</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-api-gateway"></div>
+                    <span class="legend-name">api-gateway</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-auth-service"></div>
+                    <span class="legend-name">auth-service</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-user-service"></div>
+                    <span class="legend-name">user-service</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-account-service"></div>
+                    <span class="legend-name">account-service</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-transaction-service"></div>
+                    <span class="legend-name">transaction-service</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-fraud-detection"></div>
+                    <span class="legend-name">fraud-detection</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-ml-scoring"></div>
+                    <span class="legend-name">ml-scoring</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-risk-engine"></div>
+                    <span class="legend-name">risk-engine</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-compliance-service"></div>
+                    <span class="legend-name">compliance-service</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-audit-service"></div>
+                    <span class="legend-name">audit-service</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-notification-service"></div>
+                    <span class="legend-name">notification-service</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-ledger-service"></div>
+                    <span class="legend-name">ledger-service</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-database-primary"></div>
+                    <span class="legend-name">database-primary</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-database-replica"></div>
+                    <span class="legend-name">database-replica</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-event-store"></div>
+                    <span class="legend-name">event-store</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-cache-layer"></div>
+                    <span class="legend-name">cache-layer</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-analytics-service"></div>
+                    <span class="legend-name">analytics-service</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color service-rate-limiter"></div>
+                    <span class="legend-name">rate-limiter</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Trace 1 -->
+        <div class="trace-container">
+            <div class="trace-header">
+                <h2 class="trace-title">Example Trace 1: Successful Transaction Flow</h2>
+                <span class="trace-id">TraceID: 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d</span>
+            </div>
+            <div class="timeline-header">
+                <span>0ms</span>
+                <span>200ms</span>
+                <span>400ms</span>
+                <span>600ms</span>
+                <span>800ms</span>
+                <span>1000ms</span>
+            </div>
+            <div class="timeline" id="trace1">
+                <!-- Spans will be rendered by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Example Trace 2 -->
+        <div class="trace-container">
+            <div class="trace-header">
+                <h2 class="trace-title">Example Trace 2: Transaction with Fraud Detection</h2>
+                <span class="trace-id">TraceID: 2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a</span>
+            </div>
+            <div class="timeline-header">
+                <span>0ms</span>
+                <span>250ms</span>
+                <span>500ms</span>
+                <span>750ms</span>
+                <span>1000ms</span>
+                <span>1250ms</span>
+            </div>
+            <div class="timeline" id="trace2">
+                <!-- Spans will be rendered by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Example Trace 3 -->
+        <div class="trace-container">
+            <div class="trace-header">
+                <h2 class="trace-title">Example Trace 3: Full Transaction with Notifications</h2>
+                <span class="trace-id">TraceID: 8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c</span>
+            </div>
+            <div class="timeline-header">
+                <span>0ms</span>
+                <span>300ms</span>
+                <span>600ms</span>
+                <span>900ms</span>
+                <span>1200ms</span>
+                <span>1500ms</span>
+            </div>
+            <div class="timeline" id="trace3">
+                <!-- Spans will be rendered by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Trace data based on the profile configuration
+        const traces = {
+            trace1: {
+                totalDuration: 987,
+                spans: [
+                    { service: 'edge-gateway', operation: 'POST /api/v2/transactions', start: 0, duration: 987, spanId: 'a1b2c3d4', parentId: null },
+                    { service: 'edge-gateway', operation: 'waf-scan', start: 2, duration: 8, spanId: 'a1b2c3d5', parentId: 'a1b2c3d4' },
+                    { service: 'rate-limiter', operation: 'rate-limit-check', start: 12, duration: 4, spanId: 'a1b2c3d6', parentId: 'a1b2c3d4' },
+                    { service: 'auth-service', operation: 'authenticate', start: 18, duration: 65, spanId: 'a1b2c3d7', parentId: 'a1b2c3d4' },
+                    { service: 'auth-service', operation: 'verify-mfa', start: 85, duration: 145, spanId: 'a1b2c3d8', parentId: 'a1b2c3d7' },
+                    { service: 'auth-service', operation: 'authorize', start: 235, duration: 28, spanId: 'a1b2c3d9', parentId: 'a1b2c3d4' },
+                    { service: 'user-service', operation: 'get-user-profile', start: 268, duration: 42, spanId: 'a1b2c3da', parentId: 'a1b2c3d4' },
+                    { service: 'account-service', operation: 'get-account', start: 315, duration: 55, spanId: 'a1b2c3db', parentId: 'a1b2c3d4' },
+                    { service: 'account-service', operation: 'check-balance', start: 375, duration: 25, spanId: 'a1b2c3dc', parentId: 'a1b2c3db' },
+                    { service: 'transaction-service', operation: 'validate-transaction', start: 405, duration: 85, spanId: 'a1b2c3dd', parentId: 'a1b2c3d4' },
+                    { service: 'fraud-detection', operation: 'fraud-check', start: 495, duration: 120, spanId: 'a1b2c3de', parentId: 'a1b2c3d4' },
+                    { service: 'ml-scoring', operation: 'ml-score', start: 510, duration: 95, spanId: 'a1b2c3df', parentId: 'a1b2c3de' },
+                    { service: 'transaction-service', operation: 'create-transaction', start: 620, duration: 75, spanId: 'a1b2c3e0', parentId: 'a1b2c3d4' },
+                    { service: 'ledger-service', operation: 'update-ledger', start: 700, duration: 55, spanId: 'a1b2c3e1', parentId: 'a1b2c3e0' },
+                    { service: 'database-primary', operation: 'write-primary', start: 710, duration: 38, spanId: 'a1b2c3e2', parentId: 'a1b2c3e1' },
+                    { service: 'database-replica', operation: 'replicate', start: 752, duration: 22, spanId: 'a1b2c3e3', parentId: 'a1b2c3e2' },
+                    { service: 'event-store', operation: 'publish-event', start: 780, duration: 12, spanId: 'a1b2c3e4', parentId: 'a1b2c3e0' },
+                    { service: 'audit-service', operation: 'audit-log', start: 795, duration: 28, spanId: 'a1b2c3e5', parentId: 'a1b2c3d4' },
+                    { service: 'cache-layer', operation: 'invalidate-cache', start: 830, duration: 6, spanId: 'a1b2c3e6', parentId: 'a1b2c3d4' }
+                ]
+            },
+            trace2: {
+                totalDuration: 1245,
+                spans: [
+                    { service: 'edge-gateway', operation: 'POST /api/v2/transactions', start: 0, duration: 1245, spanId: 'b1b2c3d4', parentId: null },
+                    { service: 'edge-gateway', operation: 'waf-scan', start: 3, duration: 9, spanId: 'b1b2c3d5', parentId: 'b1b2c3d4' },
+                    { service: 'rate-limiter', operation: 'rate-limit-check', start: 15, duration: 3, spanId: 'b1b2c3d6', parentId: 'b1b2c3d4' },
+                    { service: 'auth-service', operation: 'authenticate', start: 22, duration: 72, spanId: 'b1b2c3d7', parentId: 'b1b2c3d4' },
+                    { service: 'auth-service', operation: 'verify-mfa', start: 98, duration: 185, spanId: 'b1b2c3d8', parentId: 'b1b2c3d7' },
+                    { service: 'auth-service', operation: 'authorize', start: 290, duration: 35, spanId: 'b1b2c3d9', parentId: 'b1b2c3d4' },
+                    { service: 'user-service', operation: 'get-user-profile', start: 330, duration: 48, spanId: 'b1b2c3da', parentId: 'b1b2c3d4' },
+                    { service: 'account-service', operation: 'get-account', start: 385, duration: 68, spanId: 'b1b2c3db', parentId: 'b1b2c3d4' },
+                    { service: 'account-service', operation: 'check-balance', start: 458, duration: 32, spanId: 'b1b2c3dc', parentId: 'b1b2c3db' },
+                    { service: 'transaction-service', operation: 'validate-transaction', start: 495, duration: 105, spanId: 'b1b2c3dd', parentId: 'b1b2c3d4' },
+                    { service: 'fraud-detection', operation: 'fraud-check', start: 605, duration: 180, spanId: 'b1b2c3de', parentId: 'b1b2c3d4' },
+                    { service: 'ml-scoring', operation: 'ml-score', start: 620, duration: 140, spanId: 'b1b2c3df', parentId: 'b1b2c3de' },
+                    { service: 'risk-engine', operation: 'risk-assessment', start: 765, duration: 145, spanId: 'b1b2c3e0', parentId: 'b1b2c3de' },
+                    { service: 'compliance-service', operation: 'compliance-check', start: 915, duration: 75, spanId: 'b1b2c3e1', parentId: 'b1b2c3d4' },
+                    { service: 'compliance-service', operation: 'aml-verification', start: 995, duration: 120, spanId: 'b1b2c3e2', parentId: 'b1b2c3e1' },
+                    { service: 'transaction-service', operation: 'create-transaction', start: 1120, duration: 65, spanId: 'b1b2c3e3', parentId: 'b1b2c3d4' },
+                    { service: 'ledger-service', operation: 'update-ledger', start: 1190, duration: 48, spanId: 'b1b2c3e4', parentId: 'b1b2c3e3' }
+                ]
+            },
+            trace3: {
+                totalDuration: 1480,
+                spans: [
+                    { service: 'edge-gateway', operation: 'POST /api/v2/transactions', start: 0, duration: 1480, spanId: 'c1b2c3d4', parentId: null },
+                    { service: 'edge-gateway', operation: 'waf-scan', start: 2, duration: 7, spanId: 'c1b2c3d5', parentId: 'c1b2c3d4' },
+                    { service: 'rate-limiter', operation: 'rate-limit-check', start: 12, duration: 5, spanId: 'c1b2c3d6', parentId: 'c1b2c3d4' },
+                    { service: 'auth-service', operation: 'authenticate', start: 20, duration: 58, spanId: 'c1b2c3d7', parentId: 'c1b2c3d4' },
+                    { service: 'auth-service', operation: 'verify-mfa', start: 82, duration: 165, spanId: 'c1b2c3d8', parentId: 'c1b2c3d7' },
+                    { service: 'auth-service', operation: 'authorize', start: 252, duration: 30, spanId: 'c1b2c3d9', parentId: 'c1b2c3d4' },
+                    { service: 'user-service', operation: 'get-user-profile', start: 288, duration: 45, spanId: 'c1b2c3da', parentId: 'c1b2c3d4' },
+                    { service: 'account-service', operation: 'get-account', start: 338, duration: 62, spanId: 'c1b2c3db', parentId: 'c1b2c3d4' },
+                    { service: 'account-service', operation: 'check-balance', start: 405, duration: 28, spanId: 'c1b2c3dc', parentId: 'c1b2c3db' },
+                    { service: 'transaction-service', operation: 'validate-transaction', start: 438, duration: 95, spanId: 'c1b2c3dd', parentId: 'c1b2c3d4' },
+                    { service: 'fraud-detection', operation: 'fraud-check', start: 538, duration: 155, spanId: 'c1b2c3de', parentId: 'c1b2c3d4' },
+                    { service: 'ml-scoring', operation: 'ml-score', start: 555, duration: 115, spanId: 'c1b2c3df', parentId: 'c1b2c3de' },
+                    { service: 'risk-engine', operation: 'risk-assessment', start: 698, duration: 125, spanId: 'c1b2c3e0', parentId: 'c1b2c3de' },
+                    { service: 'compliance-service', operation: 'compliance-check', start: 828, duration: 68, spanId: 'c1b2c3e1', parentId: 'c1b2c3d4' },
+                    { service: 'compliance-service', operation: 'aml-verification', start: 902, duration: 105, spanId: 'c1b2c3e2', parentId: 'c1b2c3e1' },
+                    { service: 'transaction-service', operation: 'create-transaction', start: 1012, duration: 72, spanId: 'c1b2c3e3', parentId: 'c1b2c3d4' },
+                    { service: 'ledger-service', operation: 'update-ledger', start: 1090, duration: 52, spanId: 'c1b2c3e4', parentId: 'c1b2c3e3' },
+                    { service: 'database-primary', operation: 'write-primary', start: 1100, duration: 35, spanId: 'c1b2c3e5', parentId: 'c1b2c3e4' },
+                    { service: 'database-replica', operation: 'replicate', start: 1140, duration: 20, spanId: 'c1b2c3e6', parentId: 'c1b2c3e5' },
+                    { service: 'event-store', operation: 'publish-event', start: 1165, duration: 15, spanId: 'c1b2c3e7', parentId: 'c1b2c3e3' },
+                    { service: 'audit-service', operation: 'audit-log', start: 1185, duration: 32, spanId: 'c1b2c3e8', parentId: 'c1b2c3d4' },
+                    { service: 'notification-service', operation: 'send-notification', start: 1222, duration: 48, spanId: 'c1b2c3e9', parentId: 'c1b2c3d4' },
+                    { service: 'analytics-service', operation: 'update-analytics', start: 1275, duration: 65, spanId: 'c1b2c3ea', parentId: 'c1b2c3d4' },
+                    { service: 'cache-layer', operation: 'invalidate-cache', start: 1345, duration: 8, spanId: 'c1b2c3eb', parentId: 'c1b2c3d4' }
+                ]
+            }
+        };
+
+        function getServiceClass(service) {
+            return 'service-' + service.replace(/[^a-zA-Z0-9]/g, '-');
+        }
+
+        function renderTrace(containerId, trace) {
+            const container = document.getElementById(containerId);
+            const totalDuration = trace.totalDuration;
+
+            trace.spans.forEach((span, index) => {
+                const row = document.createElement('div');
+                row.className = 'span-row';
+
+                const serviceLabel = document.createElement('div');
+                serviceLabel.className = 'span-service';
+                serviceLabel.textContent = span.service;
+
+                const barContainer = document.createElement('div');
+                barContainer.className = 'span-bar-container';
+
+                const bar = document.createElement('div');
+                bar.className = `span-bar ${getServiceClass(span.service)}`;
+                bar.style.left = `${(span.start / totalDuration) * 100}%`;
+                bar.style.width = `${Math.max((span.duration / totalDuration) * 100, 1)}%`;
+                bar.textContent = span.operation;
+                bar.title = `${span.operation}\nDuration: ${span.duration}ms\nSpan ID: ${span.spanId}`;
+
+                const duration = document.createElement('span');
+                duration.className = 'span-duration';
+                duration.textContent = `${span.duration}ms`;
+                bar.appendChild(duration);
+
+                bar.onclick = () => toggleDetails(containerId, index, span);
+
+                barContainer.appendChild(bar);
+                row.appendChild(serviceLabel);
+                row.appendChild(barContainer);
+                container.appendChild(row);
+            });
+        }
+
+        function toggleDetails(containerId, index, span) {
+            const container = document.getElementById(containerId);
+            const existingDetails = container.querySelector(`.span-details[data-index="${index}"]`);
+
+            // Close all other details
+            container.querySelectorAll('.span-details').forEach(d => d.classList.remove('active'));
+
+            if (existingDetails) {
+                existingDetails.classList.toggle('active');
+            } else {
+                const details = document.createElement('div');
+                details.className = 'span-details active';
+                details.setAttribute('data-index', index);
+                details.innerHTML = `
+                    <table>
+                        <tr><td>Span ID</td><td><code>${span.spanId}</code></td></tr>
+                        <tr><td>Parent Span ID</td><td><code>${span.parentId || 'null (root)'}</code></td></tr>
+                        <tr><td>Service</td><td>${span.service}</td></tr>
+                        <tr><td>Operation</td><td>${span.operation}</td></tr>
+                        <tr><td>Start Time</td><td>${span.start}ms</td></tr>
+                        <tr><td>Duration</td><td>${span.duration}ms</td></tr>
+                        <tr><td>End Time</td><td>${span.start + span.duration}ms</td></tr>
+                    </table>
+                `;
+                container.children[index].after(details);
+            }
+        }
+
+        // Render all traces
+        renderTrace('trace1', traces.trace1);
+        renderTrace('trace2', traces.trace2);
+        renderTrace('trace3', traces.trace3);
+    </script>
+</body>
+</html>

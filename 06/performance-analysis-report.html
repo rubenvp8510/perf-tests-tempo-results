@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo Performance Test Analysis Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16213e;
+            --bg-card: #0f3460;
+            --text-primary: #eaeaea;
+            --text-secondary: #a0a0a0;
+            --accent: #e94560;
+            --accent-secondary: #533483;
+            --success: #00d9a0;
+            --warning: #ffc107;
+            --border: #2a2a4a;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--accent-secondary));
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        header .subtitle { color: var(--text-secondary); font-size: 1.2em; }
+        header .meta { margin-top: 20px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        header .meta-item { text-align: center; }
+        header .meta-value { font-size: 1.5em; font-weight: bold; color: var(--accent); }
+
+        section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+        }
+
+        section h2 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        section h3 { color: var(--text-primary); margin: 20px 0 15px; }
+
+        .grid { display: grid; gap: 20px; }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .card h4 { color: var(--accent); margin-bottom: 15px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg-card);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        tr:hover { background: rgba(233, 69, 96, 0.1); }
+
+        .highlight { color: var(--success); font-weight: bold; }
+        .warning { color: var(--warning); }
+        .danger { color: var(--accent); }
+
+        .chart-container {
+            position: relative;
+            height: 350px;
+            margin: 20px 0;
+        }
+
+        .code-block {
+            background: #0a0a1a;
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9em;
+            border: 1px solid var(--border);
+        }
+
+        .code-block .comment { color: #6a9955; }
+        .code-block .key { color: #9cdcfe; }
+        .code-block .value { color: #ce9178; }
+        .code-block .number { color: #b5cea8; }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .badge-success { background: rgba(0, 217, 160, 0.2); color: var(--success); }
+        .badge-warning { background: rgba(255, 193, 7, 0.2); color: var(--warning); }
+        .badge-danger { background: rgba(233, 69, 96, 0.2); color: var(--accent); }
+        .badge-info { background: rgba(79, 195, 247, 0.2); color: #4fc3f7; }
+
+        .recommendation-box {
+            background: linear-gradient(135deg, rgba(0, 217, 160, 0.1), rgba(83, 52, 131, 0.1));
+            border-left: 4px solid var(--success);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+        }
+
+        .toc {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .toc a:hover { color: var(--accent); }
+
+        .size-card {
+            border-top: 4px solid var(--accent);
+            padding: 20px;
+        }
+
+        .size-card.xs { border-color: #4fc3f7; }
+        .size-card.s { border-color: var(--success); }
+        .size-card.m { border-color: var(--warning); }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            header .meta { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tempo Performance Test Analysis</h1>
+            <p class="subtitle">T-Shirt Sizing Based on Load Profile Testing</p>
+            <div class="meta">
+                <div class="meta-item">
+                    <div class="meta-value">4</div>
+                    <div>Test Profiles</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">75 min</div>
+                    <div>Per Test</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">RF=2</div>
+                    <div>Replication Factor</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">v2.9.0</div>
+                    <div>Tempo Version</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Table of Contents -->
+        <nav class="toc">
+            <strong>Contents</strong>
+            <a href="#executive-summary">1. Executive Summary</a>
+            <a href="#test-environment">2. Test Environment</a>
+            <a href="#load-profiles">3. Load Profiles Tested</a>
+            <a href="#resource-analysis">4. Resource Consumption Analysis</a>
+            <a href="#component-breakdown">5. Component-Level Breakdown</a>
+            <a href="#throughput">6. Throughput Results</a>
+            <a href="#tshirt-sizes">7. Recommended T-Shirt Sizes</a>
+            <a href="#recommendations">8. Recommendations</a>
+        </nav>
+
+        <!-- 1. Executive Summary -->
+        <section id="executive-summary">
+            <h2>1. Executive Summary</h2>
+
+            <p style="margin-bottom: 20px;">This analysis evaluates <strong>4 performance tests</strong> across different load sizes to establish resource baselines and derive T-shirt sizing recommendations for Tempo deployments.</p>
+
+            <div class="grid grid-4">
+                <div class="card">
+                    <h4>Tested Range</h4>
+                    <div style="font-size: 1.5em; color: var(--success);">50 GB - 2 TB</div>
+                    <p>per day ingestion</p>
+                </div>
+                <div class="card">
+                    <h4>Max Throughput</h4>
+                    <div style="font-size: 1.5em; color: var(--success);">3,937</div>
+                    <p>iterations/sec (1x-medium)</p>
+                </div>
+                <div class="card">
+                    <h4>Memory Range</h4>
+                    <div style="font-size: 1.5em; color: var(--warning);">12.6 - 32.8 GB</div>
+                    <p>P99 total usage</p>
+                </div>
+                <div class="card">
+                    <h4>CPU Range</h4>
+                    <div style="font-size: 1.5em; color: var(--accent);">1.5 - 17.3</div>
+                    <p>P99 cores total</p>
+                </div>
+            </div>
+
+            <h3>Key Findings</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>Ingester dominates memory:</strong> 50-60% of total memory across all sizes</li>
+                <li><strong>Compactor has high baseline:</strong> 6-14 GB regardless of load due to batch processing</li>
+                <li><strong>CPU scales linearly:</strong> From 1.5 cores (pico) to 17.3 cores (medium)</li>
+                <li><strong>Query-Frontend is constant:</strong> ~1.3 GB memory across all load levels</li>
+                <li><strong>Distributor is lightweight:</strong> Only ~64 MB memory needed</li>
+            </ul>
+        </section>
+
+        <!-- 2. Test Environment -->
+        <section id="test-environment">
+            <h2>2. Test Environment</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h4>Software Versions</h4>
+                    <table>
+                        <tr><td>Tempo</td><td><span class="highlight">2.9.0</span></td></tr>
+                        <tr><td>Tempo Operator</td><td>0.19.0</td></tr>
+                        <tr><td>Platform</td><td>OpenShift</td></tr>
+                        <tr><td>k6 Extension</td><td>xk6-tempo</td></tr>
+                    </table>
+                </div>
+                <div class="card">
+                    <h4>Common Configuration</h4>
+                    <table>
+                        <tr><td>Deployment Mode</td><td>TempoStack (Distributed)</td></tr>
+                        <tr><td>Replication Factor</td><td><span class="highlight">2</span></td></tr>
+                        <tr><td>Ingester Replicas</td><td><span class="highlight">2</span></td></tr>
+                        <tr><td>Storage Backend</td><td>MinIO (S3)</td></tr>
+                        <tr><td>Trace Retention</td><td>48h</td></tr>
+                        <tr><td>Max Block Duration</td><td>10m</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <h3>Component Replicas (All Tests)</h3>
+            <div class="grid" style="grid-template-columns: repeat(6, 1fr); margin-top: 15px;">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2em;">1</div>
+                    <div>Distributor</div>
+                </div>
+                <div class="card" style="text-align: center; border: 2px solid var(--success);">
+                    <div style="font-size: 2em; color: var(--success);">2</div>
+                    <div>Ingester</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2em;">1</div>
+                    <div>Querier</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2em;">1</div>
+                    <div>Query Frontend</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2em;">1</div>
+                    <div>Compactor</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2em;">1</div>
+                    <div>Gateway</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Load Profiles -->
+        <section id="load-profiles">
+            <h2>3. Load Profiles Tested</h2>
+            <p>Four standardized load profiles were tested to establish resource baselines:</p>
+
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Profile</th>
+                        <th>Description</th>
+                        <th>Ingestion Rate</th>
+                        <th>Per Day</th>
+                        <th>Trace Profile</th>
+                        <th>Queries/sec</th>
+                        <th>VUs (min/max)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-success">1x-pico</span></td>
+                        <td>Minimal footprint</td>
+                        <td>0.6 MB/s</td>
+                        <td>~50 GB/day</td>
+                        <td>small</td>
+                        <td>25</td>
+                        <td>2/10</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-success">1x-extra-small</span></td>
+                        <td>Small clusters</td>
+                        <td>1.2 MB/s</td>
+                        <td>~100 GB/day</td>
+                        <td>small</td>
+                        <td>25</td>
+                        <td>5/20</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-warning">1x-small</span></td>
+                        <td>Moderate workloads</td>
+                        <td>5.8 MB/s</td>
+                        <td>~500 GB/day</td>
+                        <td>medium</td>
+                        <td>50</td>
+                        <td>20/80</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-danger">1x-medium</span></td>
+                        <td>High workloads</td>
+                        <td>23 MB/s</td>
+                        <td>~2 TB/day</td>
+                        <td>large</td>
+                        <td>70</td>
+                        <td>50/200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 4. Resource Analysis -->
+        <section id="resource-analysis">
+            <h2>4. Resource Consumption Analysis</h2>
+
+            <div class="chart-container">
+                <canvas id="resourceChart"></canvas>
+            </div>
+
+            <h3>Total Resource Usage (P99 over 75 min)</h3>
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Profile</th>
+                        <th>Memory P99</th>
+                        <th>Memory Max</th>
+                        <th>Memory Avg</th>
+                        <th>CPU P99</th>
+                        <th>CPU Max</th>
+                        <th>CPU Avg</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1x-pico</td>
+                        <td>12.6 GB</td>
+                        <td>13.7 GB</td>
+                        <td>7.2 GB</td>
+                        <td>1.5 cores</td>
+                        <td>1.6 cores</td>
+                        <td>0.4 cores</td>
+                    </tr>
+                    <tr>
+                        <td>1x-extra-small</td>
+                        <td>13.6 GB</td>
+                        <td>13.8 GB</td>
+                        <td>8.8 GB</td>
+                        <td>3.0 cores</td>
+                        <td>3.4 cores</td>
+                        <td>0.6 cores</td>
+                    </tr>
+                    <tr>
+                        <td>1x-small</td>
+                        <td class="warning">24.0 GB</td>
+                        <td>25.1 GB</td>
+                        <td>15.5 GB</td>
+                        <td class="warning">4.2 cores</td>
+                        <td>4.5 cores</td>
+                        <td>1.3 cores</td>
+                    </tr>
+                    <tr style="background: rgba(233, 69, 96, 0.1);">
+                        <td>1x-medium</td>
+                        <td class="danger">32.8 GB</td>
+                        <td>32.9 GB</td>
+                        <td>23.5 GB</td>
+                        <td class="danger">17.3 cores</td>
+                        <td>17.9 cores</td>
+                        <td>12.0 cores</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="recommendation-box">
+                <strong>Observation:</strong> Resource usage scales roughly linearly with load. The jump from 1x-small to 1x-medium shows ~4x ingestion rate requires ~37% more memory but ~4x more CPU, indicating CPU becomes the primary constraint at higher loads.
+            </div>
+        </section>
+
+        <!-- 5. Component Breakdown -->
+        <section id="component-breakdown">
+            <h2>5. Component-Level Breakdown</h2>
+
+            <div class="grid grid-2">
+                <div>
+                    <h3>Memory by Component (P99 GB)</h3>
+                    <div class="chart-container">
+                        <canvas id="memoryByComponentChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3>CPU by Component (P99 cores)</h3>
+                    <div class="chart-container">
+                        <canvas id="cpuByComponentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Memory Usage by Component (P99 GB)</h3>
+            <table style="margin-top: 15px;">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>1x-pico</th>
+                        <th>1x-extra-small</th>
+                        <th>1x-small</th>
+                        <th>1x-medium</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ingester</strong></td>
+                        <td>8.3 GB</td>
+                        <td>10.0 GB</td>
+                        <td>12.1 GB</td>
+                        <td class="danger">18.8 GB</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Compactor</strong></td>
+                        <td>6.4 GB</td>
+                        <td>6.7 GB</td>
+                        <td>9.8 GB</td>
+                        <td>13.6 GB</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Querier</strong></td>
+                        <td>0.5 GB</td>
+                        <td>1.9 GB</td>
+                        <td>4.0 GB</td>
+                        <td>4.5 GB</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Query-Frontend</strong></td>
+                        <td>1.3 GB</td>
+                        <td>1.3 GB</td>
+                        <td>1.3 GB</td>
+                        <td>1.3 GB</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Distributor</strong></td>
+                        <td>52 MB</td>
+                        <td>57 MB</td>
+                        <td>65 MB</td>
+                        <td>64 MB</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gateway</strong></td>
+                        <td>83 MB</td>
+                        <td>110 MB</td>
+                        <td>153 MB</td>
+                        <td>125 MB</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>CPU Usage by Component (P99 cores)</h3>
+            <table style="margin-top: 15px;">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>1x-pico</th>
+                        <th>1x-extra-small</th>
+                        <th>1x-small</th>
+                        <th>1x-medium</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ingester</strong></td>
+                        <td>1.46</td>
+                        <td>2.23</td>
+                        <td>2.75</td>
+                        <td class="danger">10.62</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Querier</strong></td>
+                        <td>0.68</td>
+                        <td>1.42</td>
+                        <td>3.52</td>
+                        <td class="danger">7.18</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gateway</strong></td>
+                        <td>0.31</td>
+                        <td>0.51</td>
+                        <td>0.97</td>
+                        <td>5.10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Distributor</strong></td>
+                        <td>0.16</td>
+                        <td>0.28</td>
+                        <td>0.88</td>
+                        <td>2.35</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Query-Frontend</strong></td>
+                        <td>0.15</td>
+                        <td>0.19</td>
+                        <td>0.46</td>
+                        <td>1.16</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Compactor</strong></td>
+                        <td>0.00</td>
+                        <td>0.24</td>
+                        <td>0.51</td>
+                        <td>0.82</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 6. Throughput -->
+        <section id="throughput">
+            <h2>6. Throughput Results</h2>
+
+            <div class="chart-container">
+                <canvas id="throughputChart"></canvas>
+            </div>
+
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Profile</th>
+                        <th>Ingestion Rate</th>
+                        <th>Query Rate</th>
+                        <th>Test Duration</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1x-pico</td>
+                        <td>103 iters/s</td>
+                        <td>25 qps</td>
+                        <td>75 min</td>
+                        <td><span class="badge badge-success">Stable</span></td>
+                    </tr>
+                    <tr>
+                        <td>1x-extra-small</td>
+                        <td>206 iters/s</td>
+                        <td>25 qps</td>
+                        <td>75 min</td>
+                        <td><span class="badge badge-success">Stable</span></td>
+                    </tr>
+                    <tr>
+                        <td>1x-small</td>
+                        <td>994 iters/s</td>
+                        <td>50 qps</td>
+                        <td>75 min</td>
+                        <td><span class="badge badge-success">Stable</span></td>
+                    </tr>
+                    <tr>
+                        <td>1x-medium</td>
+                        <td class="highlight">3,937 iters/s</td>
+                        <td>100 qps</td>
+                        <td>75 min</td>
+                        <td><span class="badge badge-success">Stable</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 7. T-Shirt Sizes -->
+        <section id="tshirt-sizes">
+            <h2>7. Recommended T-Shirt Sizes</h2>
+            <p>Based on observed P99 resource usage with <strong>25% headroom</strong> for production safety margins:</p>
+
+            <div class="grid grid-3" style="margin-top: 20px;">
+                <div class="card size-card xs">
+                    <h4>XS (Extra Small)</h4>
+                    <p style="margin-bottom: 15px;">Up to <strong>100 GB/day</strong></p>
+                    <table>
+                        <tr><td>Ingester (x2)</td><td>8Gi / 3 cpu</td></tr>
+                        <tr><td>Compactor</td><td>8Gi / 500m</td></tr>
+                        <tr><td>Querier</td><td>2Gi / 2 cpu</td></tr>
+                        <tr><td>Query-Frontend</td><td>2Gi / 500m</td></tr>
+                        <tr><td>Distributor</td><td>256Mi / 500m</td></tr>
+                        <tr><td>Gateway</td><td>256Mi / 1 cpu</td></tr>
+                    </table>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border);">
+                        <strong>Total Limits:</strong> ~37 Gi / ~10 cores
+                    </div>
+                </div>
+
+                <div class="card size-card s">
+                    <h4>S (Small)</h4>
+                    <p style="margin-bottom: 15px;">Up to <strong>500 GB/day</strong></p>
+                    <table>
+                        <tr><td>Ingester (x2)</td><td>16Gi / 4 cpu</td></tr>
+                        <tr><td>Compactor</td><td>12Gi / 1 cpu</td></tr>
+                        <tr><td>Querier</td><td>5Gi / 4 cpu</td></tr>
+                        <tr><td>Query-Frontend</td><td>2Gi / 1 cpu</td></tr>
+                        <tr><td>Distributor</td><td>256Mi / 1 cpu</td></tr>
+                        <tr><td>Gateway</td><td>256Mi / 1.5 cpu</td></tr>
+                    </table>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border);">
+                        <strong>Total Limits:</strong> ~52 Gi / ~16 cores
+                    </div>
+                </div>
+
+                <div class="card size-card m">
+                    <h4>M (Medium)</h4>
+                    <p style="margin-bottom: 15px;">Up to <strong>2 TB/day</strong></p>
+                    <table>
+                        <tr><td>Ingester (x2)</td><td>24Gi / 12 cpu</td></tr>
+                        <tr><td>Compactor</td><td>16Gi / 1 cpu</td></tr>
+                        <tr><td>Querier</td><td>6Gi / 8 cpu</td></tr>
+                        <tr><td>Query-Frontend</td><td>2Gi / 1.5 cpu</td></tr>
+                        <tr><td>Distributor</td><td>256Mi / 3 cpu</td></tr>
+                        <tr><td>Gateway</td><td>256Mi / 6 cpu</td></tr>
+                    </table>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border);">
+                        <strong>Total Limits:</strong> ~73 Gi / ~44 cores
+                    </div>
+                </div>
+            </div>
+
+            <h3>Summary Table</h3>
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Ingestion</th>
+                        <th>Memory (limits)</th>
+                        <th>CPU (limits)</th>
+                        <th>Use Case</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-info">XS</span></td>
+                        <td>~100 GB/day</td>
+                        <td>37 Gi</td>
+                        <td>10 cores</td>
+                        <td>Development, small production</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-success">S</span></td>
+                        <td>~500 GB/day</td>
+                        <td>52 Gi</td>
+                        <td>16 cores</td>
+                        <td>Medium production workloads</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-warning">M</span></td>
+                        <td>~2 TB/day</td>
+                        <td>73 Gi</td>
+                        <td>44 cores</td>
+                        <td>High production workloads</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Example TempoStack CR (Size S)</h3>
+            <div class="code-block" style="margin-top: 15px;">
+<span class="key">apiVersion:</span> tempo.grafana.com/v1alpha1
+<span class="key">kind:</span> TempoStack
+<span class="key">metadata:</span>
+  <span class="key">name:</span> tempostack
+<span class="key">spec:</span>
+  <span class="key">replicationFactor:</span> <span class="number">2</span>
+  <span class="key">template:</span>
+    <span class="key">ingester:</span>
+      <span class="key">replicas:</span> <span class="number">2</span>
+      <span class="key">resources:</span>
+        <span class="key">limits:</span>
+          <span class="key">memory:</span> <span class="value">16Gi</span>
+          <span class="key">cpu:</span> <span class="value">"4"</span>
+        <span class="key">requests:</span>
+          <span class="key">memory:</span> <span class="value">10Gi</span>
+          <span class="key">cpu:</span> <span class="value">"2"</span>
+    <span class="key">compactor:</span>
+      <span class="key">replicas:</span> <span class="number">1</span>
+      <span class="key">resources:</span>
+        <span class="key">limits:</span>
+          <span class="key">memory:</span> <span class="value">12Gi</span>
+          <span class="key">cpu:</span> <span class="value">"1"</span>
+    <span class="key">querier:</span>
+      <span class="key">replicas:</span> <span class="number">1</span>
+      <span class="key">resources:</span>
+        <span class="key">limits:</span>
+          <span class="key">memory:</span> <span class="value">5Gi</span>
+          <span class="key">cpu:</span> <span class="value">"4"</span>
+    <span class="key">queryFrontend:</span>
+      <span class="key">replicas:</span> <span class="number">1</span>
+      <span class="key">resources:</span>
+        <span class="key">limits:</span>
+          <span class="key">memory:</span> <span class="value">2Gi</span>
+          <span class="key">cpu:</span> <span class="value">"1"</span>
+    <span class="key">distributor:</span>
+      <span class="key">replicas:</span> <span class="number">1</span>
+      <span class="key">resources:</span>
+        <span class="key">limits:</span>
+          <span class="key">memory:</span> <span class="value">256Mi</span>
+          <span class="key">cpu:</span> <span class="value">"1"</span>
+    <span class="key">gateway:</span>
+      <span class="key">replicas:</span> <span class="number">1</span>
+      <span class="key">resources:</span>
+        <span class="key">limits:</span>
+          <span class="key">memory:</span> <span class="value">256Mi</span>
+          <span class="key">cpu:</span> <span class="value">"1500m"</span>
+            </div>
+        </section>
+
+        <!-- 8. Recommendations -->
+        <section id="recommendations">
+            <h2>8. Recommendations</h2>
+
+            <div class="grid grid-2">
+                <div class="card" style="border-left: 4px solid var(--success);">
+                    <h4>Sizing Guidelines</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Set memory limits 50-100% above requests</strong> - Allows for burst handling while protecting the cluster</li>
+                        <li><strong>Monitor ingester memory closely</strong> - It's the most likely component to OOM under sustained load</li>
+                        <li><strong>Plan for compactor spikes</strong> - Memory usage can spike during compaction cycles</li>
+                        <li><strong>Consider horizontal scaling for queriers</strong> - For read-heavy workloads at M size and above</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border-left: 4px solid var(--warning);">
+                    <h4>Scaling Triggers</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Ingester memory &gt; 80%</strong> - Consider increasing limits or adding replicas</li>
+                        <li><strong>Query latency increasing</strong> - Scale querier replicas horizontally</li>
+                        <li><strong>"Sending queue is full" errors</strong> - System under-provisioned, increase resources</li>
+                        <li><strong>Compactor falling behind</strong> - Increase compactor resources</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Component-Specific Recommendations</h3>
+            <div class="grid grid-3" style="margin-top: 20px;">
+                <div class="card">
+                    <h4>Ingester</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Primary memory consumer (50-60%)</li>
+                        <li>Use RF=2 for production HA</li>
+                        <li>Tune <code>trace_idle_period</code> if memory is high</li>
+                        <li>Scale replicas for &gt;2 TB/day</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Querier</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Primary CPU consumer at high load</li>
+                        <li>Scales to 7+ cores at 70+ qps</li>
+                        <li>Scale replicas for query-heavy workloads</li>
+                        <li>Memory relatively stable (4-5 GB)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Compactor</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>High baseline memory (6-14 GB)</li>
+                        <li>Low CPU requirements (&lt;1 core)</li>
+                        <li>Memory scales with data volume</li>
+                        <li>Generally doesn't need horizontal scaling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recommendation-box" style="margin-top: 20px;">
+                <strong>Production Checklist:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Use <code>replicationFactor: 2</code> for data durability</li>
+                    <li>Set resource requests to ~60% of limits</li>
+                    <li>Enable Prometheus monitoring for all components</li>
+                    <li>Configure alerts for memory usage &gt; 80%</li>
+                    <li>Test with production-like load before going live</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer style="text-align: center; padding: 40px; color: var(--text-secondary);">
+            <p>Generated from Tempo Performance Test Framework</p>
+            <p>Test Date: January 2026 | Tempo v2.9.0 | Operator v0.19.0 | Replication Factor: 2</p>
+        </footer>
+    </div>
+
+    <script>
+        // Chart.js configuration
+        Chart.defaults.color = '#a0a0a0';
+        Chart.defaults.borderColor = '#2a2a4a';
+
+        // Resource Usage Chart
+        new Chart(document.getElementById('resourceChart'), {
+            type: 'bar',
+            data: {
+                labels: ['1x-pico', '1x-extra-small', '1x-small', '1x-medium'],
+                datasets: [{
+                    label: 'P99 Memory (GB)',
+                    data: [12.6, 13.6, 24.0, 32.8],
+                    backgroundColor: 'rgba(233, 69, 96, 0.7)',
+                    borderColor: '#e94560',
+                    borderWidth: 1
+                }, {
+                    label: 'P99 CPU (cores)',
+                    data: [1.5, 3.0, 4.2, 17.3],
+                    backgroundColor: 'rgba(0, 217, 160, 0.7)',
+                    borderColor: '#00d9a0',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Resource Usage by Load Profile' }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Memory by Component Chart
+        new Chart(document.getElementById('memoryByComponentChart'), {
+            type: 'bar',
+            data: {
+                labels: ['1x-pico', '1x-extra-small', '1x-small', '1x-medium'],
+                datasets: [{
+                    label: 'Ingester',
+                    data: [8.3, 10.0, 12.1, 18.8],
+                    backgroundColor: 'rgba(233, 69, 96, 0.8)'
+                }, {
+                    label: 'Compactor',
+                    data: [6.4, 6.7, 9.8, 13.6],
+                    backgroundColor: 'rgba(83, 52, 131, 0.8)'
+                }, {
+                    label: 'Querier',
+                    data: [0.5, 1.9, 4.0, 4.5],
+                    backgroundColor: 'rgba(0, 217, 160, 0.8)'
+                }, {
+                    label: 'Other',
+                    data: [1.5, 1.5, 1.6, 1.6],
+                    backgroundColor: 'rgba(255, 193, 7, 0.8)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'top' } },
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true, title: { display: true, text: 'Memory (GB)' } }
+                }
+            }
+        });
+
+        // CPU by Component Chart
+        new Chart(document.getElementById('cpuByComponentChart'), {
+            type: 'bar',
+            data: {
+                labels: ['1x-pico', '1x-extra-small', '1x-small', '1x-medium'],
+                datasets: [{
+                    label: 'Ingester',
+                    data: [1.46, 2.23, 2.75, 10.62],
+                    backgroundColor: 'rgba(233, 69, 96, 0.8)'
+                }, {
+                    label: 'Querier',
+                    data: [0.68, 1.42, 3.52, 7.18],
+                    backgroundColor: 'rgba(0, 217, 160, 0.8)'
+                }, {
+                    label: 'Gateway',
+                    data: [0.31, 0.51, 0.97, 5.10],
+                    backgroundColor: 'rgba(83, 52, 131, 0.8)'
+                }, {
+                    label: 'Other',
+                    data: [0.31, 0.71, 1.85, 4.33],
+                    backgroundColor: 'rgba(255, 193, 7, 0.8)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'top' } },
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true, title: { display: true, text: 'CPU (cores)' } }
+                }
+            }
+        });
+
+        // Throughput Chart
+        new Chart(document.getElementById('throughputChart'), {
+            type: 'line',
+            data: {
+                labels: ['1x-pico', '1x-extra-small', '1x-small', '1x-medium'],
+                datasets: [{
+                    label: 'Ingestion (iters/s)',
+                    data: [103, 206, 994, 3937],
+                    borderColor: '#e94560',
+                    backgroundColor: 'rgba(233, 69, 96, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: 'Queries (qps)',
+                    data: [25, 25, 50, 100],
+                    borderColor: '#00d9a0',
+                    backgroundColor: 'rgba(0, 217, 160, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Throughput by Load Profile' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Throughput' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
