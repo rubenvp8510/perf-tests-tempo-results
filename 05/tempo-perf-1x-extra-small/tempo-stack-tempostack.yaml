@@ -1,0 +1,141 @@
+apiVersion: tempo.grafana.com/v1alpha1
+kind: TempoStack
+metadata:
+  annotations:
+    tempo.grafana.com/cert-hash-tempo-tempostack-compactor-mtls: b49e63c22b75ae63c509e44c20f6a309965a5db5721e702683b138f19eaf23da
+    tempo.grafana.com/cert-hash-tempo-tempostack-distributor-mtls: 494d2f33aa22f5802687d375179fb2a3bc1abcf6f92fb6a7be48d2ab5c3355a1
+    tempo.grafana.com/cert-hash-tempo-tempostack-gateway-mtls: 312ec4639e95b99d70488533822cda7795d4b8eff0e0b532f7f09ae0e216bf78
+    tempo.grafana.com/cert-hash-tempo-tempostack-ingester-mtls: df23ffb92df2d4a107b9e8ee20961ac8ca3fc384de709af662137d9c5966af5c
+    tempo.grafana.com/cert-hash-tempo-tempostack-querier-mtls: 4da99bbb944fb251f031a91a24e26fe62aa5c8008ceee9fe4f4837fe528710d1
+    tempo.grafana.com/cert-hash-tempo-tempostack-query-frontend-mtls: 49739027a90d92d53ccd43c7218cab9c951c871221b8945ca4d82f79ae7bde93
+  creationTimestamp: "2026-01-07T15:18:11Z"
+  finalizers:
+  - tempo.grafana.com/finalizer
+  generation: 1
+  labels:
+    app.kubernetes.io/managed-by: tempo-operator
+    tempo-perf-test.io/instance: tempo-perf-1x-extra-small
+    tempo-perf-test.io/managed-by: framework
+    tempo.grafana.com/distribution: openshift
+  name: tempostack
+  namespace: tempo-perf-1x-extra-small
+  resourceVersion: "253279"
+  uid: b5ca4a09-d552-4bb9-a61d-4fe745a1981b
+spec:
+  extraConfig:
+    tempo:
+      ingester:
+        max_block_duration: 10m
+  hashRing:
+    memberlist: {}
+  images: {}
+  limits:
+    global:
+      ingestion:
+        maxTracesPerUser: 0
+      query:
+        maxSearchDuration: 0s
+  managementState: Managed
+  observability:
+    grafana:
+      instanceSelector: {}
+    metrics:
+      createPrometheusRules: true
+      createServiceMonitors: true
+    tracing:
+      jaeger_agent_endpoint: localhost:6831
+      otlp_http_endpoint: http://localhost:4320
+  replicationFactor: 1
+  resources: {}
+  retention:
+    global:
+      traces: 48h0m0s
+  search:
+    defaultResultLimit: 20
+    maxDuration: 0s
+  serviceAccount: tempo-tempostack
+  storage:
+    secret:
+      name: minio
+      type: s3
+    tls:
+      enabled: false
+  storageSize: 10Gi
+  template:
+    compactor:
+      replicas: 1
+    distributor:
+      component:
+        replicas: 1
+      tls:
+        enabled: false
+    gateway:
+      component:
+        replicas: 1
+      enabled: true
+      ingress:
+        route:
+          termination: reencrypt
+        type: route
+      rbac:
+        enabled: false
+    ingester:
+      replicas: 1
+    querier:
+      replicas: 1
+    queryFrontend:
+      component:
+        replicas: 1
+      jaegerQuery:
+        enabled: true
+        ingress:
+          route: {}
+        monitorTab:
+          enabled: false
+          prometheusEndpoint: ""
+        servicesQueryDuration: 72h0m0s
+        tempoQuery: {}
+  tenants:
+    authentication:
+    - tenantId: tenant-1
+      tenantName: tenant-1
+    mode: openshift
+  timeout: 30s
+status:
+  components:
+    compactor:
+      Running:
+      - tempo-tempostack-compactor-64675d6f58-9mh2c
+    distributor:
+      Running:
+      - tempo-tempostack-distributor-77954bffd8-m9vhb
+    gateway:
+      Running:
+      - tempo-tempostack-gateway-74db6689f7-kzsjr
+    ingester:
+      Running:
+      - tempo-tempostack-ingester-0
+    querier:
+      Running:
+      - tempo-tempostack-querier-77f4fb89d7-wwpph
+    queryFrontend:
+      Running:
+      - tempo-tempostack-query-frontend-55d8955db4-mx4fk
+  conditions:
+  - lastTransitionTime: "2026-01-07T15:19:24Z"
+    message: Some Tempo components are pending on dependencies
+    reason: PendingComponents
+    status: "False"
+    type: Pending
+  - lastTransitionTime: "2026-01-07T15:19:24Z"
+    message: Some Tempo components failed
+    reason: FailedComponents
+    status: "False"
+    type: Failed
+  - lastTransitionTime: "2026-01-07T15:19:24Z"
+    message: All components are operational
+    reason: Ready
+    status: "True"
+    type: Ready
+  operatorVersion: 0.19.0
+  tempoVersion: 2.9.0

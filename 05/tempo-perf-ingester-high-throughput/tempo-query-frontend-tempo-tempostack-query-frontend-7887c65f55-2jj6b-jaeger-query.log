@@ -1,0 +1,108 @@
+2026/01/08 01:34:24 maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined
+
+*******************************************************************************
+
+🛑  WARNING: End-of-life Notice for Jaeger v1
+
+You are currently running a v1 version of Jaeger, which is deprecated and will
+reach end-of-life on December 31st, 2025. This means there will be no further
+development, bug fixes, or security patches for v1 after this date.
+
+We strongly recommend migrating to Jaeger v2 for continued support and access
+to new features.
+
+For detailed migration instructions, please refer to the official Jaeger
+documentation:  https://www.jaegertracing.io/docs/latest/migration/
+
+Tracking issue: https://github.com/jaegertracing/jaeger/issues/6321
+
+🛑  WARNING: End-of-life Notice for Jaeger v1
+
+*******************************************************************************
+
+WARNING: found deprecated command line option --span-storage.type=grpc, please use environment variable SPAN_STORAGE_TYPE instead
+2026/01/08 01:34:24 application version: git-commit=7d6c4221934c8579ce4b2814ba2c60211c7eb5d4, git-version=1.68.0, build-date=2025-12-11T21:39:31Z
+{"level":"info","ts":1767836064.798372,"caller":"flags/service.go:125","msg":"Mounting metrics handler on admin server","route":"/metrics"}
+{"level":"info","ts":1767836064.798417,"caller":"flags/service.go:131","msg":"Mounting expvar handler on admin server","route":"/debug/vars"}
+{"level":"info","ts":1767836064.798593,"caller":"flags/admin.go:106","msg":"Mounting health check on admin server","route":"/"}
+{"level":"info","ts":1767836064.7986834,"caller":"flags/admin.go:123","msg":"Starting admin HTTP server"}
+{"level":"info","ts":1767836064.798738,"caller":"flags/admin.go:137","msg":"Admin server started","http.host-port":"[::]:16687","health-status":"unavailable"}
+{"level":"info","ts":1767836064.7993124,"caller":"grpc@v1.71.1/clientconn.go:176","msg":"[core] original dial target is: \"localhost:7777\""}
+{"level":"info","ts":1767836064.7993557,"caller":"grpc@v1.71.1/clientconn.go:459","msg":"[core] [Channel #1]Channel created"}
+{"level":"info","ts":1767836064.7993712,"caller":"grpc@v1.71.1/clientconn.go:207","msg":"[core] [Channel #1]parsed dial target is: resolver.Target{URL:url.URL{Scheme:\"passthrough\", Opaque:\"\", User:(*url.Userinfo)(nil), Host:\"\", Path:\"/localhost:7777\", RawPath:\"\", OmitHost:false, ForceQuery:false, RawQuery:\"\", Fragment:\"\", RawFragment:\"\"}}"}
+{"level":"info","ts":1767836064.799381,"caller":"grpc@v1.71.1/clientconn.go:208","msg":"[core] [Channel #1]Channel authority set to \"localhost:7777\""}
+{"level":"info","ts":1767836064.799518,"caller":"grpc@v1.71.1/resolver_wrapper.go:210","msg":"[core] [Channel #1]Resolver state updated: {\n  \"Addresses\": [\n    {\n      \"Addr\": \"localhost:7777\",\n      \"ServerName\": \"\",\n      \"Attributes\": null,\n      \"BalancerAttributes\": null,\n      \"Metadata\": null\n    }\n  ],\n  \"Endpoints\": [\n    {\n      \"Addresses\": [\n        {\n          \"Addr\": \"localhost:7777\",\n          \"ServerName\": \"\",\n          \"Attributes\": null,\n          \"BalancerAttributes\": null,\n          \"Metadata\": null\n        }\n      ],\n      \"Attributes\": null\n    }\n  ],\n  \"ServiceConfig\": null,\n  \"Attributes\": null\n} (resolver returned new addresses)"}
+{"level":"info","ts":1767836064.7995486,"caller":"grpc@v1.71.1/balancer_wrapper.go:122","msg":"[core] [Channel #1]Channel switches to new LB policy \"pick_first\""}
+{"level":"info","ts":1767836064.7995808,"caller":"gracefulswitch/gracefulswitch.go:194","msg":"[pick-first-lb] [pick-first-lb 0xc0001fd440] Received new config {\n  \"shuffleAddressList\": false\n}, resolver state {\n  \"Addresses\": [\n    {\n      \"Addr\": \"localhost:7777\",\n      \"ServerName\": \"\",\n      \"Attributes\": null,\n      \"BalancerAttributes\": null,\n      \"Metadata\": null\n    }\n  ],\n  \"Endpoints\": [\n    {\n      \"Addresses\": [\n        {\n          \"Addr\": \"localhost:7777\",\n          \"ServerName\": \"\",\n          \"Attributes\": null,\n          \"BalancerAttributes\": null,\n          \"Metadata\": null\n        }\n      ],\n      \"Attributes\": null\n    }\n  ],\n  \"ServiceConfig\": null,\n  \"Attributes\": null\n}"}
+{"level":"info","ts":1767836064.799604,"caller":"grpc@v1.71.1/balancer_wrapper.go:195","msg":"[core] [Channel #1 SubChannel #2]Subchannel created"}
+{"level":"info","ts":1767836064.7996182,"caller":"grpc@v1.71.1/clientconn.go:563","msg":"[core] [Channel #1]Channel Connectivity change to CONNECTING"}
+{"level":"info","ts":1767836064.7996318,"caller":"grpc@v1.71.1/clientconn.go:364","msg":"[core] [Channel #1]Channel exiting idle mode"}
+{"level":"info","ts":1767836064.7996576,"caller":"grpc@v1.71.1/clientconn.go:176","msg":"[core] original dial target is: \"localhost:7777\""}
+{"level":"info","ts":1767836064.7996783,"caller":"grpc@v1.71.1/clientconn.go:459","msg":"[core] [Channel #3]Channel created"}
+{"level":"info","ts":1767836064.7996895,"caller":"grpc@v1.71.1/clientconn.go:207","msg":"[core] [Channel #3]parsed dial target is: resolver.Target{URL:url.URL{Scheme:\"passthrough\", Opaque:\"\", User:(*url.Userinfo)(nil), Host:\"\", Path:\"/localhost:7777\", RawPath:\"\", OmitHost:false, ForceQuery:false, RawQuery:\"\", Fragment:\"\", RawFragment:\"\"}}"}
+{"level":"info","ts":1767836064.7996964,"caller":"grpc@v1.71.1/clientconn.go:208","msg":"[core] [Channel #3]Channel authority set to \"localhost:7777\""}
+{"level":"info","ts":1767836064.7996895,"caller":"grpc@v1.71.1/clientconn.go:1224","msg":"[core] [Channel #1 SubChannel #2]Subchannel Connectivity change to CONNECTING"}
+{"level":"info","ts":1767836064.7997293,"caller":"grpc@v1.71.1/resolver_wrapper.go:210","msg":"[core] [Channel #3]Resolver state updated: {\n  \"Addresses\": [\n    {\n      \"Addr\": \"localhost:7777\",\n      \"ServerName\": \"\",\n      \"Attributes\": null,\n      \"BalancerAttributes\": null,\n      \"Metadata\": null\n    }\n  ],\n  \"Endpoints\": [\n    {\n      \"Addresses\": [\n        {\n          \"Addr\": \"localhost:7777\",\n          \"ServerName\": \"\",\n          \"Attributes\": null,\n          \"BalancerAttributes\": null,\n          \"Metadata\": null\n        }\n      ],\n      \"Attributes\": null\n    }\n  ],\n  \"ServiceConfig\": null,\n  \"Attributes\": null\n} (resolver returned new addresses)"}
+{"level":"info","ts":1767836064.7997324,"caller":"grpc@v1.71.1/clientconn.go:1344","msg":"[core] [Channel #1 SubChannel #2]Subchannel picks a new address \"localhost:7777\" to connect"}
+{"level":"info","ts":1767836064.7997456,"caller":"grpc@v1.71.1/balancer_wrapper.go:122","msg":"[core] [Channel #3]Channel switches to new LB policy \"pick_first\""}
+{"level":"info","ts":1767836064.7997668,"caller":"gracefulswitch/gracefulswitch.go:194","msg":"[pick-first-lb] [pick-first-lb 0xc0001fdd70] Received new config {\n  \"shuffleAddressList\": false\n}, resolver state {\n  \"Addresses\": [\n    {\n      \"Addr\": \"localhost:7777\",\n      \"ServerName\": \"\",\n      \"Attributes\": null,\n      \"BalancerAttributes\": null,\n      \"Metadata\": null\n    }\n  ],\n  \"Endpoints\": [\n    {\n      \"Addresses\": [\n        {\n          \"Addr\": \"localhost:7777\",\n          \"ServerName\": \"\",\n          \"Attributes\": null,\n          \"BalancerAttributes\": null,\n          \"Metadata\": null\n        }\n      ],\n      \"Attributes\": null\n    }\n  ],\n  \"ServiceConfig\": null,\n  \"Attributes\": null\n}"}
+{"level":"info","ts":1767836064.7997797,"caller":"grpc@v1.71.1/balancer_wrapper.go:195","msg":"[core] [Channel #3 SubChannel #4]Subchannel created"}
+{"level":"info","ts":1767836064.7997992,"caller":"grpc@v1.71.1/clientconn.go:563","msg":"[core] [Channel #3]Channel Connectivity change to CONNECTING"}
+{"level":"info","ts":1767836064.7998097,"caller":"grpc@v1.71.1/clientconn.go:364","msg":"[core] [Channel #3]Channel exiting idle mode"}
+{"level":"info","ts":1767836064.7998445,"caller":"pickfirst/pickfirst.go:184","msg":"[pick-first-lb] [pick-first-lb 0xc0001fd440] Received SubConn state update: 0xc000487360, {ConnectivityState:CONNECTING ConnectionError:<nil> connectedAddress:{Addr: ServerName: Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}"}
+{"level":"info","ts":1767836064.7998974,"caller":"grpc@v1.71.1/clientconn.go:1224","msg":"[core] [Channel #3 SubChannel #4]Subchannel Connectivity change to CONNECTING"}
+{"level":"info","ts":1767836064.8000093,"caller":"grpc@v1.71.1/clientconn.go:1344","msg":"[core] [Channel #3 SubChannel #4]Subchannel picks a new address \"localhost:7777\" to connect"}
+{"level":"info","ts":1767836064.8000102,"caller":"pickfirst/pickfirst.go:184","msg":"[pick-first-lb] [pick-first-lb 0xc0001fdd70] Received SubConn state update: 0xc000487540, {ConnectivityState:CONNECTING ConnectionError:<nil> connectedAddress:{Addr: ServerName: Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}"}
+{"level":"info","ts":1767836064.7998466,"caller":"grpc/factory.go:113","msg":"Remote storage configuration","configuration":{"Tenancy":{"Enabled":true,"Header":"x-scope-orgid","Tenants":[]},"Endpoint":"localhost:7777","Compression":"","TLSSetting":{"CAFile":"","CAPem":"[REDACTED]","IncludeSystemCACertsPool":false,"CertFile":"","CertPem":"[REDACTED]","KeyFile":"","KeyPem":"[REDACTED]","MinVersion":"","MaxVersion":"","CipherSuites":null,"ReloadInterval":0,"CurvePreferences":null,"Insecure":true,"InsecureSkipVerify":false,"ServerName":""},"Keepalive":null,"ReadBufferSize":0,"WriteBufferSize":0,"WaitForReady":false,"Headers":null,"BalancerName":"","Authority":"","Auth":null,"Timeout":5000000000}}
+{"level":"info","ts":1767836064.8002725,"caller":"app/flags.go:168","msg":"Archive storage not initialized"}
+{"level":"info","ts":1767836064.8009057,"caller":"grpc@v1.71.1/clientconn.go:1346","msg":"[core] Creating new client transport to \"{Addr: \\\"localhost:7777\\\", ServerName: \\\"localhost:7777\\\", }\": connection error: desc = \"transport: Error while dialing: dial tcp [::1]:7777: connect: connection refused\""}
+{"level":"warn","ts":1767836064.800957,"caller":"grpc@v1.71.1/clientconn.go:1406","msg":"[core] [Channel #3 SubChannel #4]grpc: addrConn.createTransport failed to connect to {Addr: \"localhost:7777\", ServerName: \"localhost:7777\", }. Err: connection error: desc = \"transport: Error while dialing: dial tcp [::1]:7777: connect: connection refused\""}
+{"level":"info","ts":1767836064.8009932,"caller":"grpc@v1.71.1/clientconn.go:1226","msg":"[core] [Channel #3 SubChannel #4]Subchannel Connectivity change to TRANSIENT_FAILURE, last error: connection error: desc = \"transport: Error while dialing: dial tcp [::1]:7777: connect: connection refused\""}
+{"level":"info","ts":1767836064.8011353,"caller":"pickfirst/pickfirst.go:184","msg":"[pick-first-lb] [pick-first-lb 0xc0001fdd70] Received SubConn state update: 0xc000487540, {ConnectivityState:TRANSIENT_FAILURE ConnectionError:connection error: desc = \"transport: Error while dialing: dial tcp [::1]:7777: connect: connection refused\" connectedAddress:{Addr: ServerName: Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}"}
+{"level":"info","ts":1767836064.8011587,"caller":"grpc@v1.71.1/clientconn.go:563","msg":"[core] [Channel #3]Channel Connectivity change to TRANSIENT_FAILURE"}
+{"level":"info","ts":1767836064.8014083,"caller":"grpc@v1.71.1/server.go:690","msg":"[core] [Server #5]Server created"}
+{"level":"info","ts":1767836064.8016274,"caller":"grpc@v1.71.1/clientconn.go:1346","msg":"[core] Creating new client transport to \"{Addr: \\\"localhost:7777\\\", ServerName: \\\"localhost:7777\\\", }\": connection error: desc = \"transport: Error while dialing: dial tcp [::1]:7777: connect: connection refused\""}
+{"level":"warn","ts":1767836064.801705,"caller":"grpc@v1.71.1/clientconn.go:1406","msg":"[core] [Channel #1 SubChannel #2]grpc: addrConn.createTransport failed to connect to {Addr: \"localhost:7777\", ServerName: \"localhost:7777\", }. Err: connection error: desc = \"transport: Error while dialing: dial tcp [::1]:7777: connect: connection refused\""}
+{"level":"info","ts":1767836064.8021486,"caller":"grpc@v1.71.1/clientconn.go:1226","msg":"[core] [Channel #1 SubChannel #2]Subchannel Connectivity change to TRANSIENT_FAILURE, last error: connection error: desc = \"transport: Error while dialing: dial tcp [::1]:7777: connect: connection refused\""}
+{"level":"info","ts":1767836064.8022242,"caller":"pickfirst/pickfirst.go:184","msg":"[pick-first-lb] [pick-first-lb 0xc0001fd440] Received SubConn state update: 0xc000487360, {ConnectivityState:TRANSIENT_FAILURE ConnectionError:connection error: desc = \"transport: Error while dialing: dial tcp [::1]:7777: connect: connection refused\" connectedAddress:{Addr: ServerName: Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}"}
+{"level":"info","ts":1767836064.8022494,"caller":"grpc@v1.71.1/clientconn.go:563","msg":"[core] [Channel #1]Channel Connectivity change to TRANSIENT_FAILURE"}
+{"level":"info","ts":1767836064.8024938,"caller":"app/static_handler.go:92","msg":"Using UI configuration","path":""}
+{"level":"info","ts":1767836064.802845,"caller":"app/server.go:256","msg":"Query server started","http_addr":"[::]:16686","grpc_addr":"[::]:16685"}
+{"level":"info","ts":1767836064.8028653,"caller":"healthcheck/handler.go:118","msg":"Health Check state change","status":"ready"}
+{"level":"info","ts":1767836064.8028898,"caller":"app/server.go:298","msg":"Starting GRPC server","port":16685,"addr":":16685"}
+{"level":"info","ts":1767836064.8028882,"caller":"app/server.go:284","msg":"Starting HTTP server","port":16686,"addr":":16686"}
+{"level":"info","ts":1767836064.8029442,"caller":"grpc@v1.71.1/server.go:886","msg":"[core] [Server #5 ListenSocket #6]ListenSocket created"}
+{"level":"info","ts":1767836065.8011496,"caller":"grpc@v1.71.1/clientconn.go:1226","msg":"[core] [Channel #3 SubChannel #4]Subchannel Connectivity change to IDLE, last error: connection error: desc = \"transport: Error while dialing: dial tcp [::1]:7777: connect: connection refused\""}
+{"level":"info","ts":1767836065.801204,"caller":"pickfirst/pickfirst.go:184","msg":"[pick-first-lb] [pick-first-lb 0xc0001fdd70] Received SubConn state update: 0xc000487540, {ConnectivityState:IDLE ConnectionError:connection error: desc = \"transport: Error while dialing: dial tcp [::1]:7777: connect: connection refused\" connectedAddress:{Addr: ServerName: Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}"}
+{"level":"info","ts":1767836065.8012407,"caller":"grpc@v1.71.1/clientconn.go:1224","msg":"[core] [Channel #3 SubChannel #4]Subchannel Connectivity change to CONNECTING"}
+{"level":"info","ts":1767836065.8012555,"caller":"grpc@v1.71.1/clientconn.go:1344","msg":"[core] [Channel #3 SubChannel #4]Subchannel picks a new address \"localhost:7777\" to connect"}
+{"level":"info","ts":1767836065.801351,"caller":"pickfirst/pickfirst.go:184","msg":"[pick-first-lb] [pick-first-lb 0xc0001fdd70] Received SubConn state update: 0xc000487540, {ConnectivityState:CONNECTING ConnectionError:<nil> connectedAddress:{Addr: ServerName: Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}"}
+{"level":"info","ts":1767836065.8017192,"caller":"grpc@v1.71.1/clientconn.go:1224","msg":"[core] [Channel #3 SubChannel #4]Subchannel Connectivity change to READY"}
+{"level":"info","ts":1767836065.8017569,"caller":"pickfirst/pickfirst.go:184","msg":"[pick-first-lb] [pick-first-lb 0xc0001fdd70] Received SubConn state update: 0xc000487540, {ConnectivityState:READY ConnectionError:<nil> connectedAddress:{Addr:localhost:7777 ServerName:localhost:7777 Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}"}
+{"level":"info","ts":1767836065.8017714,"caller":"grpc@v1.71.1/clientconn.go:563","msg":"[core] [Channel #3]Channel Connectivity change to READY"}
+{"level":"info","ts":1767836065.8028595,"caller":"grpc@v1.71.1/clientconn.go:1226","msg":"[core] [Channel #1 SubChannel #2]Subchannel Connectivity change to IDLE, last error: connection error: desc = \"transport: Error while dialing: dial tcp [::1]:7777: connect: connection refused\""}
+{"level":"info","ts":1767836065.8028886,"caller":"pickfirst/pickfirst.go:184","msg":"[pick-first-lb] [pick-first-lb 0xc0001fd440] Received SubConn state update: 0xc000487360, {ConnectivityState:IDLE ConnectionError:connection error: desc = \"transport: Error while dialing: dial tcp [::1]:7777: connect: connection refused\" connectedAddress:{Addr: ServerName: Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}"}
+{"level":"info","ts":1767836065.8029273,"caller":"grpc@v1.71.1/clientconn.go:1224","msg":"[core] [Channel #1 SubChannel #2]Subchannel Connectivity change to CONNECTING"}
+{"level":"info","ts":1767836065.802943,"caller":"grpc@v1.71.1/clientconn.go:1344","msg":"[core] [Channel #1 SubChannel #2]Subchannel picks a new address \"localhost:7777\" to connect"}
+{"level":"info","ts":1767836065.8030205,"caller":"pickfirst/pickfirst.go:184","msg":"[pick-first-lb] [pick-first-lb 0xc0001fd440] Received SubConn state update: 0xc000487360, {ConnectivityState:CONNECTING ConnectionError:<nil> connectedAddress:{Addr: ServerName: Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}"}
+{"level":"info","ts":1767836065.8033311,"caller":"grpc@v1.71.1/clientconn.go:1224","msg":"[core] [Channel #1 SubChannel #2]Subchannel Connectivity change to READY"}
+{"level":"info","ts":1767836065.8033693,"caller":"pickfirst/pickfirst.go:184","msg":"[pick-first-lb] [pick-first-lb 0xc0001fd440] Received SubConn state update: 0xc000487360, {ConnectivityState:READY ConnectionError:<nil> connectedAddress:{Addr:localhost:7777 ServerName:localhost:7777 Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}"}
+{"level":"info","ts":1767836065.8033838,"caller":"grpc@v1.71.1/clientconn.go:563","msg":"[core] [Channel #1]Channel Connectivity change to READY"}
+{"level":"info","ts":1767837864.8992398,"caller":"grpc@v1.71.1/resolver_wrapper.go:111","msg":"[core] [Channel #3]Closing the name resolver"}
+{"level":"info","ts":1767837864.8992424,"caller":"grpc@v1.71.1/resolver_wrapper.go:111","msg":"[core] [Channel #1]Closing the name resolver"}
+{"level":"info","ts":1767837864.8993247,"caller":"grpc@v1.71.1/balancer_wrapper.go:160","msg":"[core] [Channel #3]ccBalancerWrapper: closing"}
+{"level":"info","ts":1767837864.8993492,"caller":"grpc@v1.71.1/balancer_wrapper.go:160","msg":"[core] [Channel #1]ccBalancerWrapper: closing"}
+{"level":"info","ts":1767837864.8993704,"caller":"grpc@v1.71.1/clientconn.go:563","msg":"[core] [Channel #1]Channel Connectivity change to IDLE"}
+{"level":"info","ts":1767837864.89938,"caller":"grpc@v1.71.1/clientconn.go:398","msg":"[core] [Channel #1]Channel entering idle mode"}
+{"level":"info","ts":1767837864.8994157,"caller":"grpc@v1.71.1/clientconn.go:563","msg":"[core] [Channel #3]Channel Connectivity change to IDLE"}
+{"level":"info","ts":1767837864.8995922,"caller":"grpc@v1.71.1/clientconn.go:398","msg":"[core] [Channel #3]Channel entering idle mode"}
+{"level":"info","ts":1767837864.8994522,"caller":"grpc@v1.71.1/clientconn.go:1224","msg":"[core] [Channel #1 SubChannel #2]Subchannel Connectivity change to SHUTDOWN"}
+{"level":"info","ts":1767837864.8996751,"caller":"grpc@v1.71.1/clientconn.go:1224","msg":"[core] [Channel #3 SubChannel #4]Subchannel Connectivity change to SHUTDOWN"}
+{"level":"info","ts":1767837864.8996968,"caller":"grpc@v1.71.1/clientconn.go:881","msg":"[core] [Channel #3 SubChannel #4]Subchannel deleted"}
+{"level":"info","ts":1767837864.8996892,"caller":"grpc@v1.71.1/clientconn.go:881","msg":"[core] [Channel #1 SubChannel #2]Subchannel deleted"}
+{"level":"info","ts":1767837864.8997111,"caller":"grpc@v1.71.1/clientconn.go:1576","msg":"[transport] [client-transport 0xc00033cb48] GracefulClose called"}
+{"level":"info","ts":1767837864.8997374,"caller":"transport/http2_client.go:1063","msg":"[transport] [client-transport 0xc00033cb48] Closing: connection error: desc = \"no active streams left to process while draining\""}
+{"level":"info","ts":1767837864.8997092,"caller":"grpc@v1.71.1/clientconn.go:1576","msg":"[transport] [client-transport 0xc00033c008] GracefulClose called"}
+{"level":"info","ts":1767837864.8997924,"caller":"transport/controlbuf.go:580","msg":"[transport] [client-transport 0xc00033cb48] loopyWriter exiting with error: connection error: desc = \"no active streams left to process while draining\""}
+{"level":"info","ts":1767837864.8998013,"caller":"transport/http2_client.go:1063","msg":"[transport] [client-transport 0xc00033c008] Closing: connection error: desc = \"no active streams left to process while draining\""}
+{"level":"info","ts":1767837864.8998315,"caller":"transport/controlbuf.go:580","msg":"[transport] [client-transport 0xc00033c008] loopyWriter exiting with error: connection error: desc = \"no active streams left to process while draining\""}

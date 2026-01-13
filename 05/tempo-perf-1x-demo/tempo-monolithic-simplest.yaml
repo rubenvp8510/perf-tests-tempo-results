@@ -1,0 +1,73 @@
+apiVersion: tempo.grafana.com/v1alpha1
+kind: TempoMonolithic
+metadata:
+  annotations:
+    tempo.grafana.com/cert-hash-tempo-simplest-mtls: 210065be2d8c308f00ef94b93bec930dd15bb81a9c85e08578dc9c6ca71955f1
+  creationTimestamp: "2026-01-07T14:01:11Z"
+  finalizers:
+  - tempo.grafana.com/finalizer
+  generation: 1
+  labels:
+    tempo-perf-test.io/instance: tempo-perf-1x-demo
+    tempo-perf-test.io/managed-by: framework
+  name: simplest
+  namespace: tempo-perf-1x-demo
+  resourceVersion: "224699"
+  uid: 90e66f97-97ff-4cfa-9a10-7627a6d3f9ef
+spec:
+  extraConfig:
+    tempo:
+      ingester:
+        max_block_duration: 10m
+      overrides:
+        defaults:
+          ingestion:
+            max_traces_per_user: 0
+  jaegerui:
+    enabled: true
+    route:
+      enabled: true
+  multitenancy:
+    authentication:
+    - tenantId: tenant-1
+      tenantName: tenant-1
+    enabled: true
+    mode: openshift
+  observability:
+    metrics:
+      serviceMonitors:
+        enabled: true
+  storage:
+    traces:
+      backend: s3
+      s3:
+        secret: minio
+  timeout: 0s
+status:
+  components:
+    tempo:
+      Running:
+      - tempo-simplest-0
+  conditions:
+  - lastTransitionTime: "2026-01-07T14:01:58Z"
+    message: Some Tempo components are pending on dependencies
+    reason: PendingComponents
+    status: "False"
+    type: Pending
+  - lastTransitionTime: "2026-01-07T14:01:12Z"
+    message: ""
+    reason: InvalidStorageConfig
+    status: "False"
+    type: ConfigurationError
+  - lastTransitionTime: "2026-01-07T14:01:12Z"
+    message: ""
+    reason: FailedComponents
+    status: "False"
+    type: Failed
+  - lastTransitionTime: "2026-01-07T14:01:58Z"
+    message: All components are operational
+    reason: Ready
+    status: "True"
+    type: Ready
+  operatorVersion: 0.19.0
+  tempoVersion: 2.9.0

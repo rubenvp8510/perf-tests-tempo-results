@@ -1,0 +1,201 @@
+level=warn ts=2026-01-07T19:08:49.776508467Z caller=main.go:119 msg="-- CONFIGURATION WARNINGS --"
+level=warn ts=2026-01-07T19:08:49.776543915Z caller=main.go:125 msg="Inline, unscoped overrides are deprecated. Please use the new overrides config format."
+level=info ts=2026-01-07T19:08:49.776659258Z caller=main.go:103 msg="Starting Tempo" version="(version=2.9.0, branch=HEAD, revision=f1b3ef152)" target=ingester
+level=info msg="server listening on addresses" http=[::]:3101 grpc=[::]:41069
+level=info ts=2026-01-07T19:08:49.785585445Z caller=cache.go:55 msg="caches available to storage backend" parquet-footer=false bloom=false parquet-offset-idx=false parquet-column-idx=false trace-id-index=false parquet-page=false
+level=info ts=2026-01-07T19:08:49.787174931Z caller=server.go:281 msg="server listening on addresses" http=[::]:3200 grpc=[::]:9095
+level=info ts=2026-01-07T19:08:49.78837622Z caller=memberlist_client.go:484 msg="Using memberlist cluster label and node name" cluster_label= node=tempo-tempostack-ingester-0-74869266
+level=info ts=2026-01-07T19:08:49.789246207Z caller=module_service.go:82 msg=starting module=internal-server
+level=info ts=2026-01-07T19:08:49.789283364Z caller=module_service.go:82 msg=starting module=cache-provider
+level=info ts=2026-01-07T19:08:49.789340357Z caller=module_service.go:82 msg=starting module=store
+level=info ts=2026-01-07T19:08:49.789364275Z caller=module_service.go:82 msg=starting module=server
+level=info ts=2026-01-07T19:08:49.789370949Z caller=memberlist_client.go:628 msg="memberlist fast-join starting" nodes_found=1 to_join=2
+level=info ts=2026-01-07T19:08:49.789438181Z caller=module_service.go:82 msg=starting module=overrides
+level=info ts=2026-01-07T19:08:49.789892075Z caller=module_service.go:82 msg=starting module=memberlist-kv
+level=info ts=2026-01-07T19:08:49.789944196Z caller=module_service.go:82 msg=starting module=ring
+level=info ts=2026-01-07T19:08:49.789944868Z caller=module_service.go:82 msg=starting module=live-store-ring
+level=info ts=2026-01-07T19:08:49.806331739Z caller=memberlist_client.go:648 msg="memberlist fast-join finished" joined_nodes=6 elapsed_time=16.962765ms
+level=info ts=2026-01-07T19:08:49.806357475Z caller=memberlist_client.go:666 phase=startup msg="joining memberlist cluster" join_members=tempo-tempostack-gossip-ring
+level=info ts=2026-01-07T19:08:49.806401711Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-07T19:08:49.806393618Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-07T19:08:49.806478415Z caller=module_service.go:82 msg=starting module=ingester
+level=info ts=2026-01-07T19:08:49.806489519Z caller=ingester.go:413 msg="beginning wal replay"
+level=warn ts=2026-01-07T19:08:49.806619338Z caller=wal.go:103 msg="unowned file entry ignored during wal replay" file=blocks err=null
+level=info ts=2026-01-07T19:08:49.806630638Z caller=ingester.go:451 msg="wal replay complete"
+level=info ts=2026-01-07T19:08:49.806650569Z caller=ingester.go:465 msg="reloading local blocks" tenants=0
+level=info ts=2026-01-07T19:08:49.806706943Z caller=lifecycler.go:714 msg="instance not found in ring, adding with no tokens" ring=ingester
+level=info ts=2026-01-07T19:08:49.80673199Z caller=app.go:213 msg="Tempo started"
+level=info ts=2026-01-07T19:08:49.806765053Z caller=lifecycler.go:556 msg="auto-joining cluster after timeout" ring=ingester
+level=info ts=2026-01-07T19:08:49.820017423Z caller=memberlist_client.go:673 phase=startup msg="joining memberlist cluster succeeded" reached_nodes=6 elapsed_time=13.653426ms
+level=info ts=2026-01-07T19:11:10.887141549Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=7be37411-6525-48b1-9a84-81494511a40f
+level=info ts=2026-01-07T19:11:16.92801123Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=7be37411-6525-48b1-9a84-81494511a40f
+level=info ts=2026-01-07T19:11:40.328942346Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=7be37411-6525-48b1-9a84-81494511a40f duration=23.400893507s
+level=info ts=2026-01-07T19:11:40.406369407Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=7be37411-6525-48b1-9a84-81494511a40f
+level=info ts=2026-01-07T19:13:10.964004995Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=f46f3347-1042-4488-b8eb-66f6df83af70
+level=info ts=2026-01-07T19:13:17.542966344Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=f46f3347-1042-4488-b8eb-66f6df83af70
+level=info ts=2026-01-07T19:13:42.524892933Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=f46f3347-1042-4488-b8eb-66f6df83af70 duration=24.981894858s
+level=info ts=2026-01-07T19:13:42.613231648Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=f46f3347-1042-4488-b8eb-66f6df83af70
+level=info ts=2026-01-07T19:15:10.923814734Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=6e1e845f-e028-4663-b2bd-cc98ef031e1d
+level=info ts=2026-01-07T19:15:17.55482261Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=6e1e845f-e028-4663-b2bd-cc98ef031e1d
+level=info ts=2026-01-07T19:15:42.3944257Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=6e1e845f-e028-4663-b2bd-cc98ef031e1d duration=24.839572372s
+level=info ts=2026-01-07T19:15:42.479715418Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=6e1e845f-e028-4663-b2bd-cc98ef031e1d
+level=info ts=2026-01-07T19:17:10.877901948Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=33ea5d97-754e-425c-838e-a91a680cdb0e
+level=info ts=2026-01-07T19:17:12.680171322Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=33ea5d97-754e-425c-838e-a91a680cdb0e
+level=info ts=2026-01-07T19:17:37.154980949Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=33ea5d97-754e-425c-838e-a91a680cdb0e duration=24.474767797s
+level=info ts=2026-01-07T19:17:37.231316051Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=33ea5d97-754e-425c-838e-a91a680cdb0e
+level=info ts=2026-01-07T19:19:10.978508915Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=6ab4de95-a070-4615-b1c3-bb2b4525ae02
+level=info ts=2026-01-07T19:19:19.007778093Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=6ab4de95-a070-4615-b1c3-bb2b4525ae02
+level=info ts=2026-01-07T19:19:44.165190947Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=6ab4de95-a070-4615-b1c3-bb2b4525ae02 duration=25.157380956s
+level=info ts=2026-01-07T19:19:44.248004724Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=6ab4de95-a070-4615-b1c3-bb2b4525ae02
+level=info ts=2026-01-07T19:21:11.046799768Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=b585753f-8ad6-4603-ab26-ff81e6ed2b0e
+level=info ts=2026-01-07T19:21:20.725874691Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=b585753f-8ad6-4603-ab26-ff81e6ed2b0e
+level=info ts=2026-01-07T19:21:46.465406376Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=b585753f-8ad6-4603-ab26-ff81e6ed2b0e duration=25.739501495s
+level=info ts=2026-01-07T19:21:46.547783158Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=b585753f-8ad6-4603-ab26-ff81e6ed2b0e
+level=info ts=2026-01-07T19:23:10.994517581Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=791d6a33-a353-483b-beee-67e4084c9d95
+level=info ts=2026-01-07T19:23:15.898276657Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=791d6a33-a353-483b-beee-67e4084c9d95
+level=info ts=2026-01-07T19:23:41.286962189Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=791d6a33-a353-483b-beee-67e4084c9d95 duration=25.388657373s
+level=info ts=2026-01-07T19:23:41.371200054Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=791d6a33-a353-483b-beee-67e4084c9d95
+level=info ts=2026-01-07T19:25:11.048921294Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=fb11a469-7856-49c8-9028-6d02a3201aab
+level=info ts=2026-01-07T19:25:16.09518821Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=fb11a469-7856-49c8-9028-6d02a3201aab
+level=info ts=2026-01-07T19:25:41.563707365Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=fb11a469-7856-49c8-9028-6d02a3201aab duration=25.468488996s
+level=info ts=2026-01-07T19:25:41.646305036Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=fb11a469-7856-49c8-9028-6d02a3201aab
+level=info ts=2026-01-07T19:27:10.979536806Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=d038df73-1d0e-4b19-b4f1-beca88ef26d3
+level=info ts=2026-01-07T19:27:19.095083596Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=d038df73-1d0e-4b19-b4f1-beca88ef26d3
+level=info ts=2026-01-07T19:27:44.607958868Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=d038df73-1d0e-4b19-b4f1-beca88ef26d3 duration=25.512846576s
+level=info ts=2026-01-07T19:27:44.683620272Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=d038df73-1d0e-4b19-b4f1-beca88ef26d3
+level=info ts=2026-01-07T19:29:11.010202739Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=b041d0da-d7c7-4c4d-8467-2e678ff905ff
+level=info ts=2026-01-07T19:29:19.024661019Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=b041d0da-d7c7-4c4d-8467-2e678ff905ff
+level=info ts=2026-01-07T19:29:44.631706026Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=b041d0da-d7c7-4c4d-8467-2e678ff905ff duration=25.606910525s
+level=info ts=2026-01-07T19:29:44.724348195Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=b041d0da-d7c7-4c4d-8467-2e678ff905ff
+level=info ts=2026-01-07T19:31:11.005069186Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=11c9e076-8008-49b8-ad2b-6021098ac4b5
+level=info ts=2026-01-07T19:31:13.982324536Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=11c9e076-8008-49b8-ad2b-6021098ac4b5
+level=info ts=2026-01-07T19:31:39.465073878Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=11c9e076-8008-49b8-ad2b-6021098ac4b5 duration=25.482716961s
+level=info ts=2026-01-07T19:31:39.549432423Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=11c9e076-8008-49b8-ad2b-6021098ac4b5
+level=info ts=2026-01-07T19:33:10.965405328Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=46f0ad21-57fb-458e-9d15-220e136478f2
+level=info ts=2026-01-07T19:33:17.194902127Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=46f0ad21-57fb-458e-9d15-220e136478f2
+level=info ts=2026-01-07T19:33:42.109991203Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=46f0ad21-57fb-458e-9d15-220e136478f2 duration=24.915047074s
+level=info ts=2026-01-07T19:33:42.191399431Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=46f0ad21-57fb-458e-9d15-220e136478f2
+level=info ts=2026-01-07T19:35:11.019992088Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=fa2c0f54-4352-426c-bde0-3385f4568b45
+level=info ts=2026-01-07T19:35:19.744643197Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=fa2c0f54-4352-426c-bde0-3385f4568b45
+level=info ts=2026-01-07T19:35:45.205229888Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=fa2c0f54-4352-426c-bde0-3385f4568b45 duration=25.460548649s
+level=info ts=2026-01-07T19:35:45.283197332Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=fa2c0f54-4352-426c-bde0-3385f4568b45
+level=info ts=2026-01-07T19:37:10.937601837Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=255b2a74-988f-4528-8851-71057d714b7e
+level=info ts=2026-01-07T19:37:12.681238349Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=255b2a74-988f-4528-8851-71057d714b7e
+level=info ts=2026-01-07T19:37:37.954539075Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=255b2a74-988f-4528-8851-71057d714b7e duration=25.2732669s
+level=info ts=2026-01-07T19:37:38.041745777Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=255b2a74-988f-4528-8851-71057d714b7e
+level=info ts=2026-01-07T19:39:10.952697511Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=796250a4-5586-4f3c-bf6e-a11f2e2b9ec3
+level=info ts=2026-01-07T19:39:15.996365008Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=796250a4-5586-4f3c-bf6e-a11f2e2b9ec3
+level=info ts=2026-01-07T19:39:41.182782211Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=796250a4-5586-4f3c-bf6e-a11f2e2b9ec3 duration=25.186386905s
+level=info ts=2026-01-07T19:39:41.268778339Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=796250a4-5586-4f3c-bf6e-a11f2e2b9ec3
+level=info ts=2026-01-07T19:41:10.901433871Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=c3155a16-88ca-457f-af66-033117525e41
+level=info ts=2026-01-07T19:41:17.938084713Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=c3155a16-88ca-457f-af66-033117525e41
+level=info ts=2026-01-07T19:41:43.419716579Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=c3155a16-88ca-457f-af66-033117525e41 duration=25.481603965s
+level=info ts=2026-01-07T19:41:43.513216141Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=c3155a16-88ca-457f-af66-033117525e41
+level=info ts=2026-01-07T19:43:11.004553855Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=c2c39ed8-deef-4b2e-830f-841cc14aa830
+level=info ts=2026-01-07T19:43:17.917979916Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=c2c39ed8-deef-4b2e-830f-841cc14aa830
+level=info ts=2026-01-07T19:43:43.094880879Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=c2c39ed8-deef-4b2e-830f-841cc14aa830 duration=25.176865504s
+level=info ts=2026-01-07T19:43:43.17218733Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=c2c39ed8-deef-4b2e-830f-841cc14aa830
+level=info ts=2026-01-07T19:45:10.920467229Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=71d3dfd9-4754-47c9-945a-5f81db789e66
+level=info ts=2026-01-07T19:45:18.605497713Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=71d3dfd9-4754-47c9-945a-5f81db789e66
+level=info ts=2026-01-07T19:45:44.198047243Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=71d3dfd9-4754-47c9-945a-5f81db789e66 duration=25.592516485s
+level=info ts=2026-01-07T19:45:44.27861148Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=71d3dfd9-4754-47c9-945a-5f81db789e66
+level=info ts=2026-01-07T19:47:10.904093763Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=56fe856a-f2c8-4a26-9e3f-7ea80de502bf
+level=info ts=2026-01-07T19:47:18.096956478Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=56fe856a-f2c8-4a26-9e3f-7ea80de502bf
+level=info ts=2026-01-07T19:47:43.249838443Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=56fe856a-f2c8-4a26-9e3f-7ea80de502bf duration=25.152831341s
+level=info ts=2026-01-07T19:47:43.332383319Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=56fe856a-f2c8-4a26-9e3f-7ea80de502bf
+level=info ts=2026-01-07T19:49:10.965580994Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=4e162454-3f5e-49ae-a258-954a1d1c8a36
+level=info ts=2026-01-07T19:49:19.296826722Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=4e162454-3f5e-49ae-a258-954a1d1c8a36
+level=info ts=2026-01-07T19:49:44.837157898Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=4e162454-3f5e-49ae-a258-954a1d1c8a36 duration=25.540283599s
+level=info ts=2026-01-07T19:49:44.916560941Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=4e162454-3f5e-49ae-a258-954a1d1c8a36
+level=info ts=2026-01-07T19:51:10.5358126Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=3ed41448-c748-4a06-91e4-44672bf52042
+level=info ts=2026-01-07T19:51:12.229784197Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=3ed41448-c748-4a06-91e4-44672bf52042
+level=info ts=2026-01-07T19:51:37.197853553Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=3ed41448-c748-4a06-91e4-44672bf52042 duration=24.96803627s
+level=info ts=2026-01-07T19:51:37.280753641Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=3ed41448-c748-4a06-91e4-44672bf52042
+level=info ts=2026-01-07T19:53:11.009843589Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=334ff504-6082-4210-99a3-bf60f0ea3a37
+level=info ts=2026-01-07T19:53:18.722654998Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=334ff504-6082-4210-99a3-bf60f0ea3a37
+level=info ts=2026-01-07T19:53:43.953857514Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=334ff504-6082-4210-99a3-bf60f0ea3a37 duration=25.23117189s
+level=info ts=2026-01-07T19:53:44.036909502Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=334ff504-6082-4210-99a3-bf60f0ea3a37
+level=info ts=2026-01-07T19:55:10.75893975Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=a535ac99-b05c-4829-8bde-05395d48b169
+level=info ts=2026-01-07T19:55:20.342366737Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=a535ac99-b05c-4829-8bde-05395d48b169
+level=info ts=2026-01-07T19:55:44.979751514Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=a535ac99-b05c-4829-8bde-05395d48b169 duration=24.637345859s
+level=info ts=2026-01-07T19:55:45.063138952Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=a535ac99-b05c-4829-8bde-05395d48b169
+level=info ts=2026-01-07T19:57:11.044518519Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=26a0e9aa-97fc-4023-9df8-b6b57b4f64b8
+level=info ts=2026-01-07T19:57:16.30004378Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=26a0e9aa-97fc-4023-9df8-b6b57b4f64b8
+level=info ts=2026-01-07T19:57:40.32797608Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=26a0e9aa-97fc-4023-9df8-b6b57b4f64b8 duration=24.02788315s
+level=info ts=2026-01-07T19:57:40.407599051Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=26a0e9aa-97fc-4023-9df8-b6b57b4f64b8
+level=info ts=2026-01-07T19:59:30.255864647Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=e0fd1bfa-521a-4d85-abf2-d13b371ac2d2
+level=info ts=2026-01-07T19:59:34.060831485Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=e0fd1bfa-521a-4d85-abf2-d13b371ac2d2
+level=info ts=2026-01-07T19:59:58.518282654Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=e0fd1bfa-521a-4d85-abf2-d13b371ac2d2 duration=24.457414435s
+level=info ts=2026-01-07T19:59:58.594879649Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=e0fd1bfa-521a-4d85-abf2-d13b371ac2d2
+level=info ts=2026-01-07T20:02:10.547106613Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=754e10f8-3d6f-4d91-9dfe-d2a22bb49df8
+level=info ts=2026-01-07T20:02:13.865894631Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=754e10f8-3d6f-4d91-9dfe-d2a22bb49df8
+level=info ts=2026-01-07T20:02:37.925895132Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=754e10f8-3d6f-4d91-9dfe-d2a22bb49df8 duration=24.059973237s
+level=info ts=2026-01-07T20:02:38.007163701Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=754e10f8-3d6f-4d91-9dfe-d2a22bb49df8
+level=info ts=2026-01-07T20:04:50.281718573Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=52b909fe-07b5-49c4-8990-5002cdcdd5af
+level=info ts=2026-01-07T20:04:59.284032092Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=52b909fe-07b5-49c4-8990-5002cdcdd5af
+level=info ts=2026-01-07T20:05:23.046550533Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=52b909fe-07b5-49c4-8990-5002cdcdd5af duration=23.762384013s
+level=info ts=2026-01-07T20:05:23.11991089Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=52b909fe-07b5-49c4-8990-5002cdcdd5af
+level=info ts=2026-01-07T20:07:40.238324373Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=d2238d5a-6308-406c-9602-dcd60d506350
+level=info ts=2026-01-07T20:07:42.582883325Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=d2238d5a-6308-406c-9602-dcd60d506350
+level=info ts=2026-01-07T20:08:07.375833058Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=d2238d5a-6308-406c-9602-dcd60d506350 duration=24.79291799s
+level=info ts=2026-01-07T20:08:07.458164004Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=d2238d5a-6308-406c-9602-dcd60d506350
+level=info ts=2026-01-07T20:10:30.2258877Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=8e9afcec-4f23-4547-9b34-a01e1d4f03d1
+level=info ts=2026-01-07T20:10:31.004159839Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=8e9afcec-4f23-4547-9b34-a01e1d4f03d1
+level=info ts=2026-01-07T20:10:55.664978887Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=8e9afcec-4f23-4547-9b34-a01e1d4f03d1 duration=24.660792047s
+level=info ts=2026-01-07T20:10:55.753620371Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=8e9afcec-4f23-4547-9b34-a01e1d4f03d1
+level=info ts=2026-01-07T20:13:20.537099856Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1
+level=info ts=2026-01-07T20:13:23.290575102Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1
+level=info ts=2026-01-07T20:13:48.401818449Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1 duration=25.111202814s
+level=info ts=2026-01-07T20:13:48.482544151Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1
+level=error ts=2026-01-07T20:13:51.310256352Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1 attempts=1 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/c5ca71c3-0d78-49d8-91fc-2886f4cce9e1/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:13:51.310688274Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1 backoff=30s
+level=info ts=2026-01-07T20:14:21.311661031Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1
+level=error ts=2026-01-07T20:14:23.829596217Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1 attempts=2 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/c5ca71c3-0d78-49d8-91fc-2886f4cce9e1/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:14:23.82963546Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1 backoff=1m0s
+level=info ts=2026-01-07T20:15:23.829882112Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1
+level=error ts=2026-01-07T20:15:26.480340898Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1 attempts=3 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/c5ca71c3-0d78-49d8-91fc-2886f4cce9e1/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:15:26.480374844Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1 backoff=2m0s
+level=info ts=2026-01-07T20:16:10.145470501Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=df7d8788-527f-40f5-84d3-cca81e782e17
+level=info ts=2026-01-07T20:16:15.473523455Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=df7d8788-527f-40f5-84d3-cca81e782e17
+level=info ts=2026-01-07T20:16:40.113133297Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=df7d8788-527f-40f5-84d3-cca81e782e17 duration=24.639485945s
+level=info ts=2026-01-07T20:16:40.193050391Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=df7d8788-527f-40f5-84d3-cca81e782e17
+level=error ts=2026-01-07T20:16:43.043680336Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=df7d8788-527f-40f5-84d3-cca81e782e17 attempts=1 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/df7d8788-527f-40f5-84d3-cca81e782e17/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:16:43.043721626Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=df7d8788-527f-40f5-84d3-cca81e782e17 backoff=30s
+level=info ts=2026-01-07T20:17:13.043894353Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=df7d8788-527f-40f5-84d3-cca81e782e17
+level=error ts=2026-01-07T20:17:15.842565635Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=df7d8788-527f-40f5-84d3-cca81e782e17 attempts=2 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/df7d8788-527f-40f5-84d3-cca81e782e17/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:17:15.842600977Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=df7d8788-527f-40f5-84d3-cca81e782e17 backoff=1m0s
+level=info ts=2026-01-07T20:17:26.481003599Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1
+level=error ts=2026-01-07T20:17:29.379017703Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1 attempts=4 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/c5ca71c3-0d78-49d8-91fc-2886f4cce9e1/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:17:29.379047996Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1 backoff=2m0s
+level=info ts=2026-01-07T20:18:15.843297991Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=df7d8788-527f-40f5-84d3-cca81e782e17
+level=error ts=2026-01-07T20:18:18.693568057Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=df7d8788-527f-40f5-84d3-cca81e782e17 attempts=3 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/df7d8788-527f-40f5-84d3-cca81e782e17/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:18:18.693604744Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=df7d8788-527f-40f5-84d3-cca81e782e17 backoff=2m0s
+level=info ts=2026-01-07T20:18:50.342116167Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=407d8bf8-e8a1-41b6-83b7-87159a7444d1
+level=info ts=2026-01-07T20:18:50.555826637Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=407d8bf8-e8a1-41b6-83b7-87159a7444d1
+level=info ts=2026-01-07T20:19:14.845414992Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=407d8bf8-e8a1-41b6-83b7-87159a7444d1 duration=24.289560212s
+level=info ts=2026-01-07T20:19:14.928260397Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=407d8bf8-e8a1-41b6-83b7-87159a7444d1
+level=error ts=2026-01-07T20:19:17.538104767Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=407d8bf8-e8a1-41b6-83b7-87159a7444d1 attempts=1 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/407d8bf8-e8a1-41b6-83b7-87159a7444d1/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:19:17.538147641Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=407d8bf8-e8a1-41b6-83b7-87159a7444d1 backoff=30s
+level=info ts=2026-01-07T20:19:29.37948342Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1
+level=error ts=2026-01-07T20:19:31.820284899Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1 attempts=5 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/c5ca71c3-0d78-49d8-91fc-2886f4cce9e1/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:19:31.820314906Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1 backoff=2m0s
+level=info ts=2026-01-07T20:19:47.538262189Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=407d8bf8-e8a1-41b6-83b7-87159a7444d1
+level=info ts=2026-01-07T20:20:18.693666471Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=df7d8788-527f-40f5-84d3-cca81e782e17
+level=error ts=2026-01-07T20:20:23.241381286Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=df7d8788-527f-40f5-84d3-cca81e782e17 attempts=4 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/df7d8788-527f-40f5-84d3-cca81e782e17/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:20:23.241417489Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=df7d8788-527f-40f5-84d3-cca81e782e17 backoff=2m0s
+level=info ts=2026-01-07T20:21:30.495657503Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd
+level=info ts=2026-01-07T20:21:30.558577707Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd
+level=info ts=2026-01-07T20:21:31.82034268Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=c5ca71c3-0d78-49d8-91fc-2886f4cce9e1
+level=info ts=2026-01-07T20:21:54.974117275Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd duration=24.415515175s
+level=info ts=2026-01-07T20:21:55.048701915Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd
+level=error ts=2026-01-07T20:21:55.30656809Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd attempts=1 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:21:55.306605295Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd backoff=30s
+level=info ts=2026-01-07T20:22:23.241613291Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=df7d8788-527f-40f5-84d3-cca81e782e17
+level=error ts=2026-01-07T20:22:23.442784517Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=df7d8788-527f-40f5-84d3-cca81e782e17 attempts=5 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/df7d8788-527f-40f5-84d3-cca81e782e17/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:22:23.442816733Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=df7d8788-527f-40f5-84d3-cca81e782e17 backoff=2m0s
+level=info ts=2026-01-07T20:22:25.307226041Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd
+level=error ts=2026-01-07T20:22:25.524526249Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd attempts=2 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:22:25.524557146Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd backoff=1m0s
+level=info ts=2026-01-07T20:23:25.524816932Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd
+level=error ts=2026-01-07T20:23:25.772789936Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd attempts=3 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T20:23:25.772821864Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=62d2c7a3-d6e1-4586-b4b5-54f6f3d884fd backoff=2m0s

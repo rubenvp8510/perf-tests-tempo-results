@@ -1,0 +1,94 @@
+level=warn ts=2026-01-07T17:51:57.972136332Z caller=main.go:119 msg="-- CONFIGURATION WARNINGS --"
+level=warn ts=2026-01-07T17:51:57.972173476Z caller=main.go:125 msg="Inline, unscoped overrides are deprecated. Please use the new overrides config format."
+level=info ts=2026-01-07T17:51:57.97226742Z caller=main.go:103 msg="Starting Tempo" version="(version=2.9.0, branch=HEAD, revision=f1b3ef152)" target=ingester
+level=info msg="server listening on addresses" http=[::]:3101 grpc=[::]:37883
+level=info ts=2026-01-07T17:51:57.973815449Z caller=server.go:281 msg="server listening on addresses" http=[::]:3200 grpc=[::]:9095
+level=info ts=2026-01-07T17:51:57.984086675Z caller=cache.go:55 msg="caches available to storage backend" parquet-footer=false bloom=false parquet-offset-idx=false parquet-column-idx=false trace-id-index=false parquet-page=false
+level=info ts=2026-01-07T17:51:57.985415635Z caller=memberlist_client.go:484 msg="Using memberlist cluster label and node name" cluster_label= node=tempo-tempostack-ingester-1-f413417a
+level=info ts=2026-01-07T17:51:57.987761237Z caller=module_service.go:82 msg=starting module=cache-provider
+level=info ts=2026-01-07T17:51:57.987804923Z caller=module_service.go:82 msg=starting module=internal-server
+level=info ts=2026-01-07T17:51:57.987841885Z caller=module_service.go:82 msg=starting module=store
+level=info ts=2026-01-07T17:51:57.987911833Z caller=memberlist_client.go:628 msg="memberlist fast-join starting" nodes_found=1 to_join=2
+level=info ts=2026-01-07T17:51:57.988206748Z caller=module_service.go:82 msg=starting module=server
+level=info ts=2026-01-07T17:51:57.988361166Z caller=module_service.go:82 msg=starting module=memberlist-kv
+level=info ts=2026-01-07T17:51:57.988418017Z caller=module_service.go:82 msg=starting module=overrides
+level=info ts=2026-01-07T17:51:57.988491108Z caller=module_service.go:82 msg=starting module=live-store-ring
+level=info ts=2026-01-07T17:51:57.988499472Z caller=module_service.go:82 msg=starting module=ring
+level=info ts=2026-01-07T17:51:57.995028912Z caller=memberlist_client.go:648 msg="memberlist fast-join finished" joined_nodes=3 elapsed_time=7.122397ms
+level=info ts=2026-01-07T17:51:57.995055791Z caller=memberlist_client.go:666 phase=startup msg="joining memberlist cluster" join_members=tempo-tempostack-gossip-ring
+level=info ts=2026-01-07T17:51:57.995097399Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-07T17:51:57.995147417Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-07T17:51:57.995210693Z caller=module_service.go:82 msg=starting module=ingester
+level=info ts=2026-01-07T17:51:57.995239219Z caller=ingester.go:413 msg="beginning wal replay"
+level=warn ts=2026-01-07T17:51:57.995367737Z caller=wal.go:103 msg="unowned file entry ignored during wal replay" file=blocks err=null
+level=info ts=2026-01-07T17:51:57.995382748Z caller=ingester.go:451 msg="wal replay complete"
+level=info ts=2026-01-07T17:51:57.995405131Z caller=ingester.go:465 msg="reloading local blocks" tenants=0
+level=info ts=2026-01-07T17:51:57.995468748Z caller=lifecycler.go:714 msg="instance not found in ring, adding with no tokens" ring=ingester
+level=info ts=2026-01-07T17:51:57.995478319Z caller=app.go:213 msg="Tempo started"
+level=info ts=2026-01-07T17:51:57.99556839Z caller=lifecycler.go:556 msg="auto-joining cluster after timeout" ring=ingester
+level=info ts=2026-01-07T17:51:58.000147944Z caller=memberlist_client.go:673 phase=startup msg="joining memberlist cluster succeeded" reached_nodes=3 elapsed_time=5.084612ms
+level=info ts=2026-01-07T18:02:24.838257426Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=a3d0d21a-41c4-442c-bb36-5af806199fa4
+level=info ts=2026-01-07T18:02:28.294133067Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=a3d0d21a-41c4-442c-bb36-5af806199fa4
+level=info ts=2026-01-07T18:02:41.032751336Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=a3d0d21a-41c4-442c-bb36-5af806199fa4 duration=12.738588217s
+level=info ts=2026-01-07T18:02:41.034000156Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=a3d0d21a-41c4-442c-bb36-5af806199fa4
+level=info ts=2026-01-07T18:12:25.251270981Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=681d74a4-964c-496a-aabb-32e298b82cdc
+level=info ts=2026-01-07T18:12:28.453125862Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=681d74a4-964c-496a-aabb-32e298b82cdc
+level=info ts=2026-01-07T18:12:42.200028814Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=681d74a4-964c-496a-aabb-32e298b82cdc duration=13.746872043s
+level=info ts=2026-01-07T18:12:42.239359091Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=681d74a4-964c-496a-aabb-32e298b82cdc
+level=info ts=2026-01-07T18:22:35.224977847Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=a6c3af44-183e-49bf-9788-ac7615b95717
+level=info ts=2026-01-07T18:22:39.755672169Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=a6c3af44-183e-49bf-9788-ac7615b95717
+level=info ts=2026-01-07T18:22:53.868830231Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=a6c3af44-183e-49bf-9788-ac7615b95717 duration=14.113116649s
+level=info ts=2026-01-07T18:22:53.873327138Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=a6c3af44-183e-49bf-9788-ac7615b95717
+level=info ts=2026-01-07T18:32:46.17864383Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=bedc2d28-4809-4d16-9794-9e81562bf9bd
+level=info ts=2026-01-07T18:32:51.767165416Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=bedc2d28-4809-4d16-9794-9e81562bf9bd
+level=info ts=2026-01-07T18:33:05.99525461Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=bedc2d28-4809-4d16-9794-9e81562bf9bd duration=14.228054477s
+level=info ts=2026-01-07T18:33:05.99733962Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=bedc2d28-4809-4d16-9794-9e81562bf9bd
+level=info ts=2026-01-07T18:42:57.135740102Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=37a0735c-ce8d-4509-a671-208cbc1a6aeb
+level=info ts=2026-01-07T18:43:05.607704467Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=37a0735c-ce8d-4509-a671-208cbc1a6aeb
+level=info ts=2026-01-07T18:43:20.115706014Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=37a0735c-ce8d-4509-a671-208cbc1a6aeb duration=14.507968331s
+level=info ts=2026-01-07T18:43:20.117055019Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=37a0735c-ce8d-4509-a671-208cbc1a6aeb
+level=info ts=2026-01-07T18:52:57.254538154Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8
+level=info ts=2026-01-07T18:53:06.276472331Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8
+level=info ts=2026-01-07T18:53:20.675544125Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=57caeefd-0cb9-4713-8132-14f4e5c327c8 duration=14.399029734s
+level=info ts=2026-01-07T18:53:20.676818406Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8
+level=error ts=2026-01-07T18:53:20.814885036Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 attempts=1 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/57caeefd-0cb9-4713-8132-14f4e5c327c8/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T18:53:20.814920995Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 backoff=30s
+level=info ts=2026-01-07T18:53:50.815263378Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8
+level=error ts=2026-01-07T18:53:50.994659438Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 attempts=2 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/57caeefd-0cb9-4713-8132-14f4e5c327c8/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T18:53:50.994695927Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 backoff=1m0s
+level=info ts=2026-01-07T18:54:50.995732533Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8
+level=error ts=2026-01-07T18:54:51.160561274Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 attempts=3 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/57caeefd-0cb9-4713-8132-14f4e5c327c8/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T18:54:51.160604742Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 backoff=2m0s
+level=info ts=2026-01-07T18:56:51.160678574Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8
+level=error ts=2026-01-07T18:56:51.301833678Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 attempts=4 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/57caeefd-0cb9-4713-8132-14f4e5c327c8/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T18:56:51.301866497Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 backoff=2m0s
+level=info ts=2026-01-07T18:58:51.302337073Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8
+level=error ts=2026-01-07T18:58:51.45707154Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 attempts=5 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/57caeefd-0cb9-4713-8132-14f4e5c327c8/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T18:58:51.457106415Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 backoff=2m0s
+level=info ts=2026-01-07T19:00:51.458159609Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8
+level=error ts=2026-01-07T19:00:51.607488694Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 attempts=6 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/57caeefd-0cb9-4713-8132-14f4e5c327c8/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T19:00:51.607526873Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 backoff=2m0s
+level=info ts=2026-01-07T19:02:51.60759319Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8
+level=error ts=2026-01-07T19:02:51.745713546Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 attempts=7 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/57caeefd-0cb9-4713-8132-14f4e5c327c8/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T19:02:51.745770761Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 backoff=2m0s
+level=info ts=2026-01-07T19:03:06.302068922Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3
+level=info ts=2026-01-07T19:03:13.028421563Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3
+level=info ts=2026-01-07T19:03:27.360028322Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=8f94dcb8-5498-4cbe-b0df-f9040695a3a3 duration=14.331572432s
+level=info ts=2026-01-07T19:03:27.394996863Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3
+level=error ts=2026-01-07T19:03:27.551515365Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3 attempts=1 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/8f94dcb8-5498-4cbe-b0df-f9040695a3a3/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T19:03:27.551550483Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3 backoff=30s
+level=info ts=2026-01-07T19:03:57.552133989Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3
+level=error ts=2026-01-07T19:03:57.703591174Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3 attempts=2 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/8f94dcb8-5498-4cbe-b0df-f9040695a3a3/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T19:03:57.703627122Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3 backoff=1m0s
+level=info ts=2026-01-07T19:04:51.746021083Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8
+level=error ts=2026-01-07T19:04:51.882143481Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 attempts=8 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/57caeefd-0cb9-4713-8132-14f4e5c327c8/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T19:04:51.882181164Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 backoff=2m0s
+level=info ts=2026-01-07T19:04:57.704402302Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3
+level=error ts=2026-01-07T19:04:57.847678725Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3 attempts=3 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/8f94dcb8-5498-4cbe-b0df-f9040695a3a3/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T19:04:57.847713444Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3 backoff=2m0s
+level=info ts=2026-01-07T19:06:51.883247307Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8
+level=error ts=2026-01-07T19:06:52.019658328Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 attempts=9 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/57caeefd-0cb9-4713-8132-14f4e5c327c8/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T19:06:52.019692487Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=57caeefd-0cb9-4713-8132-14f4e5c327c8 backoff=2m0s
+level=info ts=2026-01-07T19:06:57.847965357Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3
+level=error ts=2026-01-07T19:06:58.022864984Z caller=flush.go:250 org_id=tenant-1 msg="error performing op in flushQueue" op=1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3 attempts=4 err="error copying block from local to remote backend: error writing object to s3 backend, object tenant-1/8f94dcb8-5498-4cbe-b0df-f9040695a3a3/data.parquet: Storage backend has reached its minimum free drive threshold. Please delete a few objects to proceed."
+level=info ts=2026-01-07T19:06:58.022904445Z caller=flush.go:413 org_id=tenant-1 msg="retrying op in flushQueue" op=1 block=8f94dcb8-5498-4cbe-b0df-f9040695a3a3 backoff=2m0s

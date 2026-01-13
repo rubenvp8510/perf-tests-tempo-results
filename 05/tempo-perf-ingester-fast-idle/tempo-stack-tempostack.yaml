@@ -1,0 +1,147 @@
+apiVersion: tempo.grafana.com/v1alpha1
+kind: TempoStack
+metadata:
+  annotations:
+    tempo.grafana.com/cert-hash-tempo-tempostack-compactor-mtls: b2c14e1eaec9e116b0ed884a643af06fc07d4906313d8f8a2eeb0c4dc47abade
+    tempo.grafana.com/cert-hash-tempo-tempostack-distributor-mtls: 5ee19a43d3440e51d74497b66637eb28f77ecef3ec4ada070ec85f6baeddd9ac
+    tempo.grafana.com/cert-hash-tempo-tempostack-gateway-mtls: e0e195919d9aa15e166fcddf63640bf5bb4600689fe8fd334cd4ae1191b03c1d
+    tempo.grafana.com/cert-hash-tempo-tempostack-ingester-mtls: 606626a2495cadbcbea9d2d1f7bdffedc589f067208baff89a3f1b2c65df7465
+    tempo.grafana.com/cert-hash-tempo-tempostack-querier-mtls: c067701f1a19b6b78efbb18a9cee5b6ae08a27820b8fda24515a31de331bcc35
+    tempo.grafana.com/cert-hash-tempo-tempostack-query-frontend-mtls: a19749ed0fb0c4f4e65b103cfd543e33b8c41f19285f2cc8f2075e4ac36f3e12
+  creationTimestamp: "2026-01-08T00:17:17Z"
+  finalizers:
+  - tempo.grafana.com/finalizer
+  generation: 1
+  labels:
+    app.kubernetes.io/managed-by: tempo-operator
+    tempo-perf-test.io/instance: tempo-perf-ingester-fast-idle
+    tempo-perf-test.io/managed-by: framework
+    tempo.grafana.com/distribution: openshift
+  name: tempostack
+  namespace: tempo-perf-ingester-fast-idle
+  resourceVersion: "438896"
+  uid: d4e7a956-684b-4809-8632-b59518bf08d6
+spec:
+  extraConfig:
+    tempo:
+      ingester:
+        concurrent_flushes: 4
+        flush_check_period: 10s
+        max_block_duration: 30m
+        trace_idle_period: 1s
+  hashRing:
+    memberlist: {}
+  images: {}
+  limits:
+    global:
+      ingestion:
+        maxTracesPerUser: 0
+      query:
+        maxSearchDuration: 0s
+  managementState: Managed
+  observability:
+    grafana:
+      instanceSelector: {}
+    metrics:
+      createPrometheusRules: true
+      createServiceMonitors: true
+    tracing:
+      jaeger_agent_endpoint: localhost:6831
+      otlp_http_endpoint: http://localhost:4320
+  replicationFactor: 1
+  resources: {}
+  retention:
+    global:
+      traces: 48h0m0s
+  search:
+    defaultResultLimit: 20
+    maxDuration: 0s
+  serviceAccount: tempo-tempostack
+  storage:
+    secret:
+      name: minio
+      type: s3
+    tls:
+      enabled: false
+  storageSize: 10Gi
+  template:
+    compactor:
+      replicas: 1
+    distributor:
+      component:
+        replicas: 1
+      tls:
+        enabled: false
+    gateway:
+      component:
+        replicas: 1
+      enabled: true
+      ingress:
+        route:
+          termination: reencrypt
+        type: route
+      rbac:
+        enabled: false
+    ingester:
+      replicas: 1
+    querier:
+      replicas: 1
+    queryFrontend:
+      component:
+        replicas: 1
+      jaegerQuery:
+        enabled: true
+        ingress:
+          route: {}
+        monitorTab:
+          enabled: false
+          prometheusEndpoint: ""
+        servicesQueryDuration: 72h0m0s
+        tempoQuery: {}
+  tenants:
+    authentication:
+    - tenantId: tenant-1
+      tenantName: tenant-1
+    mode: openshift
+  timeout: 30s
+status:
+  components:
+    compactor:
+      Running:
+      - tempo-tempostack-compactor-7b4bf6646f-98j6b
+    distributor:
+      Running:
+      - tempo-tempostack-distributor-5586f944c7-9mjr7
+    gateway:
+      Running:
+      - tempo-tempostack-gateway-8554bcf654-zqqq4
+    ingester:
+      Running:
+      - tempo-tempostack-ingester-0
+    querier:
+      Running:
+      - tempo-tempostack-querier-76bc69bdcd-v45kp
+    queryFrontend:
+      Running:
+      - tempo-tempostack-query-frontend-bcc8cb585-dmrhl
+  conditions:
+  - lastTransitionTime: "2026-01-08T00:20:01Z"
+    message: Some Tempo components are pending on dependencies
+    reason: PendingComponents
+    status: "False"
+    type: Pending
+  - lastTransitionTime: "2026-01-08T00:20:01Z"
+    message: 'built in cert manager error: failed to add certificate hash annotations:
+      Operation cannot be fulfilled on tempostacks.tempo.grafana.com "tempostack":
+      the object has been modified; please apply your changes to the latest version
+      and try again'
+    reason: FailedReconciliation
+    status: "False"
+    type: Failed
+  - lastTransitionTime: "2026-01-08T00:20:01Z"
+    message: All components are operational
+    reason: Ready
+    status: "True"
+    type: Ready
+  operatorVersion: 0.19.0
+  tempoVersion: 2.9.0

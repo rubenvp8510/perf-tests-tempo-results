@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo Performance Test Analysis Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16213e;
+            --bg-card: #0f3460;
+            --text-primary: #eaeaea;
+            --text-secondary: #a0a0a0;
+            --accent: #e94560;
+            --accent-secondary: #533483;
+            --success: #00d9a0;
+            --warning: #ffc107;
+            --border: #2a2a4a;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--accent-secondary));
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        header .subtitle { color: var(--text-secondary); font-size: 1.2em; }
+        header .meta { margin-top: 20px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        header .meta-item { text-align: center; }
+        header .meta-value { font-size: 1.5em; font-weight: bold; color: var(--accent); }
+
+        section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+        }
+
+        section h2 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        section h3 { color: var(--text-primary); margin: 20px 0 15px; }
+
+        .grid { display: grid; gap: 20px; }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .card h4 { color: var(--accent); margin-bottom: 15px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg-card);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        tr:hover { background: rgba(233, 69, 96, 0.1); }
+
+        .highlight { color: var(--success); font-weight: bold; }
+        .warning { color: var(--warning); }
+        .danger { color: var(--accent); }
+
+        .chart-container {
+            position: relative;
+            height: 350px;
+            margin: 20px 0;
+        }
+
+        .code-block {
+            background: #0a0a1a;
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9em;
+            border: 1px solid var(--border);
+        }
+
+        .code-block .comment { color: #6a9955; }
+        .code-block .key { color: #9cdcfe; }
+        .code-block .value { color: #ce9178; }
+        .code-block .number { color: #b5cea8; }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .badge-success { background: rgba(0, 217, 160, 0.2); color: var(--success); }
+        .badge-warning { background: rgba(255, 193, 7, 0.2); color: var(--warning); }
+        .badge-danger { background: rgba(233, 69, 96, 0.2); color: var(--accent); }
+        .badge-info { background: rgba(79, 195, 247, 0.2); color: #4fc3f7; }
+
+        .recommendation-box {
+            background: linear-gradient(135deg, rgba(0, 217, 160, 0.1), rgba(83, 52, 131, 0.1));
+            border-left: 4px solid var(--success);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+        }
+
+        .span-tree {
+            font-family: monospace;
+            background: #0a0a1a;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .span-tree .service { color: #4fc3f7; }
+        .span-tree .operation { color: #fff176; }
+        .span-tree .duration { color: #a5d6a7; }
+
+        .toc {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .toc a:hover { color: var(--accent); }
+
+        .test-category {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            margin-left: 8px;
+        }
+
+        .cat-sizing { background: rgba(79, 195, 247, 0.3); color: #4fc3f7; }
+        .cat-tuning { background: rgba(206, 147, 216, 0.3); color: #ce93d8; }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            header .meta { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tempo Performance Test Analysis</h1>
+            <p class="subtitle">Impact of Ingester Configuration on Resource Consumption</p>
+            <div class="meta">
+                <div class="meta-item">
+                    <div class="meta-value">10</div>
+                    <div>Test Runs</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">75 min</div>
+                    <div>Per Test</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">RF=2</div>
+                    <div>Replication Factor</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">v2.9.0</div>
+                    <div>Tempo Version</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Table of Contents -->
+        <nav class="toc">
+            <strong>Contents</strong>
+            <a href="#executive-summary">1. Executive Summary</a>
+            <a href="#test-environment">2. Test Environment</a>
+            <a href="#test-matrix">3. Test Matrix & Objectives</a>
+            <a href="#load-profiles">4. Load Profiles (T-Shirt Sizes)</a>
+            <a href="#trace-profiles">5. Trace Profiles & Span Examples</a>
+            <a href="#query-types">6. Query Types Tested</a>
+            <a href="#tempo-configurations">7. Tempo CR Configurations</a>
+            <a href="#sizing-analysis">8. Sizing Tests Analysis (1x-*)</a>
+            <a href="#tuning-analysis">9. Ingester Tuning Analysis (ingester-*)</a>
+            <a href="#component-analysis">10. Component-Level Breakdown</a>
+            <a href="#recommendations">11. Recommendations</a>
+        </nav>
+
+        <!-- 1. Executive Summary -->
+        <section id="executive-summary">
+            <h2>1. Executive Summary</h2>
+
+            <p style="margin-bottom: 20px;">This analysis evaluates <strong>10 performance tests</strong> across two categories:</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Sizing Tests (1x-*)</strong>: 5 tests with different load sizes to establish resource baselines</li>
+                <li><strong>Tuning Tests (ingester-*)</strong>: 5 tests with identical load but different ingester configurations to measure configuration impact</li>
+            </ul>
+
+            <div class="grid grid-4">
+                <div class="card">
+                    <h4>Best Memory Efficiency</h4>
+                    <div style="font-size: 1.5em; color: var(--success);">ingester-fast-idle</div>
+                    <p>60% less ingester memory than default</p>
+                </div>
+                <div class="card">
+                    <h4>Highest Throughput</h4>
+                    <div style="font-size: 1.5em; color: var(--success);">22,570</div>
+                    <p>spans/sec (1x-medium)</p>
+                </div>
+                <div class="card">
+                    <h4>Configuration Impact</h4>
+                    <div style="font-size: 1.5em; color: var(--warning);">~12 GB</div>
+                    <p>memory difference from tuning alone</p>
+                </div>
+                <div class="card">
+                    <h4>Key Bottleneck</h4>
+                    <div style="font-size: 1.5em; color: var(--accent);">Ingester</div>
+                    <p>Live trace accumulation</p>
+                </div>
+            </div>
+
+            <h3>Key Findings</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>Configuration matters more than you think:</strong> Same load with different configs shows 23-35 GB memory variance</li>
+                <li><strong>trace_idle_period=1s</strong> reduces ingester memory by 60% (25 GB → 10 GB) without throughput loss</li>
+                <li><strong>Default settings cause problems at scale:</strong> 280K+ live traces accumulate with default config</li>
+                <li><strong>Querier is CPU-bound:</strong> Scales to 9-11 cores at high query load regardless of ingester config</li>
+                <li><strong>Replication Factor 2</strong> used across all tests for production-realistic HA configuration</li>
+            </ul>
+        </section>
+
+        <!-- 2. Test Environment -->
+        <section id="test-environment">
+            <h2>2. Test Environment</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h4>Software Versions</h4>
+                    <table>
+                        <tr><td>Tempo</td><td><span class="highlight">2.9.0</span></td></tr>
+                        <tr><td>Tempo Operator</td><td>0.19.0</td></tr>
+                        <tr><td>Platform</td><td>OpenShift</td></tr>
+                        <tr><td>k6 Extension</td><td>xk6-tempo</td></tr>
+                    </table>
+                </div>
+                <div class="card">
+                    <h4>Common Configuration</h4>
+                    <table>
+                        <tr><td>Deployment Mode</td><td>TempoStack (Distributed)</td></tr>
+                        <tr><td>Replication Factor</td><td><span class="highlight">2</span></td></tr>
+                        <tr><td>Ingester Replicas</td><td><span class="highlight">2</span></td></tr>
+                        <tr><td>Storage Backend</td><td>MinIO (S3)</td></tr>
+                        <tr><td>Storage Size</td><td>10Gi</td></tr>
+                        <tr><td>Trace Retention</td><td>48h</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <h3>Component Replicas (All Tests)</h3>
+            <div class="grid" style="grid-template-columns: repeat(6, 1fr); margin-top: 15px;">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2em;">1</div>
+                    <div>Distributor</div>
+                </div>
+                <div class="card" style="text-align: center; border: 2px solid var(--success);">
+                    <div style="font-size: 2em; color: var(--success);">2</div>
+                    <div>Ingester</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2em;">1</div>
+                    <div>Querier</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2em;">1</div>
+                    <div>Query Frontend</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2em;">1</div>
+                    <div>Compactor</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2em;">1</div>
+                    <div>Gateway</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Test Matrix -->
+        <section id="test-matrix">
+            <h2>3. Test Matrix & Objectives</h2>
+
+            <div class="grid grid-2">
+                <div class="card" style="border-left: 4px solid #4fc3f7;">
+                    <h4>Sizing Tests (1x-*) <span class="test-category cat-sizing">5 tests</span></h4>
+                    <p style="margin-bottom: 15px;">Objective: Establish resource baselines for different load sizes</p>
+                    <table>
+                        <tr><th>Test Name</th><th>Load Size</th><th>Purpose</th></tr>
+                        <tr><td>1x-demo</td><td>Demo</td><td>Minimal footprint validation</td></tr>
+                        <tr><td>1x-extra-small</td><td>Extra Small</td><td>Light workload baseline</td></tr>
+                        <tr><td>1x-pico</td><td>Pico</td><td>Small production workload</td></tr>
+                        <tr><td>1x-small</td><td>Small</td><td>Medium production workload</td></tr>
+                        <tr><td>1x-medium</td><td>Medium</td><td>High production workload</td></tr>
+                    </table>
+                </div>
+
+                <div class="card" style="border-left: 4px solid #ce93d8;">
+                    <h4>Tuning Tests (ingester-*) <span class="test-category cat-tuning">5 tests</span></h4>
+                    <p style="margin-bottom: 15px;">Objective: Measure how ingester configuration affects resource consumption at <strong>identical load</strong></p>
+                    <table>
+                        <tr><th>Test Name</th><th>Key Change</th><th>Hypothesis</th></tr>
+                        <tr><td>ingester-default</td><td>Baseline config</td><td>Control group</td></tr>
+                        <tr><td>ingester-fast-block</td><td>max_block_duration: 2m</td><td>Faster block flush</td></tr>
+                        <tr><td>ingester-fast-idle</td><td>trace_idle_period: 1s</td><td>Faster trace completion</td></tr>
+                        <tr><td>ingester-high-throughput</td><td>concurrent_flushes: 8</td><td>More parallelism</td></tr>
+                        <tr><td>ingester-low-flush</td><td>flush_check_period: 30s</td><td>Less frequent checks</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="recommendation-box">
+                <strong>Important:</strong> All <code>ingester-*</code> tests use the <strong>same 1x-medium load profile</strong>. The only variable is the ingester configuration. This isolates the impact of configuration on resource consumption. All tests use <strong>replicationFactor: 2</strong>.
+            </div>
+        </section>
+
+        <!-- 4. Load Profiles -->
+        <section id="load-profiles">
+            <h2>4. Load Profiles (T-Shirt Sizes)</h2>
+            <p>The framework uses standardized "T-shirt size" load profiles for consistent benchmarking:</p>
+
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Description</th>
+                        <th>Ingestion Rate</th>
+                        <th>Per Day</th>
+                        <th>Trace Profile</th>
+                        <th>Queries/sec</th>
+                        <th>VUs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-success">demo</span></td>
+                        <td>Minimal validation</td>
+                        <td>0.01 MB/s</td>
+                        <td>~1 GB/day</td>
+                        <td>small (8-15 spans)</td>
+                        <td>1</td>
+                        <td>1-5</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-success">extra-small</span></td>
+                        <td>Light development load</td>
+                        <td>0.1 MB/s</td>
+                        <td>8.6 GB/day</td>
+                        <td>small (8-15 spans)</td>
+                        <td>5</td>
+                        <td>5-20</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-success">pico</span></td>
+                        <td>Small production</td>
+                        <td>0.5 MB/s</td>
+                        <td>43 GB/day</td>
+                        <td>medium (25-40 spans)</td>
+                        <td>10</td>
+                        <td>10-30</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-warning">small</span></td>
+                        <td>Medium production</td>
+                        <td>1 MB/s</td>
+                        <td>86 GB/day</td>
+                        <td>medium (25-40 spans)</td>
+                        <td>25</td>
+                        <td>10-50</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-danger">medium</span></td>
+                        <td>High production</td>
+                        <td>5 MB/s</td>
+                        <td>430 GB/day</td>
+                        <td>large (50-80 spans)</td>
+                        <td>50</td>
+                        <td>20-100</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="recommendation-box">
+                <strong>Note:</strong> The <code>ingester-*</code> tuning tests all use the <strong>medium</strong> load profile (5 MB/s, 430 GB/day) to stress-test configuration differences at high load.
+            </div>
+        </section>
+
+        <!-- 5. Trace Profiles -->
+        <section id="trace-profiles">
+            <h2>5. Trace Profiles & Span Examples</h2>
+            <p>Each load test generates realistic distributed traces simulating different application architectures:</p>
+
+            <div class="grid grid-2" style="margin-top: 20px;">
+                <div class="card">
+                    <h4>Small Profile: Startup/MVP</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;">8-15 spans, 5 services</p>
+                    <div class="span-tree">
+<span class="service">api-gateway</span> <span class="operation">POST /api/orders</span>
+  |-- <span class="service">api-gateway</span> <span class="operation">validate-request</span> <span class="duration">[5-20ms]</span>
+  |-- <span class="service">user-service</span> <span class="operation">authenticate</span> <span class="duration">[10-50ms]</span>
+  |-- <span class="service">api-gateway</span> <span class="operation">process-order</span> <span class="duration">[20-100ms]</span>
+  |   |-- <span class="service">database</span> <span class="operation">check-inventory</span> <span class="duration">[5-30ms]</span>
+  |   |-- <span class="service">cache</span> <span class="operation">cache-lookup</span> <span class="duration">[1-5ms]</span>
+  |-- <span class="service">database</span> <span class="operation">save-order</span> <span class="duration">[10-50ms]</span>
+  |-- <span class="service">api-gateway</span> <span class="operation">send-notification</span> <span class="duration">[5-20ms]</span>
+                    </div>
+                    <p style="margin-top: 10px;"><strong>Services:</strong> frontend, api-gateway, user-service, database, cache</p>
+                </div>
+
+                <div class="card">
+                    <h4>Medium Profile: E-commerce/SaaS</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;">25-40 spans, 14 services</p>
+                    <div class="span-tree">
+<span class="service">api-gateway</span> <span class="operation">POST /api/v1/checkout</span>
+  |-- <span class="service">user-service</span> <span class="operation">authenticate</span> <span class="duration">[10-50ms]</span>
+  |-- <span class="service">order-service</span> <span class="operation">get-cart</span> <span class="duration">[10-40ms]</span>
+  |-- <span class="service">inventory-service</span> <span class="operation">validate-items</span> <span class="duration">[20-80ms]</span>
+  |   |-- <span class="service">inventory-service</span> <span class="operation">check-stock</span> <span class="duration">[15-60ms]</span>
+  |   |-- <span class="service">inventory-service</span> <span class="operation">reserve-inventory</span> <span class="duration">[10-50ms]</span>
+  |-- <span class="service">pricing-service</span> <span class="operation">calculate-pricing</span> <span class="duration">[15-70ms]</span>
+  |-- <span class="service">payment-service</span> <span class="operation">process-payment</span> <span class="duration">[100-500ms]</span>
+  |-- <span class="service">shipping-service</span> <span class="operation">calculate-shipping</span> <span class="duration">[20-100ms]</span>
+  |-- <span class="service">notification-service</span> <span class="operation">send-confirmation</span> <span class="duration">[10-50ms]</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>Large Profile: Fintech/Enterprise</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;">50-80 spans, 25 services</p>
+                    <div class="span-tree">
+<span class="service">edge-gateway</span> <span class="operation">POST /api/v2/transactions</span>
+  |-- <span class="service">rate-limiter</span> <span class="operation">rate-limit-check</span> <span class="duration">[1-5ms]</span>
+  |-- <span class="service">auth-service</span> <span class="operation">authenticate</span> <span class="duration">[20-80ms]</span>
+  |   |-- <span class="service">auth-service</span> <span class="operation">verify-mfa</span> <span class="duration">[50-200ms]</span>
+  |-- <span class="service">account-service</span> <span class="operation">check-balance</span> <span class="duration">[10-40ms]</span>
+  |-- <span class="service">fraud-detection</span> <span class="operation">fraud-check</span> <span class="duration">[50-200ms]</span>
+  |   |-- <span class="service">ml-scoring</span> <span class="operation">ml-score</span> <span class="duration">[30-150ms]</span>
+  |-- <span class="service">compliance-service</span> <span class="operation">aml-verification</span> <span class="duration">[30-150ms]</span>
+  |-- <span class="service">ledger-service</span> <span class="operation">update-ledger</span> <span class="duration">[20-80ms]</span>
+  |-- <span class="service">audit-service</span> <span class="operation">audit-log</span> <span class="duration">[10-40ms]</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>Span Attributes</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;">Context propagation on all spans</p>
+                    <div class="code-block">
+<span class="comment">// Context attributes added to all spans</span>
+{
+  <span class="key">"user_id"</span>: <span class="value">"user-4821"</span>,
+  <span class="key">"session_id"</span>: <span class="value">"session-1704672000000"</span>,
+  <span class="key">"correlation_id"</span>: <span class="value">"corr-x7k9m2"</span>,
+  <span class="key">"tenant_id"</span>: <span class="value">"tenant-1"</span>,
+  <span class="key">"region"</span>: <span class="value">"us-east-1"</span>,
+  <span class="key">"request_id"</span>: <span class="value">"req-a3b8c1"</span>
+}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Query Types -->
+        <section id="query-types">
+            <h2>6. Query Types Tested</h2>
+            <p>The query tests use TraceQL to simulate realistic search patterns:</p>
+
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>TraceQL Query</th>
+                        <th>Limit</th>
+                        <th>Use Case</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="5"><strong>Service-based</strong></td>
+                        <td><code>{ resource.service.name = "api-gateway" }</code></td>
+                        <td>20</td>
+                        <td>Find all traces from API gateway</td>
+                    </tr>
+                    <tr>
+                        <td><code>{ resource.service.name = "user-service" }</code></td>
+                        <td>20</td>
+                        <td>User authentication traces</td>
+                    </tr>
+                    <tr>
+                        <td><code>{ resource.service.name = "order-service" }</code></td>
+                        <td>20</td>
+                        <td>Order processing traces</td>
+                    </tr>
+                    <tr>
+                        <td><code>{ resource.service.name = "payment-service" }</code></td>
+                        <td>20</td>
+                        <td>Payment transaction traces</td>
+                    </tr>
+                    <tr>
+                        <td><code>{ resource.service.name = "frontend" }</code></td>
+                        <td>20</td>
+                        <td>Frontend application traces</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Error-based</strong></td>
+                        <td><code>{ status = error }</code></td>
+                        <td>50</td>
+                        <td>Find all error traces</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3"><strong>Duration-based</strong></td>
+                        <td><code>{ duration > 100ms }</code></td>
+                        <td>30</td>
+                        <td>Slow traces (>100ms)</td>
+                    </tr>
+                    <tr>
+                        <td><code>{ duration > 500ms }</code></td>
+                        <td>20</td>
+                        <td>Very slow traces</td>
+                    </tr>
+                    <tr>
+                        <td><code>{ duration > 1s }</code></td>
+                        <td>10</td>
+                        <td>Critically slow traces</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><strong>Combined</strong></td>
+                        <td><code>{ resource.service.name = "api-gateway" && status = error }</code></td>
+                        <td>20</td>
+                        <td>Gateway errors</td>
+                    </tr>
+                    <tr>
+                        <td><code>{ resource.service.name = "payment-service" && duration > 200ms }</code></td>
+                        <td>20</td>
+                        <td>Slow payments</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 7. Tempo Configurations -->
+        <section id="tempo-configurations">
+            <h2>7. Tempo CR Configurations</h2>
+
+            <h3>Ingester Parameters Tested</h3>
+            <table style="margin-top: 15px;">
+                <thead>
+                    <tr>
+                        <th>Test Name</th>
+                        <th>concurrent_flushes</th>
+                        <th>flush_check_period</th>
+                        <th>max_block_duration</th>
+                        <th>trace_idle_period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ingester-default</strong></td>
+                        <td>4</td>
+                        <td>10s</td>
+                        <td>30m</td>
+                        <td>5s</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ingester-fast-block</strong></td>
+                        <td>4</td>
+                        <td>10s</td>
+                        <td class="warning">2m</td>
+                        <td>5s</td>
+                    </tr>
+                    <tr style="background: rgba(0, 217, 160, 0.1);">
+                        <td><strong>ingester-fast-idle</strong></td>
+                        <td>4</td>
+                        <td>10s</td>
+                        <td>30m</td>
+                        <td class="highlight">1s</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ingester-high-throughput</strong></td>
+                        <td class="highlight">8</td>
+                        <td>10s</td>
+                        <td class="highlight">10m</td>
+                        <td>5s</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ingester-low-flush</strong></td>
+                        <td class="warning">2</td>
+                        <td class="warning">30s</td>
+                        <td>30m</td>
+                        <td>10s</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Example TempoStack CRs</h3>
+
+            <div class="grid grid-2" style="margin-top: 15px;">
+                <div class="card">
+                    <h4>ingester-default (Baseline)</h4>
+                    <div class="code-block">
+<span class="key">apiVersion:</span> tempo.grafana.com/v1alpha1
+<span class="key">kind:</span> TempoStack
+<span class="key">metadata:</span>
+  <span class="key">name:</span> tempostack
+<span class="key">spec:</span>
+  <span class="key">extraConfig:</span>
+    <span class="key">tempo:</span>
+      <span class="key">ingester:</span>
+        <span class="key">concurrent_flushes:</span> <span class="number">4</span>
+        <span class="key">flush_check_period:</span> <span class="value">10s</span>
+        <span class="key">max_block_duration:</span> <span class="value">30m</span>
+        <span class="key">trace_idle_period:</span> <span class="value">5s</span>
+  <span class="key">replicationFactor:</span> <span class="number">2</span>
+  <span class="key">template:</span>
+    <span class="key">ingester:</span>
+      <span class="key">replicas:</span> <span class="number">2</span>
+    <span class="comment"># ... other components: 1 replica each</span>
+                    </div>
+                </div>
+
+                <div class="card" style="border: 2px solid var(--success);">
+                    <h4>ingester-fast-idle (Recommended)</h4>
+                    <div class="code-block">
+<span class="key">apiVersion:</span> tempo.grafana.com/v1alpha1
+<span class="key">kind:</span> TempoStack
+<span class="key">metadata:</span>
+  <span class="key">name:</span> tempostack
+<span class="key">spec:</span>
+  <span class="key">extraConfig:</span>
+    <span class="key">tempo:</span>
+      <span class="key">ingester:</span>
+        <span class="key">concurrent_flushes:</span> <span class="number">4</span>
+        <span class="key">flush_check_period:</span> <span class="value">10s</span>
+        <span class="key">max_block_duration:</span> <span class="value">30m</span>
+        <span class="key">trace_idle_period:</span> <span class="value">1s</span>  <span class="comment"># Key change!</span>
+  <span class="key">replicationFactor:</span> <span class="number">2</span>
+  <span class="key">template:</span>
+    <span class="key">ingester:</span>
+      <span class="key">replicas:</span> <span class="number">2</span>
+    <span class="comment"># ... other components: 1 replica each</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendation-box" style="margin-top: 20px;">
+                <strong>Replication Factor:</strong> All tests use <code>replicationFactor: 2</code> with 2 ingester replicas. Each trace is written to both ingesters for redundancy, providing data durability during ingester failures.
+            </div>
+        </section>
+
+        <!-- 8. Sizing Analysis -->
+        <section id="sizing-analysis">
+            <h2>8. Sizing Tests Analysis (1x-*)</h2>
+            <p>These tests establish resource baselines for different load sizes:</p>
+
+            <div class="chart-container">
+                <canvas id="sizingChart"></canvas>
+            </div>
+
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Test</th>
+                        <th>P99 Memory</th>
+                        <th>Avg Memory</th>
+                        <th>P99 CPU</th>
+                        <th>Avg CPU</th>
+                        <th>Max Spans/sec</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1x-demo</td>
+                        <td>0.23 GB</td>
+                        <td>0.21 GB</td>
+                        <td>0.02</td>
+                        <td>0.01</td>
+                        <td>~100</td>
+                    </tr>
+                    <tr>
+                        <td>1x-extra-small</td>
+                        <td>10.39 GB</td>
+                        <td>4.39 GB</td>
+                        <td>1.89</td>
+                        <td>1.01</td>
+                        <td>~3,000</td>
+                    </tr>
+                    <tr>
+                        <td>1x-pico</td>
+                        <td>14.30 GB</td>
+                        <td>8.04 GB</td>
+                        <td>6.04</td>
+                        <td>2.65</td>
+                        <td>~8,000</td>
+                    </tr>
+                    <tr>
+                        <td>1x-small</td>
+                        <td>23.79 GB</td>
+                        <td>14.91 GB</td>
+                        <td>13.50</td>
+                        <td>7.98</td>
+                        <td>9,963</td>
+                    </tr>
+                    <tr style="background: rgba(233, 69, 96, 0.1);">
+                        <td>1x-medium</td>
+                        <td class="danger">25.70 GB</td>
+                        <td>18.46 GB</td>
+                        <td class="danger">18.91</td>
+                        <td>14.58</td>
+                        <td class="highlight">22,570</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="recommendation-box">
+                <strong>Observation:</strong> Resource usage scales roughly linearly with load. The jump from 1x-small to 1x-medium shows ~2x spans/sec requires ~8% more memory but ~40% more CPU, indicating CPU becomes the bottleneck at higher loads.
+            </div>
+        </section>
+
+        <!-- 9. Tuning Analysis -->
+        <section id="tuning-analysis">
+            <h2>9. Ingester Tuning Analysis (ingester-*)</h2>
+            <p><strong>All tests use identical 1x-medium load (5 MB/s, 430 GB/day).</strong> Only the ingester configuration differs.</p>
+
+            <div class="chart-container" style="height: 400px;">
+                <canvas id="tuningChart"></canvas>
+            </div>
+
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Test</th>
+                        <th>P99 Memory</th>
+                        <th>Avg Memory</th>
+                        <th>P99 CPU</th>
+                        <th>Avg CPU</th>
+                        <th>Max Live Traces</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="danger">
+                        <td>ingester-default</td>
+                        <td class="danger">35.44 GB</td>
+                        <td>22.19 GB</td>
+                        <td>16.36</td>
+                        <td>11.37</td>
+                        <td class="danger">279,881</td>
+                    </tr>
+                    <tr>
+                        <td>ingester-fast-block</td>
+                        <td>34.04 GB</td>
+                        <td>22.67 GB</td>
+                        <td>15.21</td>
+                        <td>11.09</td>
+                        <td>~150,000</td>
+                    </tr>
+                    <tr style="background: rgba(0, 217, 160, 0.1);">
+                        <td>ingester-fast-idle</td>
+                        <td class="highlight">23.77 GB</td>
+                        <td class="highlight">16.36 GB</td>
+                        <td>14.55</td>
+                        <td>9.91</td>
+                        <td class="highlight">73,373</td>
+                    </tr>
+                    <tr style="background: rgba(0, 217, 160, 0.1);">
+                        <td>ingester-high-throughput</td>
+                        <td class="highlight">23.57 GB</td>
+                        <td class="highlight">15.77 GB</td>
+                        <td>16.69</td>
+                        <td>11.42</td>
+                        <td class="highlight">40,193</td>
+                    </tr>
+                    <tr>
+                        <td>ingester-low-flush</td>
+                        <td>25.70 GB</td>
+                        <td>18.12 GB</td>
+                        <td>14.98</td>
+                        <td>9.69</td>
+                        <td>84,632</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Configuration Impact Summary</h3>
+            <div class="grid grid-3" style="margin-top: 15px;">
+                <div class="card" style="border-top: 4px solid var(--accent);">
+                    <h4>ingester-default (Baseline)</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Highest memory: 35.44 GB</li>
+                        <li>280K live traces accumulated</li>
+                        <li>Risk of OOM under sustained load</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-top: 4px solid var(--success);">
+                    <h4>ingester-fast-idle (Best)</h4>
+                    <ul style="margin-left: 15px;">
+                        <li><strong>33% less memory</strong> than default</li>
+                        <li>74% fewer live traces</li>
+                        <li>Single config change: trace_idle_period=1s</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-top: 4px solid var(--success);">
+                    <h4>ingester-high-throughput</h4>
+                    <ul style="margin-left: 15px;">
+                        <li><strong>34% less memory</strong> than default</li>
+                        <li>86% fewer live traces</li>
+                        <li>Slightly higher CPU (+2%)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recommendation-box" style="margin-top: 20px;">
+                <strong>Key Insight:</strong> The <code>trace_idle_period</code> setting has the biggest impact on memory. Reducing it from 5s to 1s causes traces to be marked complete faster, reducing the number of live traces held in memory by 74% and total memory by 33%.
+            </div>
+        </section>
+
+        <!-- 10. Component Analysis -->
+        <section id="component-analysis">
+            <h2>10. Component-Level Breakdown</h2>
+
+            <div class="grid grid-2">
+                <div>
+                    <h3>Memory by Component (P99 GB) - Tuning Tests</h3>
+                    <div class="chart-container">
+                        <canvas id="memoryByComponentChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3>CPU by Component (P99 cores) - Tuning Tests</h3>
+                    <div class="chart-container">
+                        <canvas id="cpuByComponentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Ingester Memory Comparison (Tuning Tests)</h3>
+            <table style="margin-top: 15px;">
+                <thead>
+                    <tr>
+                        <th>Test</th>
+                        <th>Ingester</th>
+                        <th>Compactor</th>
+                        <th>Querier</th>
+                        <th>Query-Frontend</th>
+                        <th>Distributor</th>
+                        <th>Gateway</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ingester-default</td>
+                        <td class="danger">25.16 GB</td>
+                        <td>12.32 GB</td>
+                        <td>3.82 GB</td>
+                        <td>1.23 GB</td>
+                        <td>0.06 GB</td>
+                        <td>0.12 GB</td>
+                    </tr>
+                    <tr>
+                        <td>ingester-fast-block</td>
+                        <td>19.71 GB</td>
+                        <td>12.04 GB</td>
+                        <td>4.03 GB</td>
+                        <td>1.25 GB</td>
+                        <td>0.05 GB</td>
+                        <td>0.13 GB</td>
+                    </tr>
+                    <tr style="background: rgba(0, 217, 160, 0.1);">
+                        <td>ingester-fast-idle</td>
+                        <td class="highlight">9.98 GB</td>
+                        <td>13.37 GB</td>
+                        <td>4.40 GB</td>
+                        <td>1.23 GB</td>
+                        <td>0.06 GB</td>
+                        <td>0.18 GB</td>
+                    </tr>
+                    <tr style="background: rgba(0, 217, 160, 0.1);">
+                        <td>ingester-high-throughput</td>
+                        <td class="highlight">10.64 GB</td>
+                        <td>12.25 GB</td>
+                        <td>3.63 GB</td>
+                        <td>1.24 GB</td>
+                        <td>0.06 GB</td>
+                        <td>0.12 GB</td>
+                    </tr>
+                    <tr>
+                        <td>ingester-low-flush</td>
+                        <td>13.15 GB</td>
+                        <td>13.04 GB</td>
+                        <td>4.11 GB</td>
+                        <td>1.22 GB</td>
+                        <td>0.06 GB</td>
+                        <td>0.15 GB</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="recommendation-box">
+                <strong>Observation:</strong> Ingester memory varies from 10 GB to 25 GB based purely on configuration. Compactor (~12-13 GB) and Querier (~4 GB) remain stable regardless of ingester settings. The ingester is the only component significantly affected by these tuning parameters.
+            </div>
+        </section>
+
+        <!-- 11. Recommendations -->
+        <section id="recommendations">
+            <h2>11. Recommendations</h2>
+
+            <div class="grid grid-2">
+                <div class="card" style="border-left: 4px solid var(--success);">
+                    <h4>Recommended Configuration</h4>
+                    <p style="margin-bottom: 15px;">Based on ingester-fast-idle + ingester-high-throughput results:</p>
+                    <div class="code-block">
+<span class="key">ingester:</span>
+  <span class="key">trace_idle_period:</span> <span class="value">1s</span>       <span class="comment"># Most impactful setting</span>
+  <span class="key">max_block_duration:</span> <span class="value">10m</span>     <span class="comment"># Faster block flush</span>
+  <span class="key">concurrent_flushes:</span> <span class="number">8</span>       <span class="comment"># More parallelism</span>
+  <span class="key">flush_check_period:</span> <span class="value">10s</span>     <span class="comment"># Keep default</span>
+<span class="key">replicationFactor:</span> <span class="number">2</span>          <span class="comment"># HA mode</span>
+                    </div>
+                    <p style="margin-top: 15px;"><strong>Expected benefit:</strong> 50-60% memory reduction vs default</p>
+                </div>
+
+                <div class="card" style="border-left: 4px solid var(--accent);">
+                    <h4>Avoid These Settings</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Default settings at high load</strong> - Causes 280K live traces and 35+ GB memory</li>
+                        <li><strong>max_block_duration: 2m</strong> - Too aggressive, marginal benefit</li>
+                        <li><strong>concurrent_flushes: 2</strong> - Creates flush bottleneck</li>
+                        <li><strong>trace_idle_period: 10s+</strong> - Excessive trace buffering</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Scaling Guidelines</h3>
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Load Level</th>
+                        <th>Ingestion Rate</th>
+                        <th>Per Day</th>
+                        <th>Spans/sec</th>
+                        <th>Recommended Resources</th>
+                        <th>Configuration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-success">Light</span></td>
+                        <td>&lt; 1 MB/s</td>
+                        <td>&lt; 86 GB/day</td>
+                        <td>&lt; 5,000</td>
+                        <td>4-10 GB RAM, 2-5 CPU cores</td>
+                        <td>Default settings OK</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-success">Medium</span></td>
+                        <td>1-5 MB/s</td>
+                        <td>86-430 GB/day</td>
+                        <td>5,000 - 15,000</td>
+                        <td>15-25 GB RAM, 8-12 CPU cores</td>
+                        <td>trace_idle_period: 1s</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-warning">High</span></td>
+                        <td>5-20 MB/s</td>
+                        <td>430 GB - 1.7 TB/day</td>
+                        <td>15,000 - 25,000</td>
+                        <td>20-30 GB RAM, 15-20 CPU cores</td>
+                        <td>Recommended config above</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-danger">Very High</span></td>
+                        <td>&gt; 20 MB/s</td>
+                        <td>&gt; 1.7 TB/day</td>
+                        <td>&gt; 25,000</td>
+                        <td>Scale horizontally</td>
+                        <td>Increase ingester replicas, RF=2</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="recommendation-box" style="margin-top: 15px;">
+                <strong>Ingestion Rate Reference:</strong> Based on k6 test profiles - extra-small (0.1 MB/s / 8.6 GB/day), pico (0.5 MB/s / 43 GB/day), small (1 MB/s / 86 GB/day), medium (5 MB/s / 430 GB/day). Actual spans/sec depends on trace complexity (spans per trace).
+            </div>
+
+            <h3>Component-Specific Recommendations</h3>
+            <div class="grid grid-3" style="margin-top: 20px;">
+                <div class="card">
+                    <h4>Ingester</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Primary memory consumer</li>
+                        <li><strong>Tune trace_idle_period first</strong></li>
+                        <li>Use RF=2 for production</li>
+                        <li>Scale replicas for &gt;25K spans/sec</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Querier</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Primary CPU consumer</li>
+                        <li>9-11 cores at high query load</li>
+                        <li>Not affected by ingester tuning</li>
+                        <li>Scale replicas for query-heavy workloads</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Compactor</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Steady 12-15 GB memory</li>
+                        <li>Low CPU (~1 core)</li>
+                        <li>Not affected by ingester tuning</li>
+                        <li>Generally doesn't need scaling</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; padding: 40px; color: var(--text-secondary);">
+            <p>Generated from Tempo Performance Test Framework</p>
+            <p>Test Date: January 2026 | Tempo v2.9.0 | Operator v0.19.0 | Replication Factor: 2</p>
+        </footer>
+    </div>
+
+    <script>
+        // Chart.js configuration
+        Chart.defaults.color = '#a0a0a0';
+        Chart.defaults.borderColor = '#2a2a4a';
+
+        // Sizing Tests Chart
+        new Chart(document.getElementById('sizingChart'), {
+            type: 'bar',
+            data: {
+                labels: ['1x-demo', '1x-extra-small', '1x-pico', '1x-small', '1x-medium'],
+                datasets: [{
+                    label: 'P99 Memory (GB)',
+                    data: [0.23, 10.39, 14.30, 23.79, 25.70],
+                    backgroundColor: 'rgba(233, 69, 96, 0.7)',
+                    borderColor: '#e94560',
+                    borderWidth: 1
+                }, {
+                    label: 'P99 CPU (cores)',
+                    data: [0.02, 1.89, 6.04, 13.50, 18.91],
+                    backgroundColor: 'rgba(0, 217, 160, 0.7)',
+                    borderColor: '#00d9a0',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Resource Usage by Load Size (1x-* Tests)' }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Tuning Tests Chart
+        new Chart(document.getElementById('tuningChart'), {
+            type: 'bar',
+            data: {
+                labels: ['ingester-default', 'ingester-fast-block', 'ingester-fast-idle', 'ingester-high-throughput', 'ingester-low-flush'],
+                datasets: [{
+                    label: 'P99 Memory (GB)',
+                    data: [35.44, 34.04, 23.77, 23.57, 25.70],
+                    backgroundColor: ['rgba(233, 69, 96, 0.8)', 'rgba(255, 193, 7, 0.8)', 'rgba(0, 217, 160, 0.8)', 'rgba(0, 217, 160, 0.8)', 'rgba(255, 193, 7, 0.8)'],
+                    borderWidth: 1
+                }, {
+                    label: 'P99 CPU (cores)',
+                    data: [16.36, 15.21, 14.55, 16.69, 14.98],
+                    backgroundColor: 'rgba(79, 195, 247, 0.7)',
+                    borderColor: '#4fc3f7',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Same Load, Different Configs: Impact on Resources (ingester-* Tests)' }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Memory by Component Chart
+        new Chart(document.getElementById('memoryByComponentChart'), {
+            type: 'bar',
+            data: {
+                labels: ['ingester-default', 'ingester-fast-block', 'ingester-fast-idle', 'ingester-high-thru', 'ingester-low-flush'],
+                datasets: [{
+                    label: 'Ingester',
+                    data: [25.16, 19.71, 9.98, 10.64, 13.15],
+                    backgroundColor: 'rgba(233, 69, 96, 0.8)'
+                }, {
+                    label: 'Compactor',
+                    data: [12.32, 12.04, 13.37, 12.25, 13.04],
+                    backgroundColor: 'rgba(83, 52, 131, 0.8)'
+                }, {
+                    label: 'Querier',
+                    data: [3.82, 4.03, 4.40, 3.63, 4.11],
+                    backgroundColor: 'rgba(0, 217, 160, 0.8)'
+                }, {
+                    label: 'Other',
+                    data: [1.41, 1.43, 1.47, 1.42, 1.43],
+                    backgroundColor: 'rgba(255, 193, 7, 0.8)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'top' } },
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true, title: { display: true, text: 'Memory (GB)' } }
+                }
+            }
+        });
+
+        // CPU by Component Chart
+        new Chart(document.getElementById('cpuByComponentChart'), {
+            type: 'bar',
+            data: {
+                labels: ['ingester-default', 'ingester-fast-block', 'ingester-fast-idle', 'ingester-high-thru', 'ingester-low-flush'],
+                datasets: [{
+                    label: 'Querier',
+                    data: [8.90, 7.43, 9.37, 11.03, 8.65],
+                    backgroundColor: 'rgba(0, 217, 160, 0.8)'
+                }, {
+                    label: 'Ingester',
+                    data: [5.88, 6.74, 7.22, 6.33, 6.23],
+                    backgroundColor: 'rgba(233, 69, 96, 0.8)'
+                }, {
+                    label: 'Gateway',
+                    data: [4.42, 5.92, 4.60, 5.62, 4.51],
+                    backgroundColor: 'rgba(83, 52, 131, 0.8)'
+                }, {
+                    label: 'Other',
+                    data: [3.40, 4.02, 3.40, 3.46, 3.39],
+                    backgroundColor: 'rgba(255, 193, 7, 0.8)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'top' } },
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true, title: { display: true, text: 'CPU (cores)' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

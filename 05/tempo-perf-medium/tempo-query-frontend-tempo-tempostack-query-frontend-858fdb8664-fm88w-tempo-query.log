@@ -1,0 +1,2 @@
+ts=1767849909.5279367 level=info msg="Server starts serving" address=0.0.0.0:7777
+ts=1767851418.6624515 level=info msg="FindTraces: fetching traces" traceids=20

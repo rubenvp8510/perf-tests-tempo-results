@@ -1,0 +1,57 @@
+level=warn ts=2026-01-08T05:25:17.456245048Z caller=main.go:119 msg="-- CONFIGURATION WARNINGS --"
+level=warn ts=2026-01-08T05:25:17.456286476Z caller=main.go:125 msg="Inline, unscoped overrides are deprecated. Please use the new overrides config format."
+level=info ts=2026-01-08T05:25:17.456388252Z caller=main.go:103 msg="Starting Tempo" version="(version=2.9.0, branch=HEAD, revision=f1b3ef152)" target=ingester
+level=info msg="server listening on addresses" http=[::]:3101 grpc=[::]:41325
+level=info ts=2026-01-08T05:25:17.465226957Z caller=cache.go:55 msg="caches available to storage backend" parquet-footer=false bloom=false parquet-offset-idx=false parquet-column-idx=false trace-id-index=false parquet-page=false
+level=info ts=2026-01-08T05:25:17.466268804Z caller=server.go:281 msg="server listening on addresses" http=[::]:3200 grpc=[::]:9095
+level=info ts=2026-01-08T05:25:17.467479188Z caller=memberlist_client.go:484 msg="Using memberlist cluster label and node name" cluster_label= node=tempo-tempostack-ingester-0-82cef193
+level=info ts=2026-01-08T05:25:17.468871766Z caller=module_service.go:82 msg=starting module=internal-server
+level=info ts=2026-01-08T05:25:17.468892079Z caller=module_service.go:82 msg=starting module=cache-provider
+level=info ts=2026-01-08T05:25:17.46898178Z caller=module_service.go:82 msg=starting module=server
+level=info ts=2026-01-08T05:25:17.469011259Z caller=module_service.go:82 msg=starting module=overrides
+level=info ts=2026-01-08T05:25:17.469125817Z caller=module_service.go:82 msg=starting module=store
+level=info ts=2026-01-08T05:25:17.469381841Z caller=memberlist_client.go:628 msg="memberlist fast-join starting" nodes_found=1 to_join=2
+level=info ts=2026-01-08T05:25:17.469490993Z caller=module_service.go:82 msg=starting module=memberlist-kv
+level=info ts=2026-01-08T05:25:17.469539298Z caller=module_service.go:82 msg=starting module=ring
+level=info ts=2026-01-08T05:25:17.469554075Z caller=module_service.go:82 msg=starting module=live-store-ring
+level=info ts=2026-01-08T05:25:17.486071543Z caller=memberlist_client.go:648 msg="memberlist fast-join finished" joined_nodes=6 elapsed_time=16.692547ms
+level=info ts=2026-01-08T05:25:17.486096765Z caller=memberlist_client.go:666 phase=startup msg="joining memberlist cluster" join_members=tempo-tempostack-gossip-ring
+level=info ts=2026-01-08T05:25:17.486134185Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-08T05:25:17.486147357Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-08T05:25:17.486223534Z caller=module_service.go:82 msg=starting module=ingester
+level=info ts=2026-01-08T05:25:17.48624272Z caller=ingester.go:413 msg="beginning wal replay"
+level=warn ts=2026-01-08T05:25:17.486334569Z caller=wal.go:103 msg="unowned file entry ignored during wal replay" file=blocks err=null
+level=info ts=2026-01-08T05:25:17.486349441Z caller=ingester.go:451 msg="wal replay complete"
+level=info ts=2026-01-08T05:25:17.486373323Z caller=ingester.go:465 msg="reloading local blocks" tenants=0
+level=info ts=2026-01-08T05:25:17.486433437Z caller=lifecycler.go:714 msg="instance not found in ring, adding with no tokens" ring=ingester
+level=info ts=2026-01-08T05:25:17.486449954Z caller=app.go:213 msg="Tempo started"
+level=info ts=2026-01-08T05:25:17.486494138Z caller=lifecycler.go:556 msg="auto-joining cluster after timeout" ring=ingester
+level=info ts=2026-01-08T05:25:17.498243266Z caller=memberlist_client.go:673 phase=startup msg="joining memberlist cluster succeeded" reached_nodes=6 elapsed_time=12.136669ms
+level=info ts=2026-01-08T05:36:03.324165928Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=c46a952e-3b6c-49de-947a-f2840c54d3da
+level=info ts=2026-01-08T05:36:08.05208546Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=c46a952e-3b6c-49de-947a-f2840c54d3da
+level=info ts=2026-01-08T05:36:29.623150517Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=c46a952e-3b6c-49de-947a-f2840c54d3da duration=21.571032676s
+level=info ts=2026-01-08T05:36:29.697612669Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=c46a952e-3b6c-49de-947a-f2840c54d3da
+level=info ts=2026-01-08T05:46:16.52635437Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=a2dd8539-308e-456a-8f90-268ef3dbe9ae
+level=info ts=2026-01-08T05:46:26.043662794Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=a2dd8539-308e-456a-8f90-268ef3dbe9ae
+level=info ts=2026-01-08T05:46:48.665236139Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=a2dd8539-308e-456a-8f90-268ef3dbe9ae duration=22.621540049s
+level=info ts=2026-01-08T05:46:48.709883204Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=a2dd8539-308e-456a-8f90-268ef3dbe9ae
+level=info ts=2026-01-08T05:56:18.077423029Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=fc032f8a-ac6b-4f42-8cd2-3c7a4100d40d
+level=info ts=2026-01-08T05:56:23.842969804Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=fc032f8a-ac6b-4f42-8cd2-3c7a4100d40d
+level=info ts=2026-01-08T05:56:46.862538259Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=fc032f8a-ac6b-4f42-8cd2-3c7a4100d40d duration=23.01952595s
+level=info ts=2026-01-08T05:56:46.913762012Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=fc032f8a-ac6b-4f42-8cd2-3c7a4100d40d
+level=info ts=2026-01-08T06:06:25.576248648Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=181d6251-b4f8-4d0b-aeb2-681ccdc87082
+level=info ts=2026-01-08T06:06:32.65936576Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=181d6251-b4f8-4d0b-aeb2-681ccdc87082
+level=info ts=2026-01-08T06:06:55.544162365Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=181d6251-b4f8-4d0b-aeb2-681ccdc87082 duration=22.884751988s
+level=info ts=2026-01-08T06:06:55.588339345Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=181d6251-b4f8-4d0b-aeb2-681ccdc87082
+level=info ts=2026-01-08T06:16:35.026467902Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=7135de40-a253-4c01-9230-ee8796963ca8
+level=info ts=2026-01-08T06:16:41.064943088Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=7135de40-a253-4c01-9230-ee8796963ca8
+level=info ts=2026-01-08T06:17:03.82645802Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=7135de40-a253-4c01-9230-ee8796963ca8 duration=22.761476193s
+level=info ts=2026-01-08T06:17:03.863644681Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=7135de40-a253-4c01-9230-ee8796963ca8
+level=info ts=2026-01-08T06:26:46.497162998Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=75bf4d21-37a7-4e29-9e7f-92684d357a94
+level=info ts=2026-01-08T06:26:55.883390775Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=75bf4d21-37a7-4e29-9e7f-92684d357a94
+level=info ts=2026-01-08T06:27:18.465987218Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=75bf4d21-37a7-4e29-9e7f-92684d357a94 duration=22.582566389s
+level=info ts=2026-01-08T06:27:18.508604943Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=75bf4d21-37a7-4e29-9e7f-92684d357a94
+level=info ts=2026-01-08T06:37:17.167084748Z caller=flush.go:196 msg="head block cut. enqueueing flush op" tenant=tenant-1 block=e69a3e95-f02a-4b80-9bc0-ca6a60cf7f8c
+level=info ts=2026-01-08T06:37:20.16919428Z caller=flush.go:267 msg="completing block" tenant=tenant-1 block=e69a3e95-f02a-4b80-9bc0-ca6a60cf7f8c
+level=info ts=2026-01-08T06:37:43.860913259Z caller=flush.go:283 msg="block completed" tenant=tenant-1 blockID=e69a3e95-f02a-4b80-9bc0-ca6a60cf7f8c duration=23.691661637s
+level=info ts=2026-01-08T06:37:43.933779483Z caller=flush.go:334 msg="flushing block" tenant=tenant-1 block=e69a3e95-f02a-4b80-9bc0-ca6a60cf7f8c

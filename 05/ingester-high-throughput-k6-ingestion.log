@@ -1,0 +1,372 @@
+
+running (1h15m00.0s), 000/200 VUs, 15208537 complete and 0 interrupted iterations
+ingestion ✓ [ 100% ] 000/200 VUs  1h15m0s  3933.00 iters/s
+
+running (1h15m00.0s), 000/200 VUs, 15208537 complete and 0 interrupted iterations
+ingestion ✓ [ 100% ] 000/200 VUs  1h15m0s  3933.00 iters/s
+
+running (1h15m00.0s), 000/200 VUs, 15208537 complete and 0 interrupted iterations
+ingestion ✓ [ 100% ] 000/200 VUs  1h15m0s  3933.00 iters/s
+
+
+  █ THRESHOLDS 
+
+    tempo_ingestion_bytes_total
+    ✓ 'rate>0' rate=8.0 MB/s
+
+    tempo_ingestion_failures_total
+    ✓ 'rate<1' rate=0/s
+
+    tempo_ingestion_traces_total
+    ✓ 'rate>0' rate=1174.473518/s
+
+
+  █ TOTAL RESULTS 
+
+    CUSTOM
+    tempo_ingestion_bytes_total..........: 36 GB    8.0 MB/s
+    tempo_ingestion_duration_seconds.....: avg=18.25ms min=200.95µs med=10.58ms max=221.93ms p(90)=47.29ms p(95)=65.77ms
+    tempo_ingestion_failures_total.......: 0        0/s
+    tempo_ingestion_rate_bytes_per_sec...: 100.00%  5285152 out of 5285152
+    tempo_ingestion_traces_total.........: 5285152  1174.473518/s
+
+    EXECUTION
+    dropped_iterations...................: 2490022  553.336006/s
+    iteration_duration...................: avg=15.27ms min=344.03µs med=6.54ms  max=246.14ms p(90)=42.01ms p(95)=57.31ms
+    iterations...........................: 15208537 3379.661352/s
+    vus..................................: 80       min=0                  max=200
+    vus_max..............................: 200      min=74                 max=200
+
+    NETWORK
+    data_received........................: 0 B      0 B/s
+    data_sent............................: 0 B      0 B/s
+
+
+
+
+running (1h15m00.0s), 000/200 VUs, 15208537 complete and 0 interrupted iterations
+ingestion ✓ [ 100% ] 000/200 VUs  1h15m0s  3933.00 iters/s
+===K6_SUMMARY_JSON_START===
+{
+    "metrics": {
+        "vus_max": {
+            "value": 200,
+            "min": 74,
+            "max": 200
+        },
+        "tempo_ingestion_traces_total": {
+            "count": 5285152,
+            "rate": 1174.4735180392358,
+            "thresholds": {
+                "rate>0": false
+            }
+        },
+        "data_sent": {
+            "count": 0,
+            "rate": 0
+        },
+        "tempo_ingestion_rate_bytes_per_sec": {
+            "passes": 5285152,
+            "fails": 0,
+            "value": 1
+        },
+        "tempo_ingestion_duration_seconds": {
+            "med": 10.58331,
+            "max": 221.936853,
+            "p(90)": 47.297853500000016,
+            "p(95)": 65.77148705,
+            "avg": 18.258245965630426,
+            "min": 0.200952
+        },
+        "tempo_ingestion_failures_total": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "rate<1": false
+            }
+        },
+        "dropped_iterations": {
+            "rate": 553.3360059152687,
+            "count": 2490022
+        },
+        "iteration_duration": {
+            "min": 0.344031,
+            "med": 6.54337,
+            "max": 246.149167,
+            "p(90)": 42.0143956,
+            "p(95)": 57.317715199999995,
+            "avg": 15.278452706946252
+        },
+        "iterations": {
+            "count": 15208537,
+            "rate": 3379.6613521465206
+        },
+        "tempo_ingestion_bytes_total": {
+            "count": 35919565958,
+            "rate": 7982093.797327803,
+            "thresholds": {
+                "rate>0": false
+            }
+        },
+        "data_received": {
+            "count": 0,
+            "rate": 0
+        },
+        "vus": {
+            "value": 80,
+            "min": 0,
+            "max": 200
+        }
+    },
+    "setup_data": {
+        "traceConfig": {
+            "operations": [
+                {
+                    "duration": {
+                        "max": 10,
+                        "min": 2
+                    },
+                    "name": "waf-scan",
+                    "service": "edge-gateway"
+                },
+                {
+                    "duration": {
+                        "max": 5,
+                        "min": 1
+                    },
+                    "name": "rate-limit-check",
+                    "service": "rate-limiter"
+                },
+                {
+                    "duration": {
+                        "max": 80,
+                        "min": 20
+                    },
+                    "name": "authenticate",
+                    "service": "auth-service"
+                },
+                {
+                    "duration": {
+                        "max": 200,
+                        "min": 50
+                    },
+                    "name": "verify-mfa",
+                    "service": "auth-service"
+                },
+                {
+                    "duration": {
+                        "max": 40,
+                        "min": 10
+                    },
+                    "name": "authorize",
+                    "service": "auth-service"
+                },
+                {
+                    "duration": {
+                        "min": 15,
+                        "max": 60
+                    },
+                    "name": "get-user-profile",
+                    "service": "user-service"
+                },
+                {
+                    "duration": {
+                        "max": 80,
+                        "min": 20
+                    },
+                    "name": "get-account",
+                    "service": "account-service"
+                },
+                {
+                    "duration": {
+                        "max": 40,
+                        "min": 10
+                    },
+                    "name": "check-balance",
+                    "service": "account-service"
+                },
+                {
+                    "duration": {
+                        "max": 120,
+                        "min": 30
+                    },
+                    "name": "validate-transaction",
+                    "service": "transaction-service"
+                },
+                {
+                    "name": "fraud-check",
+                    "service": "fraud-detection",
+                    "duration": {
+                        "min": 50,
+                        "max": 200
+                    }
+                },
+                {
+                    "duration": {
+                        "max": 150,
+                        "min": 30
+                    },
+                    "name": "ml-score",
+                    "service": "ml-scoring"
+                },
+                {
+                    "duration": {
+                        "min": 40,
+                        "max": 160
+                    },
+                    "name": "risk-assessment",
+                    "service": "risk-engine"
+                },
+                {
+                    "name": "compliance-check",
+                    "service": "compliance-service",
+                    "duration": {
+                        "max": 100,
+                        "min": 20
+                    }
+                },
+                {
+                    "duration": {
+                        "max": 150,
+                        "min": 30
+                    },
+                    "name": "aml-verification",
+                    "service": "compliance-service"
+                },
+                {
+                    "name": "create-transaction",
+                    "service": "transaction-service",
+                    "duration": {
+                        "max": 100,
+                        "min": 25
+                    }
+                },
+                {
+                    "service": "ledger-service",
+                    "duration": {
+                        "max": 80,
+                        "min": 20
+                    },
+                    "name": "update-ledger"
+                },
+                {
+                    "duration": {
+                        "max": 60,
+                        "min": 15
+                    },
+                    "name": "write-primary",
+                    "service": "database-primary"
+                },
+                {
+                    "duration": {
+                        "max": 40,
+                        "min": 10
+                    },
+                    "name": "replicate",
+                    "service": "database-replica"
+                },
+                {
+                    "duration": {
+                        "max": 20,
+                        "min": 5
+                    },
+                    "name": "publish-event",
+                    "service": "event-store"
+                },
+                {
+                    "duration": {
+                        "max": 40,
+                        "min": 10
+                    },
+                    "name": "audit-log",
+                    "service": "audit-service"
+                },
+                {
+                    "duration": {
+                        "max": 60,
+                        "min": 15
+                    },
+                    "name": "send-notification",
+                    "service": "notification-service"
+                },
+                {
+                    "duration": {
+                        "max": 80,
+                        "min": 20
+                    },
+                    "name": "update-analytics",
+                    "service": "analytics-service"
+                },
+                {
+                    "name": "invalidate-cache",
+                    "service": "cache-layer",
+                    "duration": {
+                        "min": 2,
+                        "max": 10
+                    }
+                }
+            ],
+            "rootOperation": {
+                "name": "POST /api/v2/transactions",
+                "service": "edge-gateway"
+            },
+            "services": [
+                "edge-gateway",
+                "api-gateway",
+                "auth-service",
+                "user-service",
+                "account-service",
+                "transaction-service",
+                "ledger-service",
+                "fraud-detection",
+                "risk-engine",
+                "compliance-service",
+                "audit-service",
+                "notification-service",
+                "reporting-service",
+                "analytics-service",
+                "cache-layer",
+                "database-primary",
+                "database-replica",
+                "message-broker",
+                "event-store",
+                "search-cluster",
+                "ml-scoring",
+                "rate-limiter",
+                "circuit-breaker",
+                "config-service",
+                "secret-manager"
+            ],
+            "settings": {
+                "attributes": {
+                    "enableTags": true,
+                    "tagDensity": 0.85,
+                    "enableSemanticAttributes": true
+                }
+            },
+            "spans": {
+                "max": 80,
+                "min": 50
+            },
+            "context": {
+                "propagation": {
+                    "tenant_id": "tenant-1",
+                    "user_id": "user-9246",
+                    "correlation_id": "corr-v3ti0f",
+                    "region": "us-west-2",
+                    "request_id": "req-9wmkt",
+                    "session_id": "session-1767836080337"
+                }
+            },
+            "description": "Fintech/Enterprise - Complex distributed system",
+            "name": "large"
+        }
+    },
+    "root_group": {
+        "groups": {},
+        "checks": {},
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e"
+    }
+}===K6_SUMMARY_JSON_END===

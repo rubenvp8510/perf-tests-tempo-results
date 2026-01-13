@@ -1,0 +1,34 @@
+level=warn ts=2026-01-08T05:25:09.390576862Z caller=main.go:119 msg="-- CONFIGURATION WARNINGS --"
+level=warn ts=2026-01-08T05:25:09.390614265Z caller=main.go:125 msg="Inline, unscoped overrides are deprecated. Please use the new overrides config format."
+level=info ts=2026-01-08T05:25:09.390715231Z caller=main.go:103 msg="Starting Tempo" version="(version=2.9.0, branch=HEAD, revision=f1b3ef152)" target=distributor
+level=info msg="server listening on addresses" http=[::]:3101 grpc=[::]:40801
+level=info ts=2026-01-08T05:25:09.392203615Z caller=server.go:281 msg="server listening on addresses" http=[::]:3200 grpc=[::]:9095
+level=info ts=2026-01-08T05:25:09.393538092Z caller=memberlist_client.go:484 msg="Using memberlist cluster label and node name" cluster_label= node=tempo-tempostack-distributor-fc99d9c68-pr9kd-7966fe6e
+ts=2026-01-08T05:25:09Z level=info msg="OTel Shim Logger Initialized" component=tempo
+level=info ts=2026-01-08T05:25:09.39480897Z caller=memberlist_client.go:628 msg="memberlist fast-join starting" nodes_found=1 to_join=2
+level=info ts=2026-01-08T05:25:09.397349801Z caller=module_service.go:82 msg=starting module=internal-server
+level=info ts=2026-01-08T05:25:09.397443002Z caller=module_service.go:82 msg=starting module=server
+level=info ts=2026-01-08T05:25:09.397511578Z caller=module_service.go:82 msg=starting module=memberlist-kv
+level=info ts=2026-01-08T05:25:09.397524528Z caller=module_service.go:82 msg=starting module=overrides
+level=info ts=2026-01-08T05:25:09.39757016Z caller=module_service.go:82 msg=starting module=ring
+level=info ts=2026-01-08T05:25:09.39757597Z caller=module_service.go:82 msg=starting module=metrics-generator-ring
+level=info ts=2026-01-08T05:25:09.397586337Z caller=module_service.go:82 msg=starting module=live-store-ring
+ts=2026-01-08T05:25:09.399279416Z caller=memberlist_logger.go:74 level=warn msg="Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host"
+level=info ts=2026-01-08T05:25:09.399318211Z caller=memberlist_client.go:634 msg="fast-joining node failed" node=tempo-tempostack-gossip-ring err="1 error occurred:\n\t* Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host\n\n"
+level=warn ts=2026-01-08T05:25:09.399333176Z caller=memberlist_client.go:644 msg="memberlist fast-join failed because no node has been successfully reached" elapsed_time=4.526181ms
+level=error ts=2026-01-08T05:25:09.399343713Z caller=memberlist_client.go:521 msg="failed to fast-join the memberlist cluster at startup" err="no memberlist node reached during fast-join procedure"
+level=info ts=2026-01-08T05:25:09.39937428Z caller=memberlist_client.go:666 phase=startup msg="joining memberlist cluster" join_members=tempo-tempostack-gossip-ring
+level=info ts=2026-01-08T05:25:09.399405065Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-08T05:25:09.399441385Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-08T05:25:09.399403128Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-08T05:25:09.399526252Z caller=module_service.go:82 msg=starting module=distributor
+ts=2026-01-08T05:25:09Z level=info msg="Starting GRPC server" component=tempo endpoint=0.0.0.0:4317
+ts=2026-01-08T05:25:09Z level=info msg="Starting HTTP server" component=tempo endpoint=0.0.0.0:4318
+level=info ts=2026-01-08T05:25:09.400379654Z caller=app.go:213 msg="Tempo started"
+ts=2026-01-08T05:25:09.401612905Z caller=memberlist_logger.go:74 level=warn msg="Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host"
+level=warn ts=2026-01-08T05:25:09.401634296Z caller=memberlist_client.go:700 phase=startup msg="joining memberlist cluster" attempts=1 max_attempts=10 err="1 error occurred:\n\t* Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host\n\n"
+ts=2026-01-08T05:25:10.729956377Z caller=memberlist_logger.go:74 level=warn msg="Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host"
+level=warn ts=2026-01-08T05:25:10.729982406Z caller=memberlist_client.go:700 phase=startup msg="joining memberlist cluster" attempts=2 max_attempts=10 err="1 error occurred:\n\t* Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host\n\n"
+ts=2026-01-08T05:25:13.046546946Z caller=memberlist_logger.go:74 level=warn msg="Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host"
+level=warn ts=2026-01-08T05:25:13.046574315Z caller=memberlist_client.go:700 phase=startup msg="joining memberlist cluster" attempts=3 max_attempts=10 err="1 error occurred:\n\t* Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 172.30.0.10:53: no such host\n\n"
+level=info ts=2026-01-08T05:25:19.984704116Z caller=memberlist_client.go:673 phase=startup msg="joining memberlist cluster succeeded" reached_nodes=7 elapsed_time=10.585316796s

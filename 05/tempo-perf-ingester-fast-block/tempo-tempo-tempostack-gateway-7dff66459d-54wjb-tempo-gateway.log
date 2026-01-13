@@ -1,0 +1,9 @@
+2026/01/07 23:00:24 (version=, branch=, revision=unknown)
+level=info name=observatorium ts=2026-01-07T23:00:24.273908892Z caller=main.go:478 msg="starting observatorium"
+level=info name=observatorium ts=2026-01-07T23:00:24.274688115Z caller=main.go:573 msg="adding a tenant" tenant=tenant-1
+level=info name=observatorium ts=2026-01-07T23:00:24.275155139Z caller=config.go:19 protocol=HTTP msg="enabling server side TLS"
+level=info name=observatorium ts=2026-01-07T23:00:24.275510109Z caller=api.go:61 msg="gRPC dialing OTel" endpoint=tempo-tempostack-distributor.tempo-perf-ingester-fast-block.svc.cluster.local:4317
+level=info name=observatorium ts=2026-01-07T23:00:24.275987776Z caller=config.go:19 protocol=HTTP msg="enabling server side TLS"
+level=info name=observatorium ts=2026-01-07T23:00:24.276475049Z caller=main.go:1038 msg="starting internal HTTP server" address=0.0.0.0:8081
+level=info name=observatorium ts=2026-01-07T23:00:24.276482852Z caller=main.go:934 msg="starting the HTTP server" address=0.0.0.0:8080
+level=info name=observatorium ts=2026-01-07T23:00:24.276492517Z caller=main.go:970 msg="starting the gRPC server" address=0.0.0.0:8090

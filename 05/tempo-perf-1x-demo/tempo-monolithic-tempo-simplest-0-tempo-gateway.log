@@ -1,0 +1,9 @@
+2026/01/07 14:01:24 (version=, branch=, revision=unknown)
+level=info name=observatorium ts=2026-01-07T14:01:24.746484201Z caller=main.go:478 msg="starting observatorium"
+level=info name=observatorium ts=2026-01-07T14:01:24.747700107Z caller=main.go:573 msg="adding a tenant" tenant=tenant-1
+level=info name=observatorium ts=2026-01-07T14:01:24.74841482Z caller=config.go:19 protocol=HTTP msg="enabling server side TLS"
+level=info name=observatorium ts=2026-01-07T14:01:24.748826222Z caller=api.go:61 msg="gRPC dialing OTel" endpoint=localhost:4317
+level=info name=observatorium ts=2026-01-07T14:01:24.749373006Z caller=config.go:19 protocol=HTTP msg="enabling server side TLS"
+level=info name=observatorium ts=2026-01-07T14:01:24.749747738Z caller=main.go:1038 msg="starting internal HTTP server" address=0.0.0.0:8081
+level=info name=observatorium ts=2026-01-07T14:01:24.749795165Z caller=main.go:970 msg="starting the gRPC server" address=0.0.0.0:8090
+level=info name=observatorium ts=2026-01-07T14:01:24.749782194Z caller=main.go:934 msg="starting the HTTP server" address=0.0.0.0:8080
