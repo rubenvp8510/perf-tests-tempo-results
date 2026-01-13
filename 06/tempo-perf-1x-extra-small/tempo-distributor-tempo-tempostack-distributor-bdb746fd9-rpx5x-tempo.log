@@ -1,0 +1,27 @@
+level=warn ts=2026-01-09T19:31:14.372768042Z caller=main.go:119 msg="-- CONFIGURATION WARNINGS --"
+level=warn ts=2026-01-09T19:31:14.372811132Z caller=main.go:125 msg="Inline, unscoped overrides are deprecated. Please use the new overrides config format."
+level=info ts=2026-01-09T19:31:14.372983724Z caller=main.go:103 msg="Starting Tempo" version="(version=2.9.0, branch=HEAD, revision=f1b3ef152)" target=distributor
+level=info msg="server listening on addresses" http=[::]:3101 grpc=[::]:38617
+level=info ts=2026-01-09T19:31:14.37458164Z caller=server.go:281 msg="server listening on addresses" http=[::]:3200 grpc=[::]:9095
+level=info ts=2026-01-09T19:31:14.376236162Z caller=memberlist_client.go:484 msg="Using memberlist cluster label and node name" cluster_label= node=tempo-tempostack-distributor-bdb746fd9-rpx5x-838e6e24
+ts=2026-01-09T19:31:14Z level=info msg="OTel Shim Logger Initialized" component=tempo
+level=info ts=2026-01-09T19:31:14.377990709Z caller=memberlist_client.go:628 msg="memberlist fast-join starting" nodes_found=1 to_join=2
+level=info ts=2026-01-09T19:31:14.379646255Z caller=module_service.go:82 msg=starting module=internal-server
+level=info ts=2026-01-09T19:31:14.379797744Z caller=module_service.go:82 msg=starting module=server
+level=info ts=2026-01-09T19:31:14.379913418Z caller=module_service.go:82 msg=starting module=memberlist-kv
+level=info ts=2026-01-09T19:31:14.379949713Z caller=module_service.go:82 msg=starting module=overrides
+level=info ts=2026-01-09T19:31:14.379989103Z caller=module_service.go:82 msg=starting module=live-store-ring
+level=info ts=2026-01-09T19:31:14.380027059Z caller=module_service.go:82 msg=starting module=ring
+level=info ts=2026-01-09T19:31:14.379992613Z caller=module_service.go:82 msg=starting module=metrics-generator-ring
+level=info ts=2026-01-09T19:31:14.39420764Z caller=memberlist_client.go:648 msg="memberlist fast-join finished" joined_nodes=3 elapsed_time=16.221041ms
+level=info ts=2026-01-09T19:31:14.394239117Z caller=memberlist_client.go:666 phase=startup msg="joining memberlist cluster" join_members=tempo-tempostack-gossip-ring
+level=info ts=2026-01-09T19:31:14.394295836Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-09T19:31:14.394443069Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-09T19:31:14.394510855Z caller=ring.go:365 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-01-09T19:31:14.394587646Z caller=module_service.go:82 msg=starting module=distributor
+ts=2026-01-09T19:31:14Z level=info msg="Starting GRPC server" component=tempo endpoint=0.0.0.0:4317
+ts=2026-01-09T19:31:14Z level=info msg="Starting HTTP server" component=tempo endpoint=0.0.0.0:4318
+level=info ts=2026-01-09T19:31:14.395743098Z caller=app.go:213 msg="Tempo started"
+level=info ts=2026-01-09T19:31:14.402923212Z caller=memberlist_client.go:673 phase=startup msg="joining memberlist cluster succeeded" reached_nodes=3 elapsed_time=8.674806ms
+level=info ts=2026-01-09T19:32:14.394998884Z caller=pool.go:234 msg="removing stale client" addr=10.129.2.29:9095
+level=warn ts=2026-01-09T19:32:43.510168444Z caller=tcp_transport.go:496 component="memberlist TCPTransport" msg="WriteTo failed" addr=10.129.2.26:7946 err="dial tcp 10.129.2.26:7946: i/o timeout"

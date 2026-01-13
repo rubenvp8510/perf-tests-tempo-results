@@ -1,0 +1,434 @@
+level=warn ts=2026-01-10T06:29:34.54853217Z caller=main.go:119 msg="-- CONFIGURATION WARNINGS --"
+level=warn ts=2026-01-10T06:29:34.54858447Z caller=main.go:125 msg="Inline, unscoped overrides are deprecated. Please use the new overrides config format."
+level=info ts=2026-01-10T06:29:34.548712703Z caller=main.go:103 msg="Starting Tempo" version="(version=2.9.0, branch=HEAD, revision=f1b3ef152)" target=compactor
+level=info msg="server listening on addresses" http=[::]:3101 grpc=[::]:46359
+level=info ts=2026-01-10T06:29:34.550088468Z caller=server.go:281 msg="server listening on addresses" http=[::]:3200 grpc=[::]:9095
+level=info ts=2026-01-10T06:29:34.558331502Z caller=cache.go:55 msg="caches available to storage backend" parquet-footer=false bloom=false parquet-offset-idx=false parquet-column-idx=false trace-id-index=false parquet-page=false
+level=info ts=2026-01-10T06:29:34.559790659Z caller=memberlist_client.go:484 msg="Using memberlist cluster label and node name" cluster_label= node=tempo-tempostack-compactor-7bf46fb6bf-69lnd-ef02d52c
+level=info ts=2026-01-10T06:29:34.560495853Z caller=module_service.go:82 msg=starting module=internal-server
+level=info ts=2026-01-10T06:29:34.560580074Z caller=module_service.go:82 msg=starting module=cache-provider
+level=info ts=2026-01-10T06:29:34.560733006Z caller=module_service.go:82 msg=starting module=store
+level=info ts=2026-01-10T06:29:34.560912661Z caller=module_service.go:82 msg=starting module=server
+level=info ts=2026-01-10T06:29:34.56095751Z caller=memberlist_client.go:628 msg="memberlist fast-join starting" nodes_found=1 to_join=2
+level=info ts=2026-01-10T06:29:34.561064863Z caller=module_service.go:82 msg=starting module=overrides
+level=info ts=2026-01-10T06:29:34.561078044Z caller=module_service.go:82 msg=starting module=memberlist-kv
+level=info ts=2026-01-10T06:29:34.561172194Z caller=module_service.go:82 msg=starting module=compactor
+ts=2026-01-10T06:29:35.044261255Z caller=memberlist_logger.go:74 level=warn msg="Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 10.217.4.10:53: no such host"
+level=info ts=2026-01-10T06:29:35.044283826Z caller=memberlist_client.go:634 msg="fast-joining node failed" node=tempo-tempostack-gossip-ring err="1 error occurred:\n\t* Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 10.217.4.10:53: no such host\n\n"
+level=warn ts=2026-01-10T06:29:35.044294876Z caller=memberlist_client.go:644 msg="memberlist fast-join failed because no node has been successfully reached" elapsed_time=483.341436ms
+level=error ts=2026-01-10T06:29:35.044301216Z caller=memberlist_client.go:521 msg="failed to fast-join the memberlist cluster at startup" err="no memberlist node reached during fast-join procedure"
+level=info ts=2026-01-10T06:29:35.044310476Z caller=memberlist_client.go:666 phase=startup msg="joining memberlist cluster" join_members=tempo-tempostack-gossip-ring
+level=info ts=2026-01-10T06:29:35.044487299Z caller=basic_lifecycler.go:321 msg="instance not found in the ring" instance=tempo-tempostack-compactor-7bf46fb6bf-69lnd ring=compactor
+level=info ts=2026-01-10T06:29:35.044841996Z caller=compactor.go:125 msg="waiting until compactor is ACTIVE in the ring"
+level=info ts=2026-01-10T06:29:35.044863066Z caller=compactor.go:131 msg="compactor is ACTIVE in the ring"
+level=info ts=2026-01-10T06:29:35.044868186Z caller=compactor.go:140 msg="waiting until compactor ring topology is stable" min_waiting=1m0s max_waiting=5m0s
+ts=2026-01-10T06:29:39.042782627Z caller=memberlist_logger.go:74 level=warn msg="Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 10.217.4.10:53: no such host"
+level=warn ts=2026-01-10T06:29:39.042818358Z caller=memberlist_client.go:700 phase=startup msg="joining memberlist cluster" attempts=1 max_attempts=10 err="1 error occurred:\n\t* Failed to resolve tempo-tempostack-gossip-ring: lookup tempo-tempostack-gossip-ring on 10.217.4.10:53: no such host\n\n"
+level=info ts=2026-01-10T06:29:40.789403262Z caller=memberlist_client.go:673 phase=startup msg="joining memberlist cluster succeeded" reached_nodes=7 elapsed_time=5.745088376s
+level=info ts=2026-01-10T06:30:38.045677251Z caller=compactor.go:144 msg="compactor ring topology is stable"
+level=info ts=2026-01-10T06:30:38.045710391Z caller=tempodb.go:638 msg="polling enabled" interval=5m0s blocklist_concurrency=50
+level=info ts=2026-01-10T06:30:38.063783377Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=1 compactedMetas=0
+level=info ts=2026-01-10T06:30:38.109146262Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.06339826
+level=info ts=2026-01-10T06:30:38.109189792Z caller=compactor.go:157 msg="enabling compaction"
+level=info ts=2026-01-10T06:30:38.109198623Z caller=tempodb.go:598 msg="compaction and retention enabled."
+level=info ts=2026-01-10T06:30:38.109220103Z caller=app.go:213 msg="Tempo started"
+level=info ts=2026-01-10T06:30:38.109242543Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:30:38.109264034Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:31:08.109840235Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:31:08.109870705Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:31:38.110323198Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:31:38.11035472Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:32:08.110696001Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:32:08.110730272Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:32:38.111118664Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:32:38.111272207Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:33:08.112055958Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:33:08.11209931Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:33:38.112142266Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:33:38.112178246Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:34:08.112765693Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:34:08.112794873Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:34:38.113140505Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:34:38.113178716Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:35:08.117540843Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:35:08.117604204Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:35:38.11762491Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:35:38.117652041Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:35:38.121126586Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=1 compactedMetas=0
+level=info ts=2026-01-10T06:35:38.203997315Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.093852096
+level=info ts=2026-01-10T06:36:08.11836874Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:36:08.118408691Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:36:38.118834103Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:36:38.118888514Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:37:08.11890757Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:37:08.118959601Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:37:38.119108669Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:37:38.119168421Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:38:08.120178276Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:38:08.120210847Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:38:38.120555699Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:38:38.12059564Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:39:08.120807848Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:39:08.12088318Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:39:38.121562658Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:39:38.12159575Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:40:08.121877419Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:40:08.12191556Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:40:38.121904656Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:40:38.121942297Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:40:38.125885482Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=3 compactedMetas=0
+level=info ts=2026-01-10T06:40:38.221546874Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.111983341
+level=info ts=2026-01-10T06:41:08.122873153Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:41:08.122917004Z caller=compactor.go:170 msg="Compacting hash" hashString=tenant-1-0-491118-0
+level=info ts=2026-01-10T06:41:08.122951284Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=4fdec83b-a98b-437b-9b34-7c1f25b8ac84 startTime="2026-01-10 06:28:03 +0000 UTC" endTime="2026-01-10 06:30:16 +0000 UTC" totalObjects=5757 size=24263952 compactionLevel=0 encoding=none totalRecords=5757 bloomShardCount=1 footerSize=18252 replicationFactor=0
+level=info ts=2026-01-10T06:41:08.131798332Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=3756682e-efe7-4d1a-a6ae-d424cd9904a9 startTime="2026-01-10 06:28:31 +0000 UTC" endTime="2026-01-10 06:40:00 +0000 UTC" totalObjects=113306 size=480675168 compactionLevel=0 encoding=none totalRecords=113306 bloomShardCount=2 footerSize=33813 replicationFactor=0
+level=info ts=2026-01-10T06:41:08.133493434Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=3c1805bd-94c1-460b-8ace-ace446c42094 startTime="2026-01-10 06:28:03 +0000 UTC" endTime="2026-01-10 06:39:32 +0000 UTC" totalObjects=114713 size=486644131 compactionLevel=0 encoding=none totalRecords=114713 bloomShardCount=2 footerSize=33814 replicationFactor=0
+level=info ts=2026-01-10T06:41:21.380486684Z caller=compactor.go:263 msg="flushed to block" bytes=336754854 objects=79335 values=99999492
+level=info ts=2026-01-10T06:41:27.013743821Z caller=compactor.go:277 msg="wrote compacted block" version=vParquet4 tenantID=tenant-1 blockID=15b3d90d-fb62-4f2f-b343-48ba57dd3469 startTime="2026-01-10 06:28:03 +0000 UTC" endTime="2026-01-10 06:40:00 +0000 UTC" totalObjects=124692 size=529048925 compactionLevel=1 encoding=none totalRecords=124692 bloomShardCount=3 footerSize=33854 replicationFactor=0 dedicatedColumns=[]
+level=info ts=2026-01-10T06:41:27.095996699Z caller=compactor.go:360 msg="compaction complete" elapsed=18.973046325s blockID=15b3d90d-fb62-4f2f-b343-48ba57dd3469
+level=info ts=2026-01-10T06:41:27.096064491Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:41:38.122972565Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:41:38.123006785Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:42:08.12330819Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:42:08.123353881Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:42:38.123409782Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:42:38.123477783Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:43:08.124386369Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:43:08.12444087Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:43:38.124888688Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:43:38.124936789Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:44:08.125280284Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:44:08.125322606Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:44:38.125622939Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:44:38.125666751Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:45:08.125830104Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:45:08.125881325Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:45:38.120226515Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=1 compactedMetas=3
+level=info ts=2026-01-10T06:45:38.126751449Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:45:38.12677615Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:45:38.190809193Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.080577627
+level=info ts=2026-01-10T06:46:08.127703546Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:46:08.127741867Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:46:38.128859956Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:46:38.128903697Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:47:08.129142662Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:47:08.129185423Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:47:38.130556677Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:47:38.130624219Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:48:08.131506664Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:48:08.131550574Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:48:38.133030102Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:48:38.133071743Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:49:08.134076571Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:49:08.134114132Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:49:38.137672639Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:49:38.137733041Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:50:08.138125697Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:50:08.138171678Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:50:38.124281694Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=3 compactedMetas=3
+level=info ts=2026-01-10T06:50:38.138732768Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:50:38.138782649Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:50:38.192076958Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.082750647
+level=info ts=2026-01-10T06:51:08.139761685Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:51:08.139833106Z caller=compactor.go:170 msg="Compacting hash" hashString=tenant-1-0-491118-0
+level=info ts=2026-01-10T06:51:08.139877097Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=947362b1-010d-43ee-81fd-9416f0eb7c45 startTime="2026-01-10 06:38:10 +0000 UTC" endTime="2026-01-10 06:49:50 +0000 UTC" totalObjects=114537 size=485901050 compactionLevel=0 encoding=none totalRecords=114537 bloomShardCount=2 footerSize=33813 replicationFactor=0
+level=info ts=2026-01-10T06:51:08.143034586Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=a6581051-125f-4797-a003-a4c65377e0ed startTime="2026-01-10 06:37:49 +0000 UTC" endTime="2026-01-10 06:49:22 +0000 UTC" totalObjects=114928 size=487556087 compactionLevel=0 encoding=none totalRecords=114928 bloomShardCount=2 footerSize=33814 replicationFactor=0
+level=info ts=2026-01-10T06:51:21.955605572Z caller=compactor.go:263 msg="flushed to block" bytes=336747122 objects=79334 values=99999365
+level=info ts=2026-01-10T06:51:28.166909872Z caller=compactor.go:277 msg="wrote compacted block" version=vParquet4 tenantID=tenant-1 blockID=09e2171c-9373-4dbd-bc02-3e94805f9996 startTime="2026-01-10 06:37:49 +0000 UTC" endTime="2026-01-10 06:49:50 +0000 UTC" totalObjects=126302 size=535900793 compactionLevel=1 encoding=none totalRecords=126302 bloomShardCount=3 footerSize=33855 replicationFactor=0 dedicatedColumns=[]
+level=info ts=2026-01-10T06:51:28.216050063Z caller=compactor.go:360 msg="compaction complete" elapsed=20.076179106s blockID=09e2171c-9373-4dbd-bc02-3e94805f9996
+level=info ts=2026-01-10T06:51:28.216101975Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:51:38.140417166Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:51:38.140502647Z caller=compactor.go:170 msg="Compacting hash" hashString=tenant-1-1-491118-0
+level=info ts=2026-01-10T06:51:38.140534628Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=15b3d90d-fb62-4f2f-b343-48ba57dd3469 startTime="2026-01-10 06:28:03 +0000 UTC" endTime="2026-01-10 06:40:00 +0000 UTC" totalObjects=124692 size=529048925 compactionLevel=1 encoding=none totalRecords=124692 bloomShardCount=3 footerSize=33854 replicationFactor=0
+level=info ts=2026-01-10T06:51:38.141801412Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=09e2171c-9373-4dbd-bc02-3e94805f9996 startTime="2026-01-10 06:37:49 +0000 UTC" endTime="2026-01-10 06:49:50 +0000 UTC" totalObjects=126302 size=535900793 compactionLevel=1 encoding=none totalRecords=126302 bloomShardCount=3 footerSize=33855 replicationFactor=0
+level=info ts=2026-01-10T06:51:50.359699232Z caller=compactor.go:263 msg="flushed to block" bytes=336752347 objects=79337 values=99999210
+level=info ts=2026-01-10T06:51:59.135500983Z caller=compactor.go:263 msg="flushed to block" bytes=336748608 objects=79332 values=99999628
+level=info ts=2026-01-10T06:52:06.715899143Z caller=compactor.go:263 msg="flushed to block" bytes=336759609 objects=79337 values=99999437
+level=info ts=2026-01-10T06:52:07.795136772Z caller=compactor.go:277 msg="wrote compacted block" version=vParquet4 tenantID=tenant-1 blockID=00c12af4-fafb-48a8-a992-c82ca65d211d startTime="2026-01-10 06:28:03 +0000 UTC" endTime="2026-01-10 06:49:50 +0000 UTC" totalObjects=246132 size=1044733468 compactionLevel=2 encoding=none totalRecords=246132 bloomShardCount=3 footerSize=63624 replicationFactor=0 dedicatedColumns=[]
+level=info ts=2026-01-10T06:52:07.840600673Z caller=compactor.go:360 msg="compaction complete" elapsed=29.700071726s blockID=00c12af4-fafb-48a8-a992-c82ca65d211d
+level=info ts=2026-01-10T06:52:07.840654494Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:52:08.140708191Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:52:08.140767552Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:52:38.141239939Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:52:38.14127056Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:53:08.142313309Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:53:08.142350621Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:53:38.142734007Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:53:38.142765728Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:54:08.143544443Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:54:08.143594424Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:54:38.144559199Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:54:38.144590011Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:55:08.145045649Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:55:08.145078538Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:55:38.128921441Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=1 compactedMetas=7
+level=info ts=2026-01-10T06:55:38.145683249Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:55:38.145712539Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:55:38.276319714Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.166701109
+level=info ts=2026-01-10T06:56:08.147942729Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:56:08.14798962Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:56:38.148590801Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:56:38.148628522Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:57:08.149004797Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:57:08.149044538Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:57:38.149141126Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:57:38.149185827Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:58:08.149588238Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:58:08.149665588Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:58:38.150163112Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:58:38.150198612Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:59:08.150737873Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:59:08.150804575Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T06:59:38.151349819Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T06:59:38.151498002Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:00:08.151576446Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:00:08.151617576Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:00:38.143564228Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=3 compactedMetas=7
+level=info ts=2026-01-10T07:00:38.152659819Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:00:38.15269653Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:00:38.223517352Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.114052845
+level=info ts=2026-01-10T07:01:08.153480609Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:01:08.15353699Z caller=compactor.go:170 msg="Compacting hash" hashString=tenant-1-0-491118-0
+level=info ts=2026-01-10T07:01:08.153589771Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=c7cb6709-769f-4214-b684-7e8381115f62 startTime="2026-01-10 06:48:00 +0000 UTC" endTime="2026-01-10 06:59:50 +0000 UTC" totalObjects=115016 size=487929748 compactionLevel=0 encoding=none totalRecords=115016 bloomShardCount=2 footerSize=33815 replicationFactor=0
+level=info ts=2026-01-10T07:01:08.155854173Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=773ac0ed-d02f-4987-aaca-175d22613919 startTime="2026-01-10 06:47:33 +0000 UTC" endTime="2026-01-10 06:59:23 +0000 UTC" totalObjects=115133 size=488427506 compactionLevel=0 encoding=none totalRecords=115133 bloomShardCount=2 footerSize=33815 replicationFactor=0
+level=info ts=2026-01-10T07:01:22.372188574Z caller=compactor.go:263 msg="flushed to block" bytes=336745129 objects=79334 values=99999192
+level=info ts=2026-01-10T07:01:29.889525671Z caller=compactor.go:277 msg="wrote compacted block" version=vParquet4 tenantID=tenant-1 blockID=f7b1798a-9084-4397-ad62-e687ef9b3d32 startTime="2026-01-10 06:47:33 +0000 UTC" endTime="2026-01-10 06:59:50 +0000 UTC" totalObjects=128173 size=543859972 compactionLevel=1 encoding=none totalRecords=128173 bloomShardCount=3 footerSize=33856 replicationFactor=0 dedicatedColumns=[]
+level=info ts=2026-01-10T07:01:29.930159095Z caller=compactor.go:360 msg="compaction complete" elapsed=21.776581616s blockID=f7b1798a-9084-4397-ad62-e687ef9b3d32
+level=info ts=2026-01-10T07:01:29.930230766Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:01:38.153530162Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:01:38.153564013Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:02:08.153948013Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:02:08.153981344Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:02:38.155054457Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:02:38.155118938Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:03:08.155319805Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:03:08.155364886Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:03:38.155502622Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:03:38.155548783Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:04:08.155589047Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:04:08.155625528Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:04:38.156564819Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:04:38.15659683Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:05:08.157478839Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:05:08.157595921Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:05:38.122183638Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=2 compactedMetas=9
+level=info ts=2026-01-10T07:05:38.157945121Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:05:38.158004742Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:05:38.221846613Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.111961776
+level=info ts=2026-01-10T07:06:08.158619098Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:06:08.158647328Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:06:38.159515348Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:06:38.159545788Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:07:08.159604692Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:07:08.159637923Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:07:38.160611795Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:07:38.160647495Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:08:08.160913484Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:08:08.160947376Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:08:38.161498249Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:08:38.16152807Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:09:08.163026801Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:09:08.163105593Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:09:38.163579215Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:09:38.163615065Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:10:08.164601837Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:10:08.164634378Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:10:38.127473392Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=4 compactedMetas=9
+level=info ts=2026-01-10T07:10:38.165576599Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:10:38.16561985Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:10:38.224461707Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.11479945
+level=info ts=2026-01-10T07:11:08.166382768Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:11:08.166449979Z caller=compactor.go:170 msg="Compacting hash" hashString=tenant-1-0-491119-0
+level=info ts=2026-01-10T07:11:08.16652665Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=8051b581-5fcf-49ae-aaae-8eef8ac1446a startTime="2026-01-10 06:57:34 +0000 UTC" endTime="2026-01-10 07:09:23 +0000 UTC" totalObjects=113870 size=483063152 compactionLevel=0 encoding=none totalRecords=113870 bloomShardCount=2 footerSize=33814 replicationFactor=0
+level=info ts=2026-01-10T07:11:08.168529178Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=3d4357a6-561a-44a8-bd31-aa8da27271b6 startTime="2026-01-10 06:58:01 +0000 UTC" endTime="2026-01-10 07:09:50 +0000 UTC" totalObjects=113892 size=483163040 compactionLevel=0 encoding=none totalRecords=113892 bloomShardCount=2 footerSize=33814 replicationFactor=0
+level=info ts=2026-01-10T07:11:22.275421841Z caller=compactor.go:263 msg="flushed to block" bytes=336758191 objects=79335 values=99999632
+level=info ts=2026-01-10T07:11:29.215583201Z caller=compactor.go:277 msg="wrote compacted block" version=vParquet4 tenantID=tenant-1 blockID=85616008-9e73-4bfc-8eb5-8d19bba2a9a9 startTime="2026-01-10 06:57:34 +0000 UTC" endTime="2026-01-10 07:09:50 +0000 UTC" totalObjects=127962 size=542969000 compactionLevel=1 encoding=none totalRecords=127962 bloomShardCount=3 footerSize=33856 replicationFactor=0 dedicatedColumns=[]
+level=info ts=2026-01-10T07:11:29.26072211Z caller=compactor.go:360 msg="compaction complete" elapsed=21.09422736s blockID=85616008-9e73-4bfc-8eb5-8d19bba2a9a9
+level=info ts=2026-01-10T07:11:29.260813482Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:11:38.167109784Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:11:38.167143785Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:12:08.16722157Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:12:08.167279501Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:12:38.16760941Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:12:38.1676461Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:13:08.168041071Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:13:08.168072842Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:13:38.168607576Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:13:38.168653346Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:14:08.168918813Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:14:08.168966054Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:14:38.170833323Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:14:38.170913964Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:15:08.171127059Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:15:08.1711742Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:15:38.137570061Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=3 compactedMetas=11
+level=info ts=2026-01-10T07:15:38.17282694Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:15:38.1728662Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:15:38.239614583Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.129998208
+level=info ts=2026-01-10T07:16:08.173440709Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:16:08.173477419Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:16:38.173510987Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:16:38.173547137Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:17:08.174292539Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:17:08.174367709Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:17:38.174333895Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:17:38.174370846Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:18:08.175521496Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:18:08.175563277Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:18:38.176182126Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:18:38.176224215Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:19:08.180594197Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:19:08.180661738Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:19:38.18149575Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:19:38.181632684Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:20:08.182835744Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:20:08.182893854Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:20:38.13598422Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=5 compactedMetas=11
+level=info ts=2026-01-10T07:20:38.182964984Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:20:38.182997633Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:20:38.2249354Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.11448196
+level=info ts=2026-01-10T07:21:08.184737665Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:21:08.184838836Z caller=compactor.go:170 msg="Compacting hash" hashString=tenant-1-0-491119-0
+level=info ts=2026-01-10T07:21:08.184882587Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=d65082e0-3137-42a4-87a5-1a0fb3a1ddd5 startTime="2026-01-10 07:07:37 +0000 UTC" endTime="2026-01-10 07:19:23 +0000 UTC" totalObjects=113073 size=479690879 compactionLevel=0 encoding=none totalRecords=113073 bloomShardCount=2 footerSize=33814 replicationFactor=0
+level=info ts=2026-01-10T07:21:08.1897014Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=c69ff430-14d6-41d7-be95-74c7c6a77232 startTime="2026-01-10 07:08:04 +0000 UTC" endTime="2026-01-10 07:19:50 +0000 UTC" totalObjects=113407 size=481115607 compactionLevel=0 encoding=none totalRecords=113407 bloomShardCount=2 footerSize=33814 replicationFactor=0
+level=info ts=2026-01-10T07:21:23.623339613Z caller=compactor.go:263 msg="flushed to block" bytes=336744817 objects=79332 values=99999191
+level=info ts=2026-01-10T07:21:31.050604434Z caller=compactor.go:277 msg="wrote compacted block" version=vParquet4 tenantID=tenant-1 blockID=5c57a869-01d9-432c-8268-043e03ea1841 startTime="2026-01-10 07:07:37 +0000 UTC" endTime="2026-01-10 07:19:50 +0000 UTC" totalObjects=127918 size=542785876 compactionLevel=1 encoding=none totalRecords=127918 bloomShardCount=3 footerSize=33856 replicationFactor=0 dedicatedColumns=[]
+level=info ts=2026-01-10T07:21:31.086759969Z caller=compactor.go:360 msg="compaction complete" elapsed=22.901883122s blockID=5c57a869-01d9-432c-8268-043e03ea1841
+level=info ts=2026-01-10T07:21:31.08680772Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:21:38.185906134Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:21:38.186028536Z caller=compactor.go:170 msg="Compacting hash" hashString=tenant-1-1-491119-0
+level=info ts=2026-01-10T07:21:38.186066717Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=5c57a869-01d9-432c-8268-043e03ea1841 startTime="2026-01-10 07:07:37 +0000 UTC" endTime="2026-01-10 07:19:50 +0000 UTC" totalObjects=127918 size=542785876 compactionLevel=1 encoding=none totalRecords=127918 bloomShardCount=3 footerSize=33856 replicationFactor=0
+level=info ts=2026-01-10T07:21:38.187125917Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=85616008-9e73-4bfc-8eb5-8d19bba2a9a9 startTime="2026-01-10 06:57:34 +0000 UTC" endTime="2026-01-10 07:09:50 +0000 UTC" totalObjects=127962 size=542969000 compactionLevel=1 encoding=none totalRecords=127962 bloomShardCount=3 footerSize=33856 replicationFactor=0
+level=info ts=2026-01-10T07:21:51.147488181Z caller=compactor.go:263 msg="flushed to block" bytes=336744090 objects=79335 values=99998823
+level=info ts=2026-01-10T07:22:01.286166059Z caller=compactor.go:263 msg="flushed to block" bytes=336745786 objects=79332 values=99999240
+level=info ts=2026-01-10T07:22:09.787824551Z caller=compactor.go:263 msg="flushed to block" bytes=336759446 objects=79336 values=99999173
+level=info ts=2026-01-10T07:22:11.644099012Z caller=compactor.go:277 msg="wrote compacted block" version=vParquet4 tenantID=tenant-1 blockID=a47d0f75-1f07-47f6-9d4d-b70a5aa8ad2c startTime="2026-01-10 06:57:34 +0000 UTC" endTime="2026-01-10 07:19:50 +0000 UTC" totalObjects=251550 size=1067657906 compactionLevel=2 encoding=none totalRecords=251550 bloomShardCount=3 footerSize=63759 replicationFactor=0 dedicatedColumns=[]
+level=info ts=2026-01-10T07:22:11.698590358Z caller=compactor.go:360 msg="compaction complete" elapsed=33.512522711s blockID=a47d0f75-1f07-47f6-9d4d-b70a5aa8ad2c
+level=info ts=2026-01-10T07:22:11.698720912Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:22:11.698761843Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:22:11.698772483Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:22:41.699785269Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:22:41.6998302Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:23:11.699833476Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:23:11.699870348Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:23:41.699935475Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:23:41.699974007Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:24:11.700493933Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:24:11.700848641Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:24:41.700918148Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:24:41.700968939Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:25:11.701576298Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:25:11.701614058Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:25:38.210497432Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=3 compactedMetas=15
+level=info ts=2026-01-10T07:25:38.382496138Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.272804924
+level=info ts=2026-01-10T07:25:41.702861769Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:25:41.7029066Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:26:11.704056299Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:26:11.704214022Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:26:41.704023216Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:26:41.704212239Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:27:11.704083704Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:27:11.704117685Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:27:41.705018939Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:27:41.7050759Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:28:11.70519799Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:28:11.705284531Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:28:41.705415421Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:28:41.705487073Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:29:11.706015909Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:29:11.70605793Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:29:41.708558625Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:29:41.708661517Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:30:11.708882098Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:30:11.708939169Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:30:38.128150639Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=5 compactedMetas=15
+level=info ts=2026-01-10T07:30:38.224638524Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.115170574
+level=info ts=2026-01-10T07:30:41.709926245Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:30:41.709972996Z caller=compactor.go:170 msg="Compacting hash" hashString=tenant-1-0-491119-0
+level=info ts=2026-01-10T07:30:41.710012037Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=44943108-60dd-4dab-bb47-598e6b7b67ac startTime="2026-01-10 07:17:34 +0000 UTC" endTime="2026-01-10 07:29:33 +0000 UTC" totalObjects=113641 size=482093437 compactionLevel=0 encoding=none totalRecords=113641 bloomShardCount=2 footerSize=33814 replicationFactor=0
+level=info ts=2026-01-10T07:30:41.710850974Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=1a8a3c96-cfd6-4b4d-8e6c-3647c81b8876 startTime="2026-01-10 07:18:00 +0000 UTC" endTime="2026-01-10 07:30:00 +0000 UTC" totalObjects=113724 size=482451557 compactionLevel=0 encoding=none totalRecords=113724 bloomShardCount=2 footerSize=33814 replicationFactor=0
+level=info ts=2026-01-10T07:30:57.989403297Z caller=compactor.go:263 msg="flushed to block" bytes=336762278 objects=79337 values=99999507
+level=info ts=2026-01-10T07:31:06.840665439Z caller=compactor.go:277 msg="wrote compacted block" version=vParquet4 tenantID=tenant-1 blockID=7e982acf-44b2-4fe9-ac4b-c64b63d36b91 startTime="2026-01-10 07:17:34 +0000 UTC" endTime="2026-01-10 07:30:00 +0000 UTC" totalObjects=129893 size=551180731 compactionLevel=1 encoding=none totalRecords=129893 bloomShardCount=3 footerSize=33857 replicationFactor=0 dedicatedColumns=[]
+level=info ts=2026-01-10T07:31:06.877601558Z caller=compactor.go:360 msg="compaction complete" elapsed=25.167592501s blockID=7e982acf-44b2-4fe9-ac4b-c64b63d36b91
+level=info ts=2026-01-10T07:31:06.87766702Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:31:11.710044534Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:31:11.710107586Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:31:41.711058251Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:31:41.711121992Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:32:11.711867886Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:32:11.711952927Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:32:41.712661758Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:32:41.712697719Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:33:11.713353818Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:33:11.713405589Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:33:41.714270273Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:33:41.714300724Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:34:11.714595836Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:34:11.714627267Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:34:41.715282727Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:34:41.715315897Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:35:11.716077558Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:35:11.71616831Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:35:38.126326168Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=4 compactedMetas=17
+level=info ts=2026-01-10T07:35:38.228121903Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.118625233
+level=info ts=2026-01-10T07:35:41.716942712Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:35:41.717015304Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:36:11.719548757Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:36:11.719585387Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:36:41.720305759Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:36:41.720384181Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:37:11.721033369Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:37:11.7210845Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:37:41.721350462Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:37:41.721389973Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:38:11.722466451Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:38:11.722507923Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:38:41.723133081Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:38:41.723163062Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:39:11.723754481Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:39:11.723796511Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:39:41.724566643Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:39:41.724601344Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:40:11.725614901Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:40:11.725669962Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:40:38.137456978Z caller=poller.go:305 msg="writing tenant index" tenant=tenant-1 metas=6 compactedMetas=17
+level=info ts=2026-01-10T07:40:38.244741473Z caller=poller.go:252 msg="blocklist poll complete" seconds=0.135181566
+level=info ts=2026-01-10T07:40:41.726553845Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:40:41.726598006Z caller=compactor.go:170 msg="Compacting hash" hashString=tenant-1-0-491119-0
+level=info ts=2026-01-10T07:40:41.726636946Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=9015e620-44b5-40ef-9405-029df4f77ca2 startTime="2026-01-10 07:28:13 +0000 UTC" endTime="2026-01-10 07:40:01 +0000 UTC" totalObjects=110932 size=470605707 compactionLevel=0 encoding=none totalRecords=110932 bloomShardCount=2 footerSize=33811 replicationFactor=0
+level=info ts=2026-01-10T07:40:41.72794117Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=53f67d7c-7e2a-4417-ba3d-0031b9a0c854 startTime="2026-01-10 07:27:42 +0000 UTC" endTime="2026-01-10 07:39:43 +0000 UTC" totalObjects=112774 size=478430225 compactionLevel=0 encoding=none totalRecords=112774 bloomShardCount=2 footerSize=33814 replicationFactor=0
+level=info ts=2026-01-10T07:41:00.293946628Z caller=compactor.go:263 msg="flushed to block" bytes=336766610 objects=79335 values=99999638
+level=info ts=2026-01-10T07:41:08.575346346Z caller=compactor.go:277 msg="wrote compacted block" version=vParquet4 tenantID=tenant-1 blockID=c45fbfc6-6560-4c55-978c-5e29bbc88f76 startTime="2026-01-10 07:27:42 +0000 UTC" endTime="2026-01-10 07:40:01 +0000 UTC" totalObjects=127883 size=542641771 compactionLevel=1 encoding=none totalRecords=127883 bloomShardCount=3 footerSize=33856 replicationFactor=0 dedicatedColumns=[]
+level=info ts=2026-01-10T07:41:08.665789303Z caller=compactor.go:360 msg="compaction complete" elapsed=26.939155007s blockID=c45fbfc6-6560-4c55-978c-5e29bbc88f76
+level=info ts=2026-01-10T07:41:08.665849474Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:41:11.726583064Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:41:11.726631633Z caller=compactor.go:170 msg="Compacting hash" hashString=tenant-1-1-491119-0
+level=info ts=2026-01-10T07:41:11.726660874Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=c45fbfc6-6560-4c55-978c-5e29bbc88f76 startTime="2026-01-10 07:27:42 +0000 UTC" endTime="2026-01-10 07:40:01 +0000 UTC" totalObjects=127883 size=542641771 compactionLevel=1 encoding=none totalRecords=127883 bloomShardCount=3 footerSize=33856 replicationFactor=0
+level=info ts=2026-01-10T07:41:11.727901217Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=7e982acf-44b2-4fe9-ac4b-c64b63d36b91 startTime="2026-01-10 07:17:34 +0000 UTC" endTime="2026-01-10 07:30:00 +0000 UTC" totalObjects=129893 size=551180731 compactionLevel=1 encoding=none totalRecords=129893 bloomShardCount=3 footerSize=33857 replicationFactor=0
+level=info ts=2026-01-10T07:41:25.956329549Z caller=compactor.go:263 msg="flushed to block" bytes=336757068 objects=79337 values=99999704
+level=info ts=2026-01-10T07:41:37.46789218Z caller=compactor.go:263 msg="flushed to block" bytes=336758251 objects=79335 values=99999503
+level=info ts=2026-01-10T07:41:48.07527567Z caller=compactor.go:263 msg="flushed to block" bytes=336768597 objects=79337 values=99999567
+level=info ts=2026-01-10T07:41:51.269883983Z caller=compactor.go:277 msg="wrote compacted block" version=vParquet4 tenantID=tenant-1 blockID=feaf8bfd-fc97-4ed8-a89a-d392067e7698 startTime="2026-01-10 07:17:34 +0000 UTC" endTime="2026-01-10 07:40:01 +0000 UTC" totalObjects=253577 size=1076252208 compactionLevel=2 encoding=none totalRecords=253577 bloomShardCount=4 footerSize=63758 replicationFactor=0 dedicatedColumns=[]
+level=info ts=2026-01-10T07:41:51.342482462Z caller=compactor.go:360 msg="compaction complete" elapsed=39.615819118s blockID=feaf8bfd-fc97-4ed8-a89a-d392067e7698
+level=info ts=2026-01-10T07:41:51.342601294Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:41:51.342687376Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:41:51.342710476Z caller=compactor.go:170 msg="Compacting hash" hashString=tenant-1-2-491119-0
+level=info ts=2026-01-10T07:41:51.342761067Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=a47d0f75-1f07-47f6-9d4d-b70a5aa8ad2c startTime="2026-01-10 06:57:34 +0000 UTC" endTime="2026-01-10 07:19:50 +0000 UTC" totalObjects=251550 size=1067657906 compactionLevel=2 encoding=none totalRecords=251550 bloomShardCount=3 footerSize=63759 replicationFactor=0
+level=info ts=2026-01-10T07:41:51.346498315Z caller=compactor.go:266 msg="compacting block" version=vParquet4 tenantID=tenant-1 blockID=feaf8bfd-fc97-4ed8-a89a-d392067e7698 startTime="2026-01-10 07:17:34 +0000 UTC" endTime="2026-01-10 07:40:01 +0000 UTC" totalObjects=253577 size=1076252208 compactionLevel=2 encoding=none totalRecords=253577 bloomShardCount=4 footerSize=63758 replicationFactor=0
+level=info ts=2026-01-10T07:42:06.377371545Z caller=compactor.go:263 msg="flushed to block" bytes=336753725 objects=79336 values=99999748
+level=info ts=2026-01-10T07:42:18.490343921Z caller=compactor.go:263 msg="flushed to block" bytes=336765557 objects=79337 values=99999833
+level=info ts=2026-01-10T07:42:28.333603526Z caller=compactor.go:263 msg="flushed to block" bytes=336762491 objects=79333 values=99999630
+level=info ts=2026-01-10T07:42:39.990640481Z caller=compactor.go:263 msg="flushed to block" bytes=336753438 objects=79334 values=99999552
+level=info ts=2026-01-10T07:42:50.986772462Z caller=compactor.go:263 msg="flushed to block" bytes=336768020 objects=79337 values=99999351
+level=info ts=2026-01-10T07:43:01.508132477Z caller=compactor.go:263 msg="flushed to block" bytes=336768588 objects=79337 values=99999444
+level=info ts=2026-01-10T07:43:04.723918246Z caller=compactor.go:277 msg="wrote compacted block" version=vParquet4 tenantID=tenant-1 blockID=700757be-b9b1-40e3-9ec9-b228a9e88277 startTime="2026-01-10 06:57:34 +0000 UTC" endTime="2026-01-10 07:40:01 +0000 UTC" totalObjects=500850 size=2126040313 compactionLevel=3 encoding=none totalRecords=500850 bloomShardCount=6 footerSize=108823 replicationFactor=0 dedicatedColumns=[]
+level=info ts=2026-01-10T07:43:04.784034767Z caller=compactor.go:360 msg="compaction complete" elapsed=1m13.441277849s blockID=700757be-b9b1-40e3-9ec9-b228a9e88277
+level=info ts=2026-01-10T07:43:04.784166349Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:43:04.784191839Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:43:04.78419787Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:43:34.784489302Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:43:34.784524853Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:44:04.785163562Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:44:04.785194793Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1
+level=info ts=2026-01-10T07:44:34.786072145Z caller=compactor.go:145 msg="starting compaction cycle" tenantID=tenant-1 offset=0
+level=info ts=2026-01-10T07:44:34.786117555Z caller=compactor.go:158 msg="compaction cycle complete. No more blocks to compact" tenantID=tenant-1

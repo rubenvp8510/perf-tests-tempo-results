@@ -1,0 +1,11 @@
+2026/01/09 18:14:28 (version=, branch=, revision=unknown)
+level=info name=observatorium ts=2026-01-09T18:14:28.752286543Z caller=main.go:478 msg="starting observatorium"
+level=info name=observatorium ts=2026-01-09T18:14:28.753433783Z caller=main.go:573 msg="adding a tenant" tenant=tenant-1
+level=info name=observatorium ts=2026-01-09T18:14:28.754067588Z caller=config.go:19 protocol=HTTP msg="enabling server side TLS"
+level=info name=observatorium ts=2026-01-09T18:14:28.754693356Z caller=api.go:61 msg="gRPC dialing OTel" endpoint=tempo-tempostack-distributor.tempo-perf-1x-demo.svc.cluster.local:4317
+level=info name=observatorium ts=2026-01-09T18:14:28.756593302Z caller=config.go:19 protocol=HTTP msg="enabling server side TLS"
+level=info name=observatorium ts=2026-01-09T18:14:28.75797189Z caller=main.go:1038 msg="starting internal HTTP server" address=0.0.0.0:8081
+level=info name=observatorium ts=2026-01-09T18:14:28.757983005Z caller=main.go:970 msg="starting the gRPC server" address=0.0.0.0:8090
+level=info name=observatorium ts=2026-01-09T18:14:28.75802377Z caller=main.go:934 msg="starting the HTTP server" address=0.0.0.0:8080
+level=warn name=observatorium ts=2026-01-09T18:14:49.139168592Z caller=stdlib.go:105 caller=reverseproxy.go:688 msg="http: proxy error: dial tcp 172.30.147.166:3200: connect: connection refused"
+level=warn name=observatorium ts=2026-01-09T18:14:49.139224431Z caller=instrumentation.go:33 request=tempo-tempostack-gateway-65b9599598-n256h/12j6EmFuyO-000006 proto=HTTP/2.0 method=GET status=502 content= path=/api/traces/v1/tenant-1/tempo/api/search duration=10.141215ms bytes=0
