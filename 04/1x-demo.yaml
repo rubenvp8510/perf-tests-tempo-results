@@ -1,0 +1,18 @@
+name: 1x-demo
+description: "Demo environment - minimal resources, no HA, not for production"
+
+tempo:
+  variant: monolithic
+
+storage:
+  minioSize: "2Gi"
+
+k6:
+  vus:
+    min: 2
+    max: 5
+  ingestion:
+    mbPerSecond: 0.05
+    traceProfile: small
+  query:
+    queriesPerSecond: 2

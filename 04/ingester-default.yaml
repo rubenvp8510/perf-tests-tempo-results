@@ -1,0 +1,25 @@
+name: ingester-default
+description: "Ingester tuning baseline - Tempo defaults"
+
+tempo:
+  variant: stack
+  overrides:
+    maxTracesPerUser: 0
+    ingester:
+      flushCheckPeriod: "10s"
+      traceIdlePeriod: "5s"
+      maxBlockDuration: "30m"
+      concurrentFlushes: 4
+
+storage:
+  minioSize: "200Gi"
+
+k6:
+  vus:
+    min: 50
+    max: 200
+  ingestion:
+    mbPerSecond: 23
+    traceProfile: large
+  query:
+    queriesPerSecond: 100

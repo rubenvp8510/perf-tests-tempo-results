@@ -1,0 +1,22 @@
+name: 1x-extra-small
+description: "Extra small - ~100GB/day ingestion, suitable for small clusters with limited workloads"
+
+tempo:
+  variant: stack
+  overrides:
+    # Set to 0 for unlimited traces (prevents "max live traces reached" errors during load tests)
+    maxTracesPerUser: 0
+
+storage:
+  minioSize: "10Gi"
+
+k6:
+  vus:
+    min: 5
+    max: 20
+  ingestion:
+    # ~100 GB/day = ~1.16 MB/s
+    mbPerSecond: 1.2
+    traceProfile: small
+  query:
+    queriesPerSecond: 5

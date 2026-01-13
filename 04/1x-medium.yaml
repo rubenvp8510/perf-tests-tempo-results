@@ -1,0 +1,22 @@
+name: 1x-medium
+description: "Medium - ~2TB/day ingestion, HA enabled, production ready for high workloads"
+
+tempo:
+  variant: stack
+  overrides:
+    # Set to 0 for unlimited traces (prevents "max live traces reached" errors during load tests)
+    maxTracesPerUser: 0
+
+storage:
+  minioSize: "200Gi"
+
+k6:
+  vus:
+    min: 50
+    max: 200
+  ingestion:
+    # ~2 TB/day = ~23.1 MB/s
+    mbPerSecond: 23
+    traceProfile: large
+  query:
+    queriesPerSecond: 100

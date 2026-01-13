@@ -1,0 +1,23 @@
+name: 1x-small
+description: "Small - ~500GB/day ingestion, HA enabled, production ready for moderate workloads"
+
+tempo:
+  variant: stack
+  overrides:
+    # Set to 0 for unlimited traces (prevents "max live traces reached" errors during load tests)
+    # Remove or set to a specific value to use limits
+    maxTracesPerUser: 0
+
+storage:
+  minioSize: "50Gi"
+
+k6:
+  vus:
+    min: 20
+    max: 80
+  ingestion:
+    # ~500 GB/day = ~5.8 MB/s
+    mbPerSecond: 5.8
+    traceProfile: medium
+  query:
+    queriesPerSecond: 25

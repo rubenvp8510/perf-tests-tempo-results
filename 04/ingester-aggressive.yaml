@@ -1,0 +1,25 @@
+name: ingester-aggressive
+description: "Ingester tuning - aggressive flushing for lower memory"
+
+tempo:
+  variant: stack
+  overrides:
+    maxTracesPerUser: 0
+    ingester:
+      flushCheckPeriod: "5s"
+      traceIdlePeriod: "2s"
+      maxBlockDuration: "5m"
+      concurrentFlushes: 4
+
+storage:
+  minioSize: "200Gi"
+
+k6:
+  vus:
+    min: 50
+    max: 200
+  ingestion:
+    mbPerSecond: 23
+    traceProfile: large
+  query:
+    queriesPerSecond: 100

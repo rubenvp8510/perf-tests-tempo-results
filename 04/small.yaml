@@ -1,0 +1,18 @@
+name: small
+description: "Light load - suitable for development and CI"
+
+tempo:
+  variant: stack
+
+storage:
+  minioSize: "2Gi"
+
+k6:
+  vus:
+    min: 5
+    max: 20
+  ingestion:
+    mbPerSecond: 0.1
+    traceProfile: small
+  query:
+    queriesPerSecond: 5
